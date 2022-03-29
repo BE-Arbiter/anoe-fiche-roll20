@@ -6,7 +6,10 @@ div,input,textarea,label{
     border-radius:0 !important;
 }
 
-input[type="number"], label {
+input[type="number"]{
+    text-align: center !important;
+}
+label {
     text-align: right !important;;
 }
 label.sheet-left {
