@@ -349,13 +349,13 @@ input,textarea{
     margin-top: -1px;
 }
 
-.sheet-panel-ini,.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-avantages,.sheet-panel-equipement,.sheet-panel-attaques{
+.sheet-panel-ini,.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-magie,.sheet-panel-avantages,.sheet-panel-equipement,.sheet-panel-attaques{
     background-color: #DFC388;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
-.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-equipement,.sheet-panel-avantages,.sheet-panel-attaques{
+.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-equipement,.sheet-panel-magie,.sheet-panel-avantages,.sheet-panel-attaques{
     margin-top:1.6rem !important;
 }
 
@@ -387,7 +387,7 @@ input,textarea{
     padding-top: 0.2em;
     padding-right: 0.4em;
 }
-.sheet-panel-resistance label,.sheet-panel-ini label,.sheet-panel-equipement label,.sheet-panel-avantages label,.sheet-panel-attaques label{
+.sheet-panel-resistance label,.sheet-panel-ini label,.sheet-panel-equipement label,.sheet-panel-magie label,.sheet-panel-avantages label,.sheet-panel-attaques label{
     text-align: center !important;
     font-size: small !important;
     font-weight: bold !important;

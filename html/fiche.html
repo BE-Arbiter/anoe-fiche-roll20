@@ -1228,7 +1228,95 @@
         <div class="sheet-tab sheet-fi-12">
             <div class="sheet-tab-content">
                 <div class="sheet-flex-row sheet-flex-stretch sheet-fi-12">
-                    CONTENU
+                    <div class="sheet-flex-row sheet-fi-12">
+                        <div class="sheet-panel-magie sheet-flex-column sheet-margin sheet-fi-6">
+                            <h3 class="sheet-BlackImgBg">Magie</h3>
+                        </div>
+                        <div class="sheet-panel-magie sheet-flex-column sheet-margin sheet-fi-6">
+                            <h3 class="sheet-BlackImgBg">Comp. Magiques</h3>
+                            <div class="sheet-flex-row ">
+                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                                </div>
+                                <label class="sheet-fi-4 sheet-left"></label>
+                            </div>
+                            <div class="sheet-flex-row">
+                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_air_niveau"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_air_maitrise"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_air_modif"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_1_armure"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_maj_air_total"/>
+                                </div>
+                                <label class="sheet-fi-4 sheet-left">Air</label>
+                                <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Air : [[0 + @{competence_maj_air_total} - 1d10]]" name="roll_competence_maj_air_total"></button>
+                            </div>
+                            <div class="sheet-flex-row">
+                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_eau_niveau"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_eau_maitrise"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_eau_modif"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_eau_armure"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_maj_eau_total"/>
+                                </div>
+                                <label class="sheet-fi-4 sheet-left">Eau</label>
+                                <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Eau : [[0 + @{competence_maj_eau_total} - 1d10]]" name="roll_competence_maj_eau_total"></button>
+                            </div>
+                            <div class="sheet-flex-row">
+                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_energie_niveau"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_energie_maitrise"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_energie_modif"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_energie_armure"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_maj_energie_total"/>
+                                </div>
+                                <label class="sheet-fi-4 sheet-left">Énergie</label>
+                                <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Énergie : [[0 + @{competence_maj_energie_total} - 1d10]]" name="roll_competence_maj_energie_total"></button>
+                            </div>
+                            <div class="sheet-flex-row">
+                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_necrose_niveau"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_necrose_maitrise"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_necrose_modif"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_necrose_armure"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_maj_necrose_total"/>
+                                </div>
+                                <label class="sheet-fi-4 sheet-left">Nécrose</label>
+                                <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Nécrose : [[0 + @{competence_maj_necrose_total} - 1d10]]" name="roll_competence_maj_necrose_total"></button>
+                            </div>
+                            <div class="sheet-flex-row">
+                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_terre_niveau"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_terre_maitrise"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_terre_modif"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_terre_armure"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_terre_total"/>
+                                </div>
+                                <label class="sheet-fi-4 sheet-left">Terre</label>
+                                <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Terre : [[0 + @{competence_terre_total} - 1d10]]" name="roll_competence_terre_total"></button>
+                            </div>
+                            <div class="sheet-flex-row">
+                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_vitae_niveau"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_vitae_maitrise"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_vitae_modif"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_maj_vitae_armure"/>
+                                    <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_maj_vitae_total"/>
+                                </div>
+                                <label class="sheet-fi-4 sheet-left">Vitaë</label>
+                                <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Vitaë : [[0 + @{competence_maj_vitae_total} - 1d10]]" name="roll_competence_maj_vitae_total"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-flex-row sheet-fi-12">
+                    <div class="sheet-panel-magie sheet-flex-column sheet-margin sheet-fi-12">
+                        <h3 class="sheet-BlackImgBg">Sorts</h3>
+                    </div>
                 </div>
             </div>
         </div>
