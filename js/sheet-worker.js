@@ -54,13 +54,21 @@ comp_attr["spe_vision_faon"]="fm";
 
 console.log("comp_attr initialized");
 
+function getNumber(value) {
+    let number = Number(value);
+    if (number !== number) {
+        return null;
+    }
+    return number;
+}
+
 function updateVitalite(){
     getAttrs([`carac_c_tot`,`carac_f_tot`],function (values){
-        let force = Number(values[`carac_f_tot`]||0);
-        let constitution = Number(values[`carac_c_tot`]||0);
+        let force = getNumber(values[`carac_f_tot`])||0;
+        let constitution = getNumber(values[`carac_c_tot`])||0;
         let vie = ((force+constitution)*2)+10;
-        let vieHalf = Math.ceil(max / 2);
-        let vieQuart = Math.ceil(max / 4);
+        let vieHalf = Math.ceil(vie / 2);
+        let vieQuart = Math.ceil(vie / 4);
         let saveobj = {};
         saveobj[`vie_max`] = vie;
         saveobj[`vie_moitie`] = vieHalf;
@@ -71,34 +79,99 @@ function updateVitalite(){
 
 function updateStress(){
     getAttrs([`carac_fm_tot`,`priest_is_priest`],function (values) {
-        let forceMentale = Number(values[`carac_f_tot`]||0);
-        let isPriest = Number(values[`priest_is_priest`]||0);
-        let asocial = (fm*2)+10;
-        let saturation = (fm*3)+20;
+        let forceMentale = getNumber(values[`carac_fm_tot`])||0;
+        let isPriest = getNumber(values[`priest_is_priest`])||0;
+        let asocial = (forceMentale*2)+10;
+        let saturation = (forceMentale*3)+20;
         if(isPriest !== 0){
             asocial = (fm*3)+10;
             saturation = (fm*4)+20;
         }
         let saveobj = {};
-        saveobj[`stress_asoc`] = vie;
-        saveobj[`stress_sat`] = vieHalf;
+        saveobj[`stress_asoc`] = asocial;
+        saveobj[`stress_sat`] = saturation;
         setAttrs(saveobj);
     });
 }
+
+function updateActions(){
+    getAttrs([`carac_r_tot`],function (values) {
+        let rapidite = getNumber(values[`carac_r_tot`])||0;
+        let saveobj = {};
+        saveobj[`actions`] = Math.ceil(rapidite/5);
+        setAttrs(saveobj);
+    });
+}
+
 function updateInit(){
+    getAttrs([`carac_r_tot`,`carac_i_tot`,`ini_armes`,`ini_armure`,`ini_mod`],function (values) {
+        let intelligence = getNumber(values[`carac_i_tot`])||0;
+        let rapidite = getNumber(values[`carac_r_tot`])||0;
+        let armes = getNumber(values[`ini_armes`])||0;
+        let armure = getNumber(values[`ini_armure`])||0;
+        let mod = getNumber(values[`ini_mod`])||0;
+        let init_base = Math.ceil((intelligence+rapidite)/2);
+        let init_tot = init_base-armure+armes+mod;
+        let saveobj = {};
+        saveobj[`ini_attr`] = init_base;
+        saveobj[`ini_total`] = init_tot;
+        setAttrs(saveobj);
+    });
+}
+
+function updateResChoc(){
+    getAttrs([`carac_c_tot`,`carac_fm_tot`,`res_choc_mod`],function (values) {
+        let constitution = getNumber(values[`carac_c_tot`])||0;
+        let forcementale = getNumber(values[`carac_fm_tot`])||0;
+        let mod = getNumber(values[`res_choc_mod`])||0;
+        let res_base = Math.ceil((constitution+forcementale)/10);
+        let res_tot = res_base+mod;
+        let saveobj = {};
+        saveobj[`res_choc_val`] = res_base;
+        saveobj[`res_choc_total`] = res_tot;
+        setAttrs(saveobj);
+    });
+}
+
+function updateResSoc(){
+    getAttrs([`carac_ch_tot`,`carac_i_tot`,`carac_fm_tot`,`res_soc_mod`],function (values) {
+        let charisme = getNumber(values[`carac_ch_tot`])||0;
+        let forcementale = getNumber(values[`carac_fm_tot`])||0;
+        let intelligence = getNumber(values[`carac_i_tot`])||0;
+        let mod = getNumber(values[`res_soc_mod`])||0;
+        let res_base = Math.ceil((charisme+intelligence+forcementale)/10);
+        let res_tot = res_base+mod;
+        let saveobj = {};
+        saveobj[`res_soc_val`] = res_base;
+        saveobj[`res_soc_total`] = res_tot;
+        setAttrs(saveobj);
+    });
+}
+
+function updateResMag(){
+    getAttrs([`carac_c_tot`,`carac_fm_tot`,`res_maj_mod`],function (values) {
+        let constitution = getNumber(values[`carac_c_tot`])||0;
+        let forcementale = getNumber(values[`carac_fm_tot`])||0;
+        let mod = getNumber(values[`res_maj_mod`])||0;
+        let res_base = Math.ceil((constitution+forcementale)/10);
+        let res_tot = res_base+mod;
+        let saveobj = {};
+        saveobj[`res_maj_val`] = res_base;
+        saveobj[`res_maj_total`] = res_tot;
+        setAttrs(saveobj);
+    });
 }
 
 function updateCompetence(competence,attribut){
-    console.log("updating "+competence+" on "+attribut);
     getAttrs([`carac_${attribut}_tot`],function (values){
-        let max = Number(values[`carac_${attribut}_tot`]||0);
+        let max = getNumber(values[`carac_${attribut}_tot`])||0;
         getAttrs([`competence_${competence}_niveau`,`competence_${competence}_maitrise`,`competence_${competence}_modif`,`competence_${competence}_armure`],function(values){
-            let niveau =  Number(values[`competence_${competence}_niveau`]||0);
-            let maitrise =  Number(values[`competence_${competence}_maitrise`]||0);
-            let modif =  Number(values[`competence_${competence}_modif`]||0);
-            let armure =  Number(values[`competence_${competence}_armure`]||0);
+            let niveau =  getNumber(values[`competence_${competence}_niveau`])||0;
+            let maitrise =  getNumber(values[`competence_${competence}_maitrise`])||0;
+            let modif =  getNumber(values[`competence_${competence}_modif`])||0;
+            let armure =  getNumber(values[`competence_${competence}_armure`])||0;
             if(niveau === 0){
-                niveau = Math.floor(max / 3)
+                niveau = Math.ceil(max / 3)
             }else{
                 niveau = (niveau < max || max <= 0) ? niveau : max;
             }
@@ -112,8 +185,8 @@ function updateCompetence(competence,attribut){
 console.log("update_competence initialized");
 function updateAttribut(attribut) {
     getAttrs([`carac_${attribut}_niv`, `carac_${attribut}_mod`], function (values) {
-        let niveau = Number(values[`carac_${attribut}_niv`] || 0);
-        let mod = Number(values[`carac_${attribut}_mod`] || 0);
+        let niveau = getNumber(values[`carac_${attribut}_niv`] || 0);
+        let mod = getNumber(values[`carac_${attribut}_mod`] || 0);
         let tot = niveau + mod;
         let saveobj = {};
         saveobj[`carac_${attribut}_tot`] = tot;
@@ -126,19 +199,28 @@ function updateAttribut(attribut) {
         }
         if(attribut === "c"){
             updateVitalite();
+            updateResMag();
+            updateResChoc();
         }
         else if(attribut === "f"){
             updateVitalite();
         }
         else if(attribut === "fm"){
-            updateVitalite();
+            updateStress();
+            updateResMag();
+            updateResChoc();
+            updateResSoc();
         }
         else if(attribut === "r"){
             updateInit();
             updateActions();
         }
+        else if( attribut === "ch"){
+            updateResSoc();
+        }
         else if( attribut === "i"){
             updateInit();
+            updateResSoc();
         }
     });
 }
@@ -152,6 +234,11 @@ on("change:carac_fm_niv change:carac_fm_mod",function(){updateAttribut("fm");});
 on("change:carac_i_niv change:carac_i_mod",function(){updateAttribut("i");});
 on("change:carac_p_niv change:carac_p_mod",function(){updateAttribut("p");});
 on("change:carac_r_niv change:carac_r_mod",function(){updateAttribut("r");});
+
+on("change:ini_armes change:ini_armure change:ini_mod",function(){updateInit();});
+on("change:res_soc_mod",function(){updateResSoc();});
+on("change:res_choc_mod",function(){updateResChoc();});
+on("change:res_maj_mod",function(){updateResMag();});
 
 on("change:competence_cmb_jet_niveau change:competence_cmb_jet_maitrise change:competence_cmb_jet_mod change:competence_cmb_jet_armure",function(){updateCompetence("cmb_jet",comp_attr["cmb_jet"]);});
 on("change:competence_cmb_trait_niveau change:competence_cmb_trait_maitrise change:competence_cmb_trait_mod change:competence_cmb_trait_armure",function(){updateCompetence("cmb_trait",comp_attr["cmb_trait"]);});

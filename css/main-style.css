@@ -2,8 +2,8 @@
 
 div,input,textarea,label{
     font-family: 'Spectral', serif;
-    box-sizing: border-box;
-    border-radius:0 !important;;
+    box-sizing: border-box !important;
+    border-radius:0 !important;
 }
 
 label {
@@ -63,6 +63,7 @@ label.sheet-nav, .sheet-tab {
     font-weight: bold !important;
     transition: background ease 0.3s !important;
     width:auto !important;
+    color: #909090 !important;
 }
 .sheet-tabs .sheet-tab,.sheet-top-row{
     width: 100% !important;
@@ -91,6 +92,7 @@ label.sheet-nav, .sheet-tab {
     border: solid #53332a 2px !important;
     border-bottom: none !important;
     z-index: 999 !important;
+    color: #53332a !important;
 }
 
 .sheet-tabs input[type="radio"]:checked + label.sheet-nav + .sheet-tab {
@@ -245,7 +247,7 @@ input{
 }
 
 .sheet-panel-competence h3{
-    text-align: right;
+    text-align: right !important;
     margin-bottom: -1em;
     padding-right: 2em;
 }
@@ -276,8 +278,7 @@ input{
 .sheet-panel-destine input{
     font-size: 1.5em;
 }
-
-.sheet-panel-vitalite ,.sheet-panel-stress{
+.sheet-panel-vitalite h3, .sheet-panel-stress h3,.sheet-panel-action h3, .sheet-panel-vitalite ,.sheet-panel-stress{
     background-color: #2D120F;
     color: white !important;
 }
@@ -311,7 +312,7 @@ input{
 }
 
 .sheet-panel-armes,.sheet-panel-protection{
-    margin-top:0.6rem;
+    margin-top:1.6rem !important;
 }
 
 .sheet-top-label{
@@ -350,19 +351,19 @@ input{
 }
 
 .sheet-panel-resistance input,.sheet-panel-ini input{
-    font-size: 1.3em;
+    font-size: 1.3em !important;
 }
 
 h3.sheet-BlackImgBg{
-    color: white;
+    color: white !important;
     width: 40% !important;
-    margin-top: -1em;
-    margin-left: -0.3em;
+    margin-top: -1em !important;
+    margin-left: -0.3em !important;
 
-    background-color: black;
-    background-position: left center,right center,center center;
-    background-repeat: no-repeat,no-repeat,repeat-x;
-    background-size: auto 100%,auto 100%,auto 100%;
+    background-color: black !important;
+    background-position: left center,right center,center center !important;
+    background-repeat: no-repeat,no-repeat,repeat-x !important;
+    background-size: auto 100%,auto 100%,auto 100% !important;
 }
 
 .sheet-over-small{
