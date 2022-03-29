@@ -1,0 +1,1143 @@
+<div style="width: 1024px">
+
+    <div class="sheet-flex-column sheet-top-row">
+        <div class="sheet-tab-content">
+            <div class="sheet-flex-row sheet-fi-12">
+                <label class="sheet-fi-1">Nom</label>
+                <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_character_name">
+                <label class="sheet-fi-1">Race</label>
+                <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_race">
+                <label class="sheet-fi-1">Sexe</label>
+                <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_sex">
+            </div>
+            <div class="sheet-flex-row sheet-fi-12">
+                <label class="sheet-fi-1">Âge</label>
+                <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_age">
+                <label class="sheet-fi-1">Pays</label>
+                <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_pays">
+                <label class="sheet-fi-1">Métier</label>
+                <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_metier">
+            </div>
+        </div>
+    </div>
+    <div class="sheet-tabs" style="width: 100%">
+
+        <input type="radio" name="tabs" id="tabone" checked="checked">
+        <label class="sheet-nav" for="tabone">Général</label>
+        <div class="sheet-tab sheet-fi-12">
+            <div class="sheet-tab-content">
+                <div class="sheet-flex-row sheet-fi-12">
+                    <div class="sheet-flex-column sheet-tab-content sheet-fi-6 sheet-margin sheet-margin-compensate sheet-">
+                        <h3 class="sheet-BlackImgBg">Personnage</h3>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-5">Taille (C, D ou E)</label>
+                            <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_taille">
+                        </div>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-5">Poids</label>
+                            <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_poids">
+                        </div>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-5">Peau</label>
+                            <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_peau">
+                        </div>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-5">Yeux</label>
+                            <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_yeux">
+                        </div>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-5">Vision Nocturne</label>
+                            <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_vision_nocture">
+                        </div>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-5">Main Directrice</label>
+                            <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_main_directrice">
+                        </div>
+                        <div class="sheet-hr"></div>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-8">Nuit Complète (-10 stress)</label>
+                            <div class="sheet-fi-4 sheet-margin sheet-complex_input">
+                                <input class="sheet-fi-11 sheet-input_editable" type="text" name="attr_nuit_complete">
+                                <div class="sheet-fi-1 sheet-input_editable">h</div>
+                            </div>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-8">Nuit Incomplète (-5 stress)</label>
+                            <div class="sheet-fi-4 sheet-margin sheet-complex_input">
+                                <input class="sheet-fi-11 sheet-input_editable" type="text" name="attr_nuit_incomplete">
+                                <div class="sheet-fi-1 sheet-input_editable">h</div>
+                            </div>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-8">Nuit Courte (0 stress)</label>
+                            <div class="sheet-fi-4 sheet-complex_input">
+                                <input class="sheet-fi-11 sheet-input_editable" type="text" name="attr_nuit_courte">
+                                <div class="sheet-fi-1 sheet-input_editable">h</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-flex-column sheet-tab-content sheet-fi-6 sheet-margin">
+                        <h3 class="sheet-BlackImgBg">Attributs</h3>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-2">Niveau</div>
+                            <div class="sheet-fi-2">Modif</div>
+                            <div class="sheet-fi-2">Score</div>
+                            <div class="sheet-fi-6"></div>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_a_niv">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_a_mod">
+
+                            <input class="sheet-fi-2 sheet-input_calc sheet-margin" type="number" step="1" readonly="true" name="attr_carac_a_tot">
+                            <label class="sheet-fi-5 sheet-left">Agilité (A)</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Agilité : [[0 + @{carac__tot} - 1d10]]" name="roll_carac__tot"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_ch_niv">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_ch_mod">
+                            <input class="sheet-fi-2 sheet-input_calc sheet-margin" type="number" step="1" readonly="true" name="attr_carac_ch_tot">
+                            <label class="sheet-fi-5 sheet-left">Charisme (Ch)</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Charisme : [[0 + @{carac_ch_tot} - 1d10]]" name="roll_carac_ch_tot"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_c_niv">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_c_mod">
+                            <input class="sheet-fi-2 sheet-input_calc sheet-margin" type="number" step="1" readonly="true" name="attr_carac_c_tot">
+                            <label class="sheet-fi-5 sheet-left">Constitution (C)</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Constitution : [[0 + @{carac_c_tot} - 1d10]]" name="roll_carac_c_tot"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_f_niv">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_f_mod">
+                            <input class="sheet-fi-2 sheet-input_calc sheet-margin" type="number" step="1" readonly="true" name="attr_carac_f_tot">
+                            <label class="sheet-fi-5 sheet-left">Force (F)</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Force : [[0 + @{carac_f_tot} - 1d10]]" name="roll_carac_f_tot"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_fm_niv">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_fm_mod">
+                            <input class="sheet-fi-2 sheet-input_calc sheet-margin" type="number" step="1" readonly="true" name="attr_carac_fm_tot">
+                            <label class="sheet-fi-5 sheet-left">Force Mentale (FM)</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Formce Mentale : [[0 + @{carac_fm_tot} - 1d10]]" name="roll_carac_fm_tot"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_i_niv">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_i_mod">
+                            <input class="sheet-fi-2 sheet-input_calc sheet-margin" type="number" step="1" readonly="true" name="attr_carac_i_tot">
+                            <label class="sheet-fi-5 sheet-left">Intelligence (I)</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Intelligence : [[0 + @{carac_i_tot} - 1d10]]" name="roll_carac_i_tot"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_p_niv">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_p_mod">
+                            <input class="sheet-fi-2 sheet-input_calc sheet-margin" type="number" step="1" readonly="true" name="attr_carac_p_tot">
+                            <label class="sheet-fi-5 sheet-left">Perception (P)</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Perception : [[0 + @{carac_p_tot} - 1d10]]" name="roll_carac_p_tot"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_r_niv">
+                            <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1" name="attr_carac_r_mod">
+
+                            <input class="sheet-fi-2 sheet-input_calc sheet-margin" type="number" step="1" readonly="true" name="attr_carac_r_tot">
+                            <label class="sheet-fi-5 sheet-left">Rapidité (R)</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Rapidité : [[0 + @{carac_r_tot} - 1d10]]" name="roll_carac_r_tot"></button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <input type="radio" name="tabs" id="tabtwo">
+        <label class="sheet-nav" for="tabtwo">Compétences</label>
+        <div class="sheet-tab sheet-fi-12">
+            <div class="sheet-tab-content sheet-panel-competence sheet-flex-column">
+                <div class="sheet-flex-row">
+                    <div class="sheet-tab-content sheet-margin sheet-flex-column sheet-fi-6">
+                        <h3>Combat</h3>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                            </div>
+                            <label class="sheet-fi-4 sheet-left"></label>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_jet_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_jet_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_jet_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_jet_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_jet_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Armes de jet #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Armes : [[0 + @{competence_cmb_jet_total} - 1d10]]" name="roll_competence_cmb_jet_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_trait_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_trait_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_trait_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_trait_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_trait_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Armes de trait #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Armes : [[0 + @{competence_cmb_trait_total} - 1d10]]" name="roll_competence_cmb_trait_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_boucliers_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_boucliers_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_boucliers_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_boucliers_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_boucliers_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Boucliers #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Boucliers : [[0 + @{competence_cmb_boucliers_total} - 1d10]]" name="roll_competence_cmb_boucliers_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_epees_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_epees_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_epees_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_epees_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_epees_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Épées #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Épées : [[0 + @{competence_cmb_epees_total} - 1d10]]" name="roll_competence_cmb_epees_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_esquive_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_esquive_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_esquive_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_esquive_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_esquive_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Esquive #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Esquive : [[0 + @{competence_cmb_esquive_total} - 1d10]]" name="roll_competence_cmb_esquive_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_haches_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_haches_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_haches_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_haches_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_haches_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Haches&amp;Masses #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Haches&amp;Masses : [[0 + @{competence_cmb_haches_total} - 1d10]]" name="roll_competence_cmb_haches_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_poignards_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_poignards_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_poignards_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_poignards_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_poignards_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Poignards #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Poignards : [[0 + @{competence_cmb_poignards_total} - 1d10]]" name="roll_competence_cmb_poignards_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_pugilat_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_pugilat_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_pugilat_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_pugilat_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_pugilat_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Pugilat #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Pugilat : [[0 + @{competence_cmb_pugilat_total} - 1d10]]" name="roll_competence_cmb_pugilat_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_strategie_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_strategie_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_strategie_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_strategie_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Strategie</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Strategie : [[0 + @{competence_cmb_strategie_total} - 1d10]]" name="roll_competence_cmb_strategie_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_custom_1_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_custom_1_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_custom_1_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_custom_1_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_custom_1_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_cmb_custom_1_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_cmb_custom_1_nom} : [[0 + @{competence_cmb_custom_1_total} - 1d10]]" name="roll_competence_cmb_custom_1_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_custom_2_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_custom_2_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_custom_2_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_custom_2_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_custom_2_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_cmb_custom_2_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_cmb_custom_2_nom} : [[0 + @{competence_cmb_custom_2_total} - 1d10]]" name="roll_competence_cmb_custom_2_total"></button>
+                        </div>
+                    </div>
+                    <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
+                        <h3>Sociale</h3>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                            </div>
+                            <label class="sheet-fi-4 sheet-left"></label>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_baratin_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_baratin_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_baratin_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_baratin_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Baratin</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Baratin : [[0 + @{competence_soc_baratin_total} - 1d10]]" name="roll_competence_soc_baratin_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_diplomatie_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_diplomatie_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_diplomatie_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_diplomatie_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Diplomatie</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Diplomatie : [[0 + @{competence_soc_diplomatie_total} - 1d10]]" name="roll_competence_soc_diplomatie_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_empathie_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_empathie_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_empathie_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_empathie_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Empathie</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Empathie : [[0 + @{competence_soc_empathie_total} - 1d10]]" name="roll_competence_soc_empathie_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_etiquette_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_etiquette_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_etiquette_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_etiquette_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Étiquette</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Étiquette : [[0 + @{competence_soc_etiquette_total} - 1d10]]" name="roll_competence_soc_etiquette_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_interrogatoire_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_interrogatoire_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_interrogatoire_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_interrogatoire_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Interrogatoire</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Interrogatoire : [[0 + @{competence_soc_interrogatoire_total} - 1d10]]" name="roll_competence_soc_interrogatoire_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_intimidation_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_intimidation_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_intimidation_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_intimidation_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Intimidation</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Intimidation : [[0 + @{competence_soc_intimidation_total} - 1d10]]" name="roll_competence_soc_intimidation_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_marchandage_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_marchandage_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_marchandage_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_marchandage_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Marchandage</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Marchandage : [[0 + @{competence_soc_marchandage_total} - 1d10]]" name="roll_competence_soc_marchandage_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_seduction_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_seduction_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_seduction_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_seduction_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Séduction</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Séduction : [[0 + @{competence_soc_seduction_total} - 1d10]]" name="roll_competence_soc_seduction_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_reseau_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_reseau_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_reseau_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_reseau_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Réseau</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Réseau : [[0 + @{competence_soc_reseau_total} - 1d10]]" name="roll_competence_soc_reseau_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_custom_1_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_custom_1_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_custom_1_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_custom_1_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_soc_custom_1_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_soc_custom_1_nom} : [[0 + @{competence_soc_custom_1_total} - 1d10]]" name="roll_competence_soc_custom_1_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_custom_2_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_custom_2_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_soc_custom_2_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_soc_custom_2_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_soc_custom_2_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_soc_custom_2_nom} : [[0 + @{competence_soc_custom_2_total} - 1d10]]" name="roll_competence_soc_custom_2_total"></button>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="sheet-flex-row">
+                    <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
+                        <h3>Physiques</h3>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                            </div>
+                            <label class="sheet-fi-4 sheet-left"></label>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_acrobatie_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_acrobatie_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_acrobatie_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_acrobatie_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_acrobatie_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Acrobatie #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Acrobatie : [[0 + @{competence_phy_acrobatie_total} - 1d10]]" name="roll_competence_phy_acrobatie_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_course_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_course_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_course_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_course_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_course_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Course&amp;Vol #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Course&amp;Vol : [[0 + @{competence_phy_course_total} - 1d10]]" name="roll_competence_phy_course_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_discretion_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_discretion_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_discretion_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_discretion_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_discretion_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Discrétion #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Discrétion : [[0 + @{competence_phy_discretion_total} - 1d10]]" name="roll_competence_phy_discretion_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_escalade_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_escalade_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_escalade_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_escalade_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_escalade_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Escalade #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Escalade : [[0 + @{competence_phy_escalade_total} - 1d10]]" name="roll_competence_phy_escalade_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_equitation_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_equitation_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_equitation_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_equitation_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_equitation_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Équitation #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Équitation : [[0 + @{competence_phy_equitation_total} - 1d10]]" name="roll_competence_phy_equitation_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_filature_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_filature_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_filature_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_filature_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_filature_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Filature #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Filature : [[0 + @{competence_phy_filature_total} - 1d10]]" name="roll_competence_phy_filature_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_forge_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_forge_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_forge_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_forge_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_forge_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Forge #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Forge : [[0 + @{competence_phy_forge_total} - 1d10]]" name="roll_competence_phy_forge_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_natation_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_natation_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_natation_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_natation_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_natation_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Natation #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Natation : [[0 + @{competence_phy_natation_total} - 1d10]]" name="roll_competence_phy_natation_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_pickpocket_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_pickpocket_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_pickpocket_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_pickpocket_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_pickpocket_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Pickpocket #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Pickpocket : [[0 + @{competence_phy_pickpocket_total} - 1d10]]" name="roll_competence_phy_pickpocket_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_survie_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_survie_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_survie_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_survie_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_survie_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Survie #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Survie : [[0 + @{competence_phy_survie_total} - 1d10]]" name="roll_competence_phy_survie_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_recherche_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_recherche_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_recherche_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_recherche_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_recherche_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Recherche #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Recherche : [[0 + @{competence_phy_recherche_total} - 1d10]]" name="roll_competence_phy_recherche_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_vigilance_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_vigilance_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_vigilance_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_vigilance_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_vigilance_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Vigilance #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Vigilance : [[0 + @{competence_phy_vigilance_total} - 1d10]]" name="roll_competence_phy_vigilance_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_custom_1_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_custom_1_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_custom_1_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_custom_1_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_custom_1_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_phy_custom_1_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_phy_custom_1_nom} : [[0 + @{competence_phy_custom_1_total} - 1d10]]" name="roll_competence_phy_custom_1_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_custom_2_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_custom_2_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_custom_2_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_phy_custom_2_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_phy_custom_2_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_phy_custom_2_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_phy_custom_2_nom} : [[0 + @{competence_phy_custom_2_total} - 1d10]]" name="roll_competence_phy_custom_2_total"></button>
+                        </div>
+                    </div>
+                    <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
+                        <h3>Connaissances</h3>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                            </div>
+                            <label class="sheet-fi-4 sheet-left"></label>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_artisanat_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_artisanat_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_artisanat_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_artisanat_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_artisanat_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Artisanat #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Artisanat : [[0 + @{competence_con_artisanat_total} - 1d10]]" name="roll_competence_con_artisanat_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_cartographie_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_cartographie_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_cartographie_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_cartographie_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Cartographie</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Cartographie : [[0 + @{competence_con_conduite_total} - 1d10]]" name="roll_competence_con_conduite_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_conduite_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_conduite_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_conduite_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_conduite_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Conduite</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Conduite : [[0 + @{competence_con_conduite_total} - 1d10]]" name="roll_competence_con_conduite_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_crochetage_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_crochetage_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_crochetage_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_crochetage_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_crochetage_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Crochetage #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Crochetage : [[0 + @{competence_con_crochetage_total} - 1d10]]" name="roll_competence_con_crochetage_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_dissimulation_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_dissimulation_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_dissimulation_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_dissimulation_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_dissimulation_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Dissimulation #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Dissimulation : [[0 + @{competence_con_dissimulation_total} - 1d10]]" name="roll_competence_con_dissimulation_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_evaluation_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_evaluation_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_evaluation_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_evaluation_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Évaluation #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Évaluation : [[0 + @{competence_con_evaluation_total} - 1d10]]" name="roll_competence_con_evaluation_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_faune_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_faune_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_faune_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_faune_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Faune&amp;Flore</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Faune&amp;Flore : [[0 + @{competence_con_faune_total} - 1d10]]" name="roll_competence_con_faune_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_heraldique_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_heraldique_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_heraldique_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_heraldique_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Héraldique</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Héraldique : [[0 + @{competence_con_heraldique_total} - 1d10]]" name="roll_competence_con_heraldique_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_jeu_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_jeu_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_jeu_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_jeu_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Jeu</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Jeu : [[0 + @{competence_con_jeu_total} - 1d10]]" name="roll_competence_con_jeu_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_musique_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_musique_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_musique_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_musique_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_musique_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Musique #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Musique : [[0 + @{competence_con_musique_total} - 1d10]]" name="roll_competence_con_musique_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_politique_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_politique_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_politique_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_politique_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Politique</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Politique : [[0 + @{competence_con_politique_total} - 1d10]]" name="roll_competence_con_politique_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_theologie_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_theologie_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_theologie_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_theologie_total">
+                            </div>
+                            <label class="sheet-fi-4 sheet-left">Théologie</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Théologie : [[0 + @{competence_con_theologie_total} - 1d10]]" name="roll_competence_con_theologie_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_custom_1_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_custom_1_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_custom_1_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_custom_1_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_custom_1_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_con_custom_1_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_con_custom_1_nom} : [[0 + @{competence_con_custom_1_total} - 1d10]]" name="roll_competence_con_custom_1_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_custom_2_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_custom_2_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_custom_2_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_con_custom_2_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_con_custom_2_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_con_custom_2_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_con_custom_2_nom} : [[0 + @{competence_con_custom_2_total} - 1d10]]" name="roll_competence_con_custom_2_total"></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-flex-row">
+                    <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
+                        <h3>Langages</h3>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                            </div>
+                            <label class="sheet-fi-4 sheet-left"></label>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_1_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_1_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_1_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_lang_1_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_lang_1_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_lang_1_nom} : [[0 + @{competence_lang_1_total} - 1d10]]" name="roll_competence_lang_1_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_2_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_2_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_2_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_lang_2_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_lang_2_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_lang_2_nom} : [[0 + @{competence_lang_2_total} - 1d10]]" name="roll_competence_lang_2_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_3_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_3_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_3_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_lang_3_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_lang_3_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_lang_3_nom} : [[0 + @{competence_lang_3_total} - 1d10]]" name="roll_competence_lang_3_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_4_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_4_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_4_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_lang_4_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_lang_4_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_lang_4_nom} : [[0 + @{competence_lang_4_total} - 1d10]]" name="roll_competence_lang_4_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_5_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_5_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_5_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_lang_5_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_lang_5_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_lang_5_nom} : [[0 + @{competence_lang_5_total} - 1d10]]" name="roll_competence_lang_5_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_6_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_6_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_lang_6_modif">
+                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_lang_6_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_lang_6_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_lang_6_nom} : [[0 + @{competence_lang_6_total} - 1d10]]" name="roll_competence_lang_6_total"></button>
+                        </div>
+                    </div>
+                    <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
+                        <h3>Spéciales (x3)</h3>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                            </div>
+                            <label class="sheet-fi-4 sheet-left"></label>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_alchimie_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_alchimie_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_alchimie_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_alchimie_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_spe_alchimie_total">
+                            </div>
+                            <label class="sheet-fi-4">Alchimie #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Alchimie : [[0 + @{competence_spe_alchimie_total} - 1d10]]" name="roll_competence_spe_alchimie_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_medicine_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_medicine_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_medicine_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_medicine_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_spe_medicine_total">
+                            </div>
+                            <label class="sheet-fi-4">Médecine #</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Médecine : [[0 + @{competence_spe_medicine_total} - 1d10]]" name="roll_competence_spe_medicine_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_vision_faon_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_vision_faon_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_vision_faon_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_vision_faon_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_spe_vision_faon_total">
+                            </div>
+                            <label class="sheet-fi-4">Vision-Faon #M</label>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Vision-Faon : [[0 + @{competence_spe_vision_faon_total} - 1d10]]" name="roll_competence_spe_vision_faon_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_1_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_1_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_1_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_1_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_spe_custom_1_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_spe_custom_1_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_spe_custom_1_nom} : [[0 + @{competence_spe_custom_1_total} - 1d10]]" name="roll_competence_spe_custom_1_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_2_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_2_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_2_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_2_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_spe_custom_2_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_spe_custom_2_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_spe_custom_2_nom} : [[0 + @{competence_spe_custom_2_total} - 1d10]]" name="roll_competence_spe_custom_2_total"></button>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_3_niveau">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_3_maitrise">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_3_modif">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_spe_custom_3_armure">
+                                <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_spe_custom_3_total">
+                            </div>
+                            <input class="sheet-fi-4 sheet-input_editable" type="text" name="attr_competence_spe_custom_3_nom">
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance @{competence_spe_custom_3_nom} : [[0 + @{competence_spe_custom_3_total} - 1d10]]" name="roll_competence_spe_custom_3_total"></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <input type="radio" name="tabs" id="tabthree">
+        <label class="sheet-nav" for="tabthree">Combat</label>
+        <div class="sheet-tab sheet-fi-12">
+            <div class="sheet-tab-content">
+                <div class="sheet-flex-row sheet-flex-stretch sheet-fi-12">
+                    <div class="sheet-flex-column sheet-margin sheet-fi-4 sheet-panel-vitalite">
+                        <h3>Vitalité</h3>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <div class="sheet-fi-3 sheet-margin sheet-center-text sheet-alive">/</div>
+                            <div class="sheet-fi-3 sheet-margin sheet-center-text sheet-alive">-2</div>
+                            <div class="sheet-fi-3 sheet-margin sheet-center-text sheet-wounded">Coma</div>
+                            <div class="sheet-fi-3 sheet-margin sheet-center-text sheet-dead">Mort</div>
+                        </div>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <input class="sheet-fi-3 sheet-center-text sheet-margin" type="number" step="1" name="attr_vie_max" readonly="">
+                            <input class="sheet-fi-3 sheet-center-text sheet-margin" type="number" step="1" name="attr_vie_moitie" readonly="">
+                            <input class="sheet-fi-3 sheet-center-text sheet-margin" type="number" step="1" name="attr_vie_quart" readonly="">
+                            <div class="sheet-fi-3 sheet-margin sheet-center-text sheet-alive">0</div>
+                        </div>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <label class="sheet-fi-9 sheet-margin">Actuel</label>
+                            <input class="sheet-fi-3 sheet-center-text sheet-margin" type="number" step="1" name="attr_vie_actuel">
+                        </div>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <textarea name="attr_vie_notes" class="sheet-fi-12"></textarea>
+                        </div>
+                    </div>
+                    <div class="sheet-flex-column sheet-margin sheet-fi-4 sheet-panel-stress">
+                        <h3>Stress</h3>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <div class="sheet-fi-2 sheet-margin sheet-center-text sheet-alive">0</div>
+                            <div class="sheet-fi-5 sheet-margin sheet-center-text sheet-wounded">Asocial</div>
+                            <div class="sheet-fi-5 sheet-margin sheet-center-text sheet-dead">Saturation</div>
+                        </div>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <div class="sheet-fi-2 sheet-margin sheet-center-text sheet-alive">0</div>
+                            <input class="sheet-fi-5 sheet-center-text sheet-margin" type="number" step="1" name="attr_stress_asoc" readonly="">
+                            <input class="sheet-fi-5 sheet-center-text sheet-margin" type="number" step="1" name="attr_stress_sat" readonly="">
+                        </div>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <label class="sheet-fi-8 sheet-margin">Actuel</label>
+                            <input class="sheet-fi-4 sheet-center-text sheet-margin" type="number" step="1" name="attr_stress_actuel">
+                        </div>
+                        <div class="sheet-flex-column sheet-fi-12">
+                            <textarea name="attr_stress_notes" class="sheet-fi-12"></textarea>
+                            <div class="sheet-fi-12 sheet-attr_vie_notes_bottom">
+                                <b>2pts stress</b> = +1 Dgt/Comp./Attr.<br>
+                                <b>5pts stress</b> = +1/-1 res<br>
+                                <b>10pts stress</b> = Relance
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-flex-column sheet-fi-4 sheet-flex-space-between sheet-nopad">
+                        <div class="sheet-flex-row sheet-margin sheet-panel-resistance">
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <h4 class="sheet-fi-12 sheet-margin">Rés Soc.</h4>
+                                <button type="roll" class="sheet-fi-10 sheet-margin" value="/em lance Rés Soc. : [[0 + @{res_soc_total} - 1d10]]" name="roll_res_soc_total"></button>
+                            </div>
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-margin">Val</label>
+                                <input class="sheet-fi-12 sheet-margin" type="number" readonly="true" step="1" name="attr_res_soc_val">
+                            </div>
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-margin">Mod</label>
+                                <input class="sheet-fi-12 sheet-margin" type="number" step="1" name="attr_res_soc_mod">
+                            </div>
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-margin">Total</label>
+                                <input class="sheet-fi-12 sheet-margin" type="number" step="1" readonly="true" name="attr_res_soc_total" readonly="">
+                            </div>
+                        </div>
+                        <div class="sheet-flex-row sheet-margin sheet-panel-resistance">
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <h4 class="sheet-fi-12 sheet-margin">Rés Choc</h4>
+                                <button type="roll" class="sheet-fi-10 sheet-margin" value="/em lance Rés Choc : [[0 + @{res_choc_total} - 1d10]]" name="roll_res_choc_total"></button>
+                            </div>
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-margin">Val</label>
+                                <input class="sheet-fi-12 sheet-margin" type="number" readonly="true" step="1" name="attr_res_choc_val">
+                            </div>
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-margin">Mod</label>
+                                <input class="sheet-fi-12 sheet-margin" type="number" step="1" name="attr_res_choc_mod">
+                            </div>
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-margin">Total</label>
+                                <input class="sheet-fi-12 sheet-margin" type="number" step="1" readonly="true" name="attr_res_choc_total" readonly="">
+                            </div>
+                        </div>
+                        <div class="sheet-flex-row sheet-margin sheet-panel-resistance">
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <h4 class="sheet-fi-12 sheet-margin">Rés Mag.</h4>
+                                <button type="roll" class="sheet-fi-10 sheet-margin" value="/em lance Rés Mag. : [[0 + @{res_maj_total} - 1d10]]" name="roll_res_maj_total"></button>
+                            </div>
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-margin">Val</label>
+                                <input class="sheet-fi-12 sheet-margin" type="number" step="1" readonly="true" name="attr_res_maj_val">
+                            </div>
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-margin">Mod</label>
+                                <input class="sheet-fi-12 sheet-margin" type="number" step="1" name="attr_res_maj_mod">
+                            </div>
+                            <div class="sheet-fi-3 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-margin">Total</label>
+                                <input class="sheet-fi-12 sheet-margin" type="number" step="1" readonly="true" name="attr_res_maj_total" readonly="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="sheet-flex-row sheet-fi-12">
+                    <div class="sheet-flex-row sheet-fi-7 sheet-margin sheet-panel-ini">
+                        <div class="sheet-fi-2 sheet-flex-column">
+                            <h4 class="sheet-fi-12 sheet-margin">Ini. #</h4>
+                            <button type="roll" class="sheet-fi-10 sheet-margin" value="/em lance Initiative : [[0 + @{ini_total} - 1d10]]" name="roll_ini_total"></button>
+                        </div>
+                        <div class="sheet-fi-2 sheet-flex-column">
+                            <label class="sheet-fi-12 sheet-margin">(I+R)/2</label>
+                            <input class="sheet-fi-12 sheet-margin" type="number" readonly="true" step="1" name="attr_ini_attr">
+                        </div>
+                        <div class="sheet-fi-2 sheet-flex-column">
+                            <label class="sheet-fi-12 sheet-margin">+ Armes</label>
+                            <input class="sheet-fi-12 sheet-margin" type="number" readonly="true" step="1" name="attr_ini_armes">
+                        </div>
+                        <div class="sheet-fi-2 sheet-flex-column">
+                            <label class="sheet-fi-12 sheet-margin">- Armure</label>
+                            <input class="sheet-fi-12 sheet-margin" type="number" readonly="true" step="1" name="attr_ini_armure">
+                        </div>
+                        <div class="sheet-fi-2 sheet-flex-column">
+                            <label class="sheet-fi-12 sheet-margin">Divers</label>
+                            <input class="sheet-fi-12 sheet-margin" type="number" step="1" name="attr_ini_mod">
+                        </div>
+                        <div class="sheet-fi-2 sheet-flex-column">
+                            <label class="sheet-fi-12 sheet-margin">(I+R)/2</label>
+                            <input class="sheet-fi-12 sheet-margin" type="number" readonly="true" step="1" name="attr_ini_total">
+                        </div>
+                    </div>
+                    <div class="sheet-flex-row sheet-fi-5 sheet-nopad">
+                        <div class="sheet-flex-column sheet-fi-4 sheet-margin sheet-panel-action">
+                            <h3>Actions</h3>
+                            <input class="sheet-fi-12 sheet-alive sheet-margin" readonly="true" >
+                        </div>
+                        <div class="sheet-flex-column sheet-fi-6 sheet-margin sheet-panel-destine">
+                            <h3>Destinée</h3>
+                            <input class="sheet-fi-12 sheet-alive sheet-margin">
+                        </div>
+                        <div class="sheet-flex-column sheet-fi-6 sheet-margin sheet-panel-destine">
+                            <h3>Nécrose</h3>
+                            <input class="sheet-fi-12 sheet-alive sheet-margin">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sheet-flex-row sheet-fi-12">
+                    <div class="sheet-flex-column sheet-fi-7 sheet-margin sheet-panel-armes">
+                        <h3 class="sheet-BlackImgBg">Armes</h3>
+                        <fieldset class="repeating_weapons">
+                            <div class="sheet-flex-row sheet-fi-12 sheet-nopad">
+                                <div class="sheet-flex-column sheet-fi-4 sheet-top-label">
+                                    <label class="sheet-fi-12">Nom</label>
+                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_name" >
+                                </div>
+                                <div class="sheet-flex-column sheet-fi-4 sheet-top-label">
+                                    <label class="sheet-fi-12">Compétence</label>
+                                    <div class="sheet-flex-row">
+                                        <input class="sheet-fi-10 sheet-input_editable" name="attr_weapon_competence">
+                                        <button type="roll" class="sheet-fi-2" value="/em Attaque avec @{weapon_name} : [[0 + @{weapon_competence}+ @{weapon_mod} - 1d10]]" name="roll_res_maj_total"></button>
+                                    </div>
+                                </div>
+                                <div class="sheet-flex-column sheet-fi-2 sheet-top-label">
+                                    <label class="sheet-fi-12">Mod</label>
+                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_mod">
+                                </div>
+                                <div class="sheet-flex-column sheet-fi-2 sheet-top-label">
+                                    <label class="sheet-fi-12">Ini</label>
+                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_init">
+                                </div>
+                            </div>
+                            <div class="sheet-flex-row sheet-fi-12 sheet-nopad">
+                                <div class="sheet-flex-column sheet-fi-4 sheet-top-label">
+                                    <label class="sheet-fi-12">Dégats</label>
+                                    <div class="sheet-flex-row">
+                                        <input class="sheet-fi-10 sheet-input_editable" name="attr_weapon_degats">
+                                        <button type="roll" class="sheet-fi-2" value="/em Dégats de @{weapon_name} : [[@{weapon_degats}]]" name="roll_res_maj_total"></button>
+                                    </div>
+                                </div>
+                                <div class="sheet-flex-column sheet-fi-2 sheet-top-label">
+                                    <label class="sheet-fi-12">Res</label>
+                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_res">
+                                </div>
+                                <div class="sheet-flex-column sheet-fi-6 sheet-top-label">
+                                    <label class="sheet-fi-12">Notes</label>
+                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_notes">
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="sheet-flex-row sheet-fi-5 sheet-margin sheet-panel-protection">
+                        <h3 class="sheet-BlackImgBg">Protection</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <input type="radio" name="tabs" id="tabfour">
+        <label class="sheet-nav" for="tabfour">Magie &amp; Prêtrise</label>
+        <div class="sheet-tab sheet-fi-12">
+            <div class="sheet-tab-content">
+                <h1>CONTENU</h1>
+
+            </div>
+        </div>
+        <input type="radio" name="tabs" id="tabfive">
+        <label class="sheet-nav" for="tabfive">Second Tab</label>
+        <div class="sheet-tab sheet-fi-12">
+            <div class="sheet-tab-content">
+                <h1>CONTENU</h1>
+            </div>
+        </div>
+    </div>
+</div>
