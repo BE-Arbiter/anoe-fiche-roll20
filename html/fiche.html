@@ -1200,7 +1200,7 @@
                 <div class="sheet-flex-column sheet-fi-12 sheet-panel-attaques">
                     <h3 class="sheet-BlackImgBg">Attaques Spé</h3>
                     <div class="sheet-flex-row sheet-fi-12">
-                        <label class="sheet-fi-1">Stress</label>
+                        <label class="sheet-fi-1">&nbsp;</label>
                         <label class="sheet-fi-9">Nom</label>
                         <label class="sheet-fi-1">Stress</label>
                         <label class="sheet-fi-1">Desc.</label>
@@ -1242,8 +1242,85 @@
         <input type="radio" name="tabs" id="tabsix"/>
         <label class="sheet-nav" for="tabsix">Divers</label>
         <div class="sheet-tab sheet-fi-12">
-            <div class="sheet-tab-content">
-                <h1>CONTENU</h1>
+            <div class="sheet-tab-content sheet-flex-column">
+                <div class="sheet-flex-row">
+                    <div class="sheet-fi-6 sheet-panel-equipement sheet-margin">
+                        <h3 class="sheet-BlackImgBg">Equipement Divers</h3>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <label class="sheet-fi-1">&nbsp;</label>
+                            <label class="sheet-fi-8">Nom</label>
+                            <label class="sheet-fi-1">Cout</label>
+                            <label class="sheet-fi-1">Poids</label>
+                            <label class="sheet-fi-1">Desc.</label>
+                        </div>
+                        <fieldset class="repeating_equipement">
+                            <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
+                                <div class="sheet-fi-1 sheet-small-pad">
+                                    <button type="roll" class="sheet-fi-12" value="/em Possède @{equipement_nom}(@{attr_equipement_poids}) d'une valeur de @{equipement_cout} Hélias: \n @{equipement_desc}" name="roll_equipement_desc"></button>
+                                </div>
+                                <div class="sheet-fi-8 sheet-small-pad">
+                                    <input type="text" class="sheet-fi-12 sheet-input_editable" name="attr_equipement_nom"/>
+                                </div>
+                                <div class="sheet-fi-1 sheet-small-pad">
+                                    <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_equipement_cout"/>
+                                </div>
+                                <div class="sheet-fi-1 sheet-small-pad">
+                                    <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_equipement_poids"/>
+                                </div>
+                                <input type="checkbox" name="attr_avantage_show_desc" class="sheet-hider"/>
+                                <textarea class="sheet-fi-12 sheet-hide" name="attr_equipement_desc"></textarea>
+                            </div>
+                        </fieldset>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <label class="sheet-fi-3">Encombrement</label>
+                            <div class="sheet-fi-4 sheet-margin sheet-complex_input">
+                                <input class="sheet-fi-9 sheet-input_editable" type="number" name="attr_encombrement"/>
+                                <div class="sheet-fi-3 sheet-input_editable">kg</div>
+                            </div>
+                            <label class="sheet-fi-3">Maximum</label>
+                            <div class="sheet-fi-4 sheet-margin sheet-complex_input">
+                                <input class="sheet-fi-9 sheet-input_editable" type="number" name="attr_max"/>
+                                <div class="sheet-fi-3 sheet-input_editable">kg</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sheet-fi-6 sheet-panel-equipement sheet-margin">
+                        <h3 class="sheet-BlackImgBg">Richesses</h3>
+                        <div class="sheet-flex-row sheet-fi-12 sheet-nopad">
+                            <label class="sheet-fi-1">&nbsp;</label>
+                            <label class="sheet-fi-5 sheet-nopad">Nom</label>
+                            <label class="sheet-fi-4 sheet-nopad">lieu</label>
+                            <label class="sheet-fi-1 sheet-nopad">Val</label>
+                            <label class="sheet-fi-1 sheet-nopad">Desc.</label>
+                        </div>
+                        <fieldset class="repeating_richesse">
+                            <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
+                                <div class="sheet-fi-1 sheet-small-pad">
+                                    <button type="roll" class="sheet-fi-12" value="/em Possède @{richesse_nom}(à @{attr_richesse_lieu}) d'une valeur de @{richesse_cout} Hélias: \n @{richesse_desc}" name="roll_richesse_desc"></button>
+                                </div>
+                                <div class="sheet-fi-5 sheet-small-pad">
+                                    <input type="text" class="sheet-fi-12 sheet-input_editable" name="attr_richesse_nom"/>
+                                </div>
+                                <div class="sheet-fi-4 sheet-small-pad">
+                                    <input type="text" class="sheet-fi-12 sheet-input_editable" name="attr_richesse_lieu"/>
+                                </div>
+                                <div class="sheet-fi-1 sheet-small-pad">
+                                    <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_richesse_cout"/>
+                                </div>
+                                <input type="checkbox" name="attr_avantage_show_desc" class="sheet-hider"/>
+                                <textarea class="sheet-fi-12 sheet-hide" name="attr_richesse_desc"></textarea>
+                            </div>
+                        </fieldset>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <div class="sheet-fi-6">&nbsp;</div>
+                            <label class="sheet-fi-3">Hélias possédés</label>
+                            <div class="sheet-fi-4 sheet-margin sheet-complex_input">
+                                <input class="sheet-fi-7 sheet-input_editable" type="number" name="attr_encombrement"/>
+                                <div class="sheet-fi-5 sheet-input_editable">Hélias</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -6,6 +6,18 @@ div,input,textarea,label{
     border-radius:0 !important;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
 input[type="number"]{
     text-align: center !important;
 }
@@ -158,6 +170,18 @@ input.sheet-hider:checked ~ .sheet-hide{
 .sheet-flex-bottom{
     align-items: flex-end;
 }
+
+
+.sheet-complex_input{
+    display: flex;
+    padding: 0;
+}
+
+.sheet-complex_input div{
+    width: 10% ;
+    background-color: white !important;
+}
+
 .sheet-fi-1, .sheet-fi-2, .sheet-fi-3, .sheet-fi-4, .sheet-fi-5, .sheet-fi-6, .sheet-fi-7, .sheet-fi-8, .sheet-fi-9, .sheet-fi-10, .sheet-fi-11, .sheet-fi-12,.sheet-fi-20  {
     padding: 0.2rem;
 }
@@ -245,14 +269,6 @@ div.sheet-hr{
     height: 0.1em;
 }
 
-.sheet-complex_input{
-    display: flex;
-    padding: 0;
-}
-.sheet-complex_input div{
-    width: 10% !important;
-    background-color: white !important;
-}
 input,textarea{
     border: none;
 }
@@ -333,13 +349,13 @@ input,textarea{
     margin-top: -1px;
 }
 
-.sheet-panel-ini,.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-avantages,.sheet-panel-attaques{
+.sheet-panel-ini,.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-avantages,.sheet-panel-equipement,.sheet-panel-attaques{
     background-color: #DFC388;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
-.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-avantages,.sheet-panel-attaques{
+.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-equipement,.sheet-panel-avantages,.sheet-panel-attaques{
     margin-top:1.6rem !important;
 }
 
@@ -371,7 +387,7 @@ input,textarea{
     padding-top: 0.2em;
     padding-right: 0.4em;
 }
-.sheet-panel-resistance label,.sheet-panel-ini label,.sheet-panel-avantages label,.sheet-panel-attaques label{
+.sheet-panel-resistance label,.sheet-panel-ini label,.sheet-panel-equipement label,.sheet-panel-avantages label,.sheet-panel-attaques label{
     text-align: center !important;
     font-size: small !important;
     font-weight: bold !important;
