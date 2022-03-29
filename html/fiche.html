@@ -1061,15 +1061,15 @@
                     <div class="sheet-flex-row sheet-fi-5 sheet-nopad">
                         <div class="sheet-flex-column sheet-fi-4 sheet-margin sheet-panel-action">
                             <h3>Actions</h3>
-                            <input class="sheet-fi-12 sheet-alive sheet-margin" name="attr_actions" readonly="true" />
+                            <input type="number" class="sheet-fi-12 sheet-alive sheet-margin" name="attr_actions" readonly="true" />
                         </div>
                         <div class="sheet-flex-column sheet-fi-6 sheet-margin sheet-panel-destine">
                             <h3>Destinée</h3>
-                            <input class="sheet-fi-12 sheet-alive sheet-margin" name="attr_destiny"/>
+                            <input type="number" class="sheet-fi-12 sheet-alive sheet-margin" name="attr_destiny"/>
                         </div>
                         <div class="sheet-flex-column sheet-fi-6 sheet-margin sheet-panel-destine">
                             <h3>Nécrose</h3>
-                            <input class="sheet-fi-12 sheet-alive sheet-margin" name="attr_necrose"/>
+                            <input type="number" class="sheet-fi-12 sheet-alive sheet-margin" name="attr_necrose"/>
                         </div>
                     </div>
                 </div>
@@ -1081,39 +1081,39 @@
                             <div class="sheet-flex-row sheet-fi-12 sheet-nopad">
                                 <div class="sheet-flex-column sheet-fi-4 sheet-top-label">
                                     <label class="sheet-fi-12">Nom</label>
-                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_name" />
+                                    <input type="text" class="sheet-fi-12 sheet-input_editable" name="attr_weapon_name" />
                                 </div>
                                 <div class="sheet-flex-column sheet-fi-4 sheet-top-label">
                                     <label class="sheet-fi-12">Compétence</label>
                                     <div class="sheet-flex-row">
-                                        <input class="sheet-fi-10 sheet-input_editable" name="attr_weapon_competence"/>
+                                        <input type="number" class="sheet-fi-10 sheet-input_editable" name="attr_weapon_competence"/>
                                         <button type="roll" class="sheet-fi-2" value="/em Attaque avec @{weapon_name} : [[0 + @{weapon_competence}+ @{weapon_mod} - 1d10]]" name="roll_res_maj_total"></button>
                                     </div>
                                 </div>
                                 <div class="sheet-flex-column sheet-fi-2 sheet-top-label">
                                     <label class="sheet-fi-12">Mod</label>
-                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_mod"/>
+                                    <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_weapon_mod"/>
                                 </div>
                                 <div class="sheet-flex-column sheet-fi-2 sheet-top-label">
                                     <label class="sheet-fi-12">Ini</label>
-                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_init"/>
+                                    <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_weapon_init"/>
                                 </div>
                             </div>
                             <div class="sheet-flex-row sheet-fi-12 sheet-nopad">
                                 <div class="sheet-flex-column sheet-fi-4 sheet-top-label">
                                     <label class="sheet-fi-12">Dégats</label>
                                     <div class="sheet-flex-row">
-                                        <input class="sheet-fi-10 sheet-input_editable" name="attr_weapon_degats"/>
+                                        <input type="text" class="sheet-fi-10 sheet-input_editable" name="attr_weapon_degats"/>
                                         <button type="roll" class="sheet-fi-2" value="/em Dégats de @{weapon_name} : [[@{weapon_degats}]]" name="roll_res_maj_total"></button>
                                     </div>
                                 </div>
                                 <div class="sheet-flex-column sheet-fi-2 sheet-top-label">
                                     <label class="sheet-fi-12">Res</label>
-                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_res"/>
+                                    <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_weapon_res"/>
                                 </div>
                                 <div class="sheet-flex-column sheet-fi-6 sheet-top-label">
                                     <label class="sheet-fi-12">Notes</label>
-                                    <input class="sheet-fi-12 sheet-input_editable" name="attr_weapon_notes"/>
+                                    <input type="text" class="sheet-fi-12 sheet-input_editable" name="attr_weapon_notes"/>
                                 </div>
                             </div>
                         </fieldset>
