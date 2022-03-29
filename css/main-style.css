@@ -29,6 +29,10 @@ label.sheet-left {
     padding: 0 !important;
 }
 
+.sheet-small-pad{
+    padding: 0.1em !important;
+}
+
 .sheet-tabs {
     display: flex;
     flex-wrap: wrap;
@@ -83,6 +87,14 @@ label.sheet-nav, .sheet-tab {
     border: solid #53332a 2px;
 }
 
+.sheet-hide{
+    display : none !important;
+}
+
+input.sheet-hider:checked ~ .sheet-hide{
+    display : flex !important;
+}
+
 .sheet-tabs input[type="radio"] {
     display: none;
 }
@@ -125,6 +137,9 @@ label.sheet-nav, .sheet-tab {
     align-items: center;
 }
 
+.sheet-flex-wrap{
+    flex-wrap: wrap;
+}
 .sheet-flex-center{
   justify-content: center;
 }
@@ -204,6 +219,21 @@ h3{
     margin-bottom: 0.2rem;
 }
 
+.sheet-relative{
+    position: relative;
+}
+
+.sheet-absolute-bottom-left{
+    position: absolute;
+    bottom: 0.1em;
+    left: 0.1em;
+}
+.sheet-absolute-bottom-right{
+    position: absolute;
+    bottom: 0.1em;
+    left: 0.1em;
+}
+
 div.sheet-hr{
     border-bottom: 1px solid #2D120F;
     width: 100% !important;
@@ -222,11 +252,6 @@ div.sheet-hr{
 }
 input,textarea{
     border: none;
-}
-
-input{
-    text-align: center;
-    width: 100%;
 }
 
 .sheet-input_editable{
@@ -305,13 +330,13 @@ input{
     margin-top: -1px;
 }
 
-.sheet-panel-ini,.sheet-panel-armes,.sheet-panel-protection{
+.sheet-panel-ini,.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-avantages,.sheet-panel-attaques{
     background-color: #DFC388;
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
 
-.sheet-panel-armes,.sheet-panel-protection{
+.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-avantages,.sheet-panel-attaques{
     margin-top:1.6rem !important;
 }
 
@@ -343,7 +368,7 @@ input{
     padding-top: 0.2em;
     padding-right: 0.4em;
 }
-.sheet-panel-resistance label,.sheet-panel-ini label{
+.sheet-panel-resistance label,.sheet-panel-ini label,.sheet-panel-avantages label,.sheet-panel-attaques label{
     text-align: center !important;
     font-size: small !important;
     font-weight: bold !important;

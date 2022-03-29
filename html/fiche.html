@@ -144,7 +144,82 @@
                         </div>
                     </div>
                 </div>
+                <div class="sheet-flex-row sheet-fi-12">
+                    <div class="sheet-fi-7 sheet-flex-column">
+                        <div class="sheet-flex-column sheet-fi-12 sheet-panel-avantages">
+                            <h3 class="sheet-BlackImgBg">Avantages</h3>
+                            <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap">
+                                <label class="sheet-fi-1">&nbsp;</label>
+                                <label class="sheet-fi-6">Nom</label>
+                                <label class="sheet-fi-1">Niv</label>
+                                <label class="sheet-fi-1">C.S.</label>
+                                <label class="sheet-fi-1">P.H.</label>
+                                <label class="sheet-fi-1">P.X.</label>
+                                <label class="sheet-fi-1">Desc</label>
+                            </div>
+                            <fieldset class="repeating_avantages">
+                                <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
+                                    <div class="sheet-fi-1 sheet-small-pad">
+                                        <button type="roll" class="sheet-fi-12" value="/em @{avantage_nom}(niv @{avantage_niv}) pour @{avantage_stress} stress \n @{avantage_desc}" name="roll_avantage_desc"></button>
+                                    </div>
+                                    <div class="sheet-fi-6 sheet-small-pad">
+                                        <input type="text" class="sheet-fi-12 sheet-input_editable" name="attr_avantage_nom"/>
+                                    </div>
+                                    <div class="sheet-fi-1 sheet-small-pad">
+                                        <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_avantage_niv"/>
+                                    </div>
+                                    <div class="sheet-fi-1 sheet-small-pad">
+                                        <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_avantage_stress"/>
+                                    </div>
+                                    <div class="sheet-fi-1 sheet-small-pad">
+                                        <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_avantage_ph"/>
+                                    </div>
+                                    <div class="sheet-fi-1 sheet-small-pad">
+                                        <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_avantage_px"/>
+                                    </div>
+                                    <input type="checkbox" name="attr_avantage_show_desc" class="sheet-hider"/>
 
+                                    <textarea class="sheet-fi-12 sheet-hide" name="attr_avantage_desc"></textarea>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="sheet-flex-column sheet-fi-12 sheet-panel-avantages">
+                            <h3 class="sheet-BlackImgBg">Faiblesses</h3>
+                            <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap">
+                                <label class="sheet-fi-1">&nbsp;</label>
+                                <label class="sheet-fi-8">Nom</label>
+                                <label class="sheet-fi-1">G.H.</label>
+                                <label class="sheet-fi-1">G.X.</label>
+                                <label class="sheet-fi-1">Desc</label>
+                            </div>
+                            <fieldset class="repeating_faiblesses">
+                                <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
+                                    <div class="sheet-fi-1 sheet-small-pad">
+                                        <button type="roll" class="sheet-fi-12" value="/em @{faiblesse_nom} : \n @{faiblesse_desc}" name="roll_faiblesse_desc"></button>
+                                    </div>
+                                    <div class="sheet-fi-8 sheet-small-pad">
+                                        <input type="text" class="sheet-fi-12 sheet-input_editable" name="attr_faiblesse_nom"/>
+                                    </div>
+                                    <div class="sheet-fi-1 sheet-small-pad">
+                                        <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_faiblesse_ph"/>
+                                    </div>
+                                    <div class="sheet-fi-1 sheet-small-pad">
+                                        <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_faiblesse_px"/>
+                                    </div>
+                                    <input type="checkbox" name="attr_faiblesse_show_desc" class="sheet-hider"/>
+
+                                    <textarea class="sheet-fi-12 sheet-hide" name="attr_faiblesse_desc"></textarea>
+                                </div>
+                            </fieldset>
+                        </div>
+
+                    </div>
+                    <div class="sheet-fi-5 sheet-flex-column">
+                        <div class="sheet-flex-column sheet-fi-12 sheet-panel-avantages">
+                            <h3 class="sheet-BlackImgBg">Rang Social et autres merdes</h3>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -1122,18 +1197,50 @@
                         <h3 class="sheet-BlackImgBg">Protection</h3>
                     </div>
                 </div>
+                <div class="sheet-flex-column sheet-fi-12 sheet-panel-attaques">
+                    <h3 class="sheet-BlackImgBg">Attaques Spé</h3>
+                    <div class="sheet-flex-row sheet-fi-12">
+                        <label class="sheet-fi-1">Stress</label>
+                        <label class="sheet-fi-9">Nom</label>
+                        <label class="sheet-fi-1">Stress</label>
+                        <label class="sheet-fi-1">Desc.</label>
+                    </div>
+                    <fieldset class="repeating_combatskill">
+                        <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
+                            <div class="sheet-fi-1 sheet-small-pad">
+                                <button type="roll" class="sheet-fi-12" value="/em Utilise @{attaque_nom} pour @{attaque_stress} stress: \n @{attaque_desc}" name="roll_attaque_desc"></button>
+                            </div>
+                            <div class="sheet-fi-9 sheet-small-pad">
+                                <input type="text" class="sheet-fi-12 sheet-input_editable" name="attr_attaque_nom"/>
+                            </div>
+                            <div class="sheet-fi-1 sheet-small-pad">
+                                <input type="number" class="sheet-fi-12 sheet-input_editable" name="attr_attaque_stress"/>
+                            </div>
+                            <input type="checkbox" name="attr_avantage_show_desc" class="sheet-hider"/>
+                            <textarea class="sheet-fi-12 sheet-hide" name="attr_attaque_desc"></textarea>
+                        </div>
+                    </fieldset>
+                </div>
             </div>
         </div>
         <input type="radio" name="tabs" id="tabfour"/>
-        <label class="sheet-nav" for="tabfour">Magie &amp; Prêtrise</label>
+        <label class="sheet-nav" for="tabfour">Magie</label>
         <div class="sheet-tab sheet-fi-12">
             <div class="sheet-tab-content">
-                <h1>CONTENU</h1>
-
+                <div class="sheet-flex-row sheet-flex-stretch sheet-fi-12">
+                    CONTENU
+                </div>
             </div>
         </div>
         <input type="radio" name="tabs" id="tabfive"/>
-        <label class="sheet-nav" for="tabfive">Second Tab</label>
+        <label class="sheet-nav" for="tabfive">Prêtrise</label>
+        <div class="sheet-tab sheet-fi-12">
+            <div class="sheet-tab-content">
+                <h1>CONTENU</h1>
+            </div>
+        </div>
+        <input type="radio" name="tabs" id="tabsix"/>
+        <label class="sheet-nav" for="tabsix">Divers</label>
         <div class="sheet-tab sheet-fi-12">
             <div class="sheet-tab-content">
                 <h1>CONTENU</h1>
