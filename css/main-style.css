@@ -44,6 +44,14 @@ label.sheet-left {
     background: #f2ceaa;
 }
 
+.sheet-coupler-show{
+	text-decoration: none;
+}
+
+.sheet-coupler:checked ~ .sheet-coupler-show{
+	text-decoration: line-through;
+}
+
 textarea {
     resize: none;
     height: 75px
@@ -53,6 +61,7 @@ label.sheet-nav, .sheet-tab {
     margin-top: 0 !important;;
     margin-bottom: 0 !important;;
 }
+
 
 .sheet-tabs label.sheet-nav {
     order: 1 !important;
@@ -164,6 +173,10 @@ input.sheet-hider:checked ~ .sheet-hide{
 }
 .sheet-fi-1 {
     width: 8.33% !important;
+}
+
+.sheet-fi-05 {
+    width: 4.16% !important;
 }
 
 .sheet-fi-2 {
