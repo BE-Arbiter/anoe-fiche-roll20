@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Spectral:wght@500&display=swap');
 
 div,input,textarea,label{
-    font-family: 'Spectral', serif;
+    font-family: 'Spectral', serif !important;;
     box-sizing: border-box !important;
     border-radius:0 !important;
 }
@@ -22,10 +22,10 @@ input[type="number"]{
     text-align: center !important;
 }
 label {
-    text-align: right !important;;
+    text-align: right !important;
 }
 label.sheet-left {
-    text-align: left !important;;
+    text-align: left !important;
 }
 
 .sheet-small {
@@ -127,8 +127,8 @@ input.sheet-hider:checked ~ .sheet-hide{
 }
 
 .sheet-tab-content{
-    padding-top: 0.5em;
     padding: 1em;
+    padding-top: 0.5em;
     background: rgba(255,255,255,0.3);
     box-shadow: 0 0 1em rgb(255 255 255 / 60%);
 }
@@ -241,7 +241,7 @@ input.sheet-hider:checked ~ .sheet-hide{
     text-align: center !important;
 }
 
-h3{
+h3,h4{
     margin-top: 0.2rem;
     margin-bottom: 0.2rem;
 }
@@ -360,11 +360,11 @@ input,textarea{
 }
 
 .sheet-top-label{
-    padding: 0;
-    margin-top: 0;
-    margin-bottom: 0;
-    margin-left: 0.1em;
-    margin-right: 0.1em;
+    padding: 0 !important;
+    margin-top: 0 !important;;
+    margin-bottom: 0 !important;;
+    margin-left: 0.1em !important;;
+    margin-right: 0.1em !important;;
 }
 
 .sheet-top-label input,.sheet-top-label label{
@@ -387,7 +387,7 @@ input,textarea{
     padding-top: 0.2em;
     padding-right: 0.4em;
 }
-.sheet-panel-resistance label,.sheet-panel-ini label,.sheet-panel-equipement label,.sheet-panel-magie label,.sheet-panel-avantages label,.sheet-panel-attaques label{
+.sheet-panel-resistance label,.sheet-panel-ini label,.sheet-panel-equipement label,.sheet-panel-magie label.sheet-center-text ,.sheet-panel-avantages label,.sheet-panel-attaques label{
     text-align: center !important;
     font-size: small !important;
     font-weight: bold !important;
@@ -423,4 +423,29 @@ h3.sheet-BlackImgBg{
     border-radius: 50%;
     margin-left: -0.5em;
     margin-right: -0.5em;
+}
+
+.sheet-tr{
+    background: rgba(255,255,255,0.7);
+    margin-top: -1px;
+    margin-bottom: 0;
+    border-left: 1px #53332a solid;
+    border-bottom: 1px #53332a solid;
+    border-top: 1px #53332a solid;
+}
+
+.sheet-th{
+    font-weight: bold;
+    font-size: 1em;
+}
+
+button[type="roll"]{
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.sheet-tr label{
+    margin: 0 !important;
+    border-right: 1px #53332a solid !important;;
 }
