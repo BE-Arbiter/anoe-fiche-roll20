@@ -165,15 +165,16 @@ function updateResMag(){
 function updateCompetence(competence,attribut){
     getAttrs([`carac_${attribut}_tot`],function (values){
         let max = getNumber(values[`carac_${attribut}_tot`])||0;
-        getAttrs([`competence_${competence}_niveau`,`competence_${competence}_maitrise`,`competence_${competence}_modif`,`competence_${competence}_armure`],function(values){
+        getAttrs([`competence_${competence}_niveau`,`competence_${competence}_maitrise`,`competence_${competence}_modif`,`competence_${competence}_armure`,`competence_${competence}_couplage`],function(values){
             let niveau =  getNumber(values[`competence_${competence}_niveau`])||0;
             let maitrise =  getNumber(values[`competence_${competence}_maitrise`])||0;
             let modif =  getNumber(values[`competence_${competence}_modif`])||0;
             let armure =  getNumber(values[`competence_${competence}_armure`])||0;
+            let couplage = getNumber(values[`competence_${competence}_couplage`] || 0);
             if(niveau === 0){
                 niveau = Math.ceil(max / 3)
-            }else{
-                niveau = (niveau < max || max <= 0) ? niveau : max;
+            }else if(couplage === 0 && niveau > max && max > 0){
+                niveau = max;
             }
             let total = niveau+maitrise+modif-armure;
             let saveobj = {};

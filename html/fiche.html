@@ -231,29 +231,28 @@
                     <div class="sheet-tab-content sheet-margin sheet-flex-column sheet-fi-6">
                         <h3>Combat</h3>
                         <div class="sheet-flex-row">
-							<div class="sheet-fi-1 sheet-nopad sheet-flex-row sheet-flex-bottom" />
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niv.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Mait.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Mod.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Arm.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Total</label>
                             </div>
                             <label class="sheet-fi-3 sheet-left"></label>
                         </div>
                         <div class="sheet-flex-row">
-							<div class="sheet-fi-1 sheet-nopad sheet-flex-row" name="div_competence_cmb_jet_couplage">
-								<input type="checkbox" class="sheet-coupler sheet-hide" readonly="true" name="attr_competence_cmb_jet_couplage"/>
-								<label name="label_competence_cmb_jet_couplage" class="sheet-coupler-show" onclick="this.previousElementSibling.checked=!this.previousElementSibling.checked">X</label>
-							</div>
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_jet_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_jet_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_jet_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1" name="attr_competence_cmb_jet_armure"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number" step="1" name="attr_competence_cmb_jet_total"/>
                             </div>
-                            <label class="sheet-fi-3 sheet-left">Armes de jet #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_jet_couplage" name="attr_competence_cmb_jet_couplage" value="1"/>
+                                <label name="label_competence_cmb_jet_couplage" for="attr_competence_cmb_jet_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Armes de jet #</label>
+                                </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Armes : [[0 + @{competence_cmb_jet_total} - 1d10]]" name="roll_competence_cmb_jet_total"></button>
                         </div>
                         <div class="sheet-flex-row">

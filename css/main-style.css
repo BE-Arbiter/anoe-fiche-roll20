@@ -44,14 +44,6 @@ label.sheet-left {
     background: #f2ceaa;
 }
 
-.sheet-coupler-show{
-	text-decoration: none;
-}
-
-.sheet-coupler:checked ~ .sheet-coupler-show{
-	text-decoration: line-through;
-}
-
 textarea {
     resize: none;
     height: 75px
@@ -417,4 +409,19 @@ h3.sheet-BlackImgBg{
     border-radius: 50%;
     margin-left: -0.5em;
     margin-right: -0.5em;
+}
+
+
+.sheet-coupler-label{
+    text-decoration: none;
+    text-align: center !important;
+    vertical-align: center !important;
+    border-radius: 3px !important;
+    border: 1px solid ;
+    font-weight: bold;
+}
+
+.sheet-coupler:checked ~ .sheet-coupler-label{
+    text-decoration: line-through;
+    background-color: #DFC388;
 }
