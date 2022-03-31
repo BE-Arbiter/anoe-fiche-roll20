@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Spectral:wght@500&display=swap');
 
 div,input,textarea,label{
-    font-family: 'Spectral', serif !important;;
+    font-family: 'Spectral', serif !important; !important;
     box-sizing: border-box !important;
     border-radius:0 !important;
 }
@@ -9,64 +9,58 @@ div,input,textarea,label{
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+    -webkit-appearance: none !important;
+    margin: 0 !important;
 }
 
 /* Firefox */
 input[type=number] {
-    -moz-appearance: textfield;
+    -moz-appearance: textfield !important;
 }
 
 input[type="number"]{
     text-align: center !important;
 }
-label {
+label,.sheet-right {
     text-align: right !important;
 }
-label.sheet-left {
+label.sheet-left,.sheet-left {
     text-align: left !important;
 }
 
+
 .sheet-small {
-    font-size: 0.8em;
+    font-size: 0.8em !important;
 }
 
 .sheet-very-small {
-    font-size: 0.6em;
+    font-size: 0.6em !important;
 }
 
-.sheet-margin{
-    margin: 0.1rem;
-}
-
-.sheet-nopad {
-    padding: 0 !important;
-}
 
 .sheet-small-pad{
     padding: 0.1em !important;
 }
 
 .sheet-tabs {
-    display: flex;
-    flex-wrap: wrap;
+    display: flex !important;
+    flex-wrap: wrap !important;
     width: 100% !important;
-    padding-top: 0em;
-    padding-bottom: 1em;
-    padding-left: 1em;
-    padding-right: 1em;
-    background: #f2ceaa;
+    padding-top: 0 !important;
+    padding-bottom: 1em !important;
+    padding-left: 1em !important;
+    padding-right: 1em !important;
+    background: #f2ceaa !important;
 }
 
 textarea {
-    resize: none;
+    resize: none !important;
     height: 75px
 }
 
 label.sheet-nav, .sheet-tab {
-    margin-top: 0 !important;;
-    margin-bottom: 0 !important;;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
 }
 
 .sheet-tabs label.sheet-nav {
@@ -74,8 +68,8 @@ label.sheet-nav, .sheet-tab {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
-    padding: 1rem 1rem !important;
-    margin-right: 0.2rem !important;
+    padding: 1em 1em !important;
+    margin-right: 0.2em !important;
     margin-bottom: -2px !important;
     cursor: pointer !important;
     background-color: #53332a !important;
@@ -86,20 +80,20 @@ label.sheet-nav, .sheet-tab {
 }
 .sheet-tabs .sheet-tab,.sheet-top-row{
     width: 100% !important;
-    background: #DFC388;
-    padding: 1rem;
-    color: #53332a;
+    background: #DFC388 !important;
+    padding: 1em !important;
+    color: #53332a !important;
 }
 .sheet-top-row{
-    background:#f2ceaa;
+    background:#f2ceaa !important;
 }
 
 .sheet-tabs .sheet-tab {
-    order: 9;
-    flex-grow: 1;
-    height: 100%;
-    display: none;
-    border: solid #53332a 2px;
+    order: 9 !important;
+    flex-grow: 1 !important;
+    height: 100% !important;
+    display: none !important;
+    border: solid #53332a 2px !important;
 }
 
 .sheet-hide{
@@ -111,7 +105,7 @@ input.sheet-hider:checked ~ .sheet-hide{
 }
 
 .sheet-tabs input[type="radio"] {
-    display: none;
+    display: none !important;
 }
 
 .sheet-tabs input[type="radio"]:checked + label.sheet-nav {
@@ -123,47 +117,46 @@ input.sheet-hider:checked ~ .sheet-hide{
 }
 
 .sheet-tabs input[type="radio"]:checked + label.sheet-nav + .sheet-tab {
-    display: block;
+    display: block !important;
 }
 
 .sheet-tab-content{
-    padding: 1em;
-    padding-top: 0.5em;
-    background: rgba(255,255,255,0.3);
-    box-shadow: 0 0 1em rgb(255 255 255 / 60%);
+    padding: 0.25em !important;
+    background: rgba(255,255,255,0.3) !important;
+    box-shadow: 0 0 1em rgb(255 255 255 / 60%) !important;
 }
 .sheet-tab-content.sheet-margin{
-    margin: 0.4em;
+    margin: 0.4em !important;
 }
 
 .sheet-flex-row, .sheet-flex-column {
-    display: flex;
+    display: flex !important;
 }
 
 .sheet-flex-column {
-    flex-direction: column;
+    flex-direction: column !important;
 }
 
 .sheet-flex-stretch{
-    align-items: stretch;
+    align-items: stretch !important;
 }
 
 .sheet-flex-v-center{
-    align-items: center;
+    align-items: center !important;
 }
 
 .sheet-flex-v-bottom{
-    align-items: flex-end;
+    align-items: flex-end !important;
 }
 .sheet-flex-wrap{
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
 }
 .sheet-flex-center{
-  justify-content: center;
+  justify-content: center !important;
 }
 
 .sheet-flex-space-between{
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 
 .sheet-flex-v-top{
@@ -171,24 +164,30 @@ input.sheet-hider:checked ~ .sheet-hide{
 }
 
 .sheet-flex-bottom{
-    align-items: flex-end;
+    align-items: flex-end !important;
 }
 
 
 .sheet-complex_input{
-    display: flex;
-    padding: 0;
+    display: flex !important;
+    padding: 0 !important;
 }
 
 .sheet-complex_input div{
-    width: 10% ;
     background-color: white !important;
 }
 
 .sheet-fi-1, .sheet-fi-2, .sheet-fi-3, .sheet-fi-4, .sheet-fi-5, .sheet-fi-6, .sheet-fi-7, .sheet-fi-8, .sheet-fi-9, .sheet-fi-10, .sheet-fi-11, .sheet-fi-12,.sheet-fi-20  {
-    padding: 0.2rem;
+    padding: 0.2em !important;
 }
 
+.sheet-margin{
+    margin: 0.1em !important;
+}
+
+.sheet-nopad {
+    padding: 0 !important;
+}
 .sheet-fi-20 {
     width: 20% !important;
 }
@@ -251,43 +250,43 @@ input.sheet-hider:checked ~ .sheet-hide{
 }
 
 h3,h4{
-    margin-top: 0.2rem;
-    margin-bottom: 0.2rem;
+    margin-top: 0.2em !important;
+    margin-bottom: 0.2em !important;
 }
 
 .sheet-relative{
-    position: relative;
+    position: relative !important;
 }
 
 .sheet-absolute-bottom-left{
-    position: absolute;
-    bottom: 0.1em;
-    left: 0.1em;
+    position: absolute !important;
+    bottom: 0.1em !important;
+    left: 0.1em !important;
 }
 .sheet-absolute-bottom-right{
-    position: absolute;
-    bottom: 0.1em;
-    left: 0.1em;
+    position: absolute !important;
+    bottom: 0.1em !important;
+    left: 0.1em !important;
 }
 
 div.sheet-hr{
-    border-bottom: 1px solid #2D120F;
+    border-bottom: 1px solid #2D120F !important;
     width: 100% !important;
-    margin-left: 1%;
-    margin-right: 1%;
-    height: 0.1em;
+    margin-left: 1% !important;
+    margin-right: 1% !important;
+    height: 0.1em !important;
 }
 
 input,textarea{
-    border: none;
+    border: none !important;
 }
 
 .sheet-input_editable{
-    border-bottom: 1px black dashed;
+    border-bottom: 1px black dashed !important;
 }
 
 .sheet-input_calc{
-    border: 2px black solid;
+    border: 2px black solid !important;
 }
 
 .sheet-panel-competence{
@@ -296,87 +295,87 @@ input,textarea{
 
 .sheet-panel-competence label.sheet-center-text{
     font-size: small !important;
-    font-weight: bold !important;;
+    font-weight: bold !important; !important;
 }
 
 .sheet-panel-competence h3{
     text-align: right !important;
-    margin-bottom: -1em;
-    padding-right: 2em;
+    margin-bottom: -1em !important;
+    padding-right: 2em !important;
 }
 
-.sheet-panel-action {
-    background-color: black;
-    padding: 0.2em;
+.sheet-panel-action, .sheet-panel-destine {
+    background-color: black !important;
+    padding: 0.2em !important;
     color: white !important;
 }
 
-.sheet-panel-action input{
-    font-size: 1.5em;
-    padding-top: 0.25em;
-    padding-bottom: 0.25em;
+.sheet-panel-action input,.sheet-panel-destine input{
+    font-size: 1.5em !important;
+    padding-top: 0.25em !important;
+    padding-bottom: 0.25em !important;
 }
 
 .sheet-panel-destine{
-    background-size: 100% 100%;
+    background-color: #DFC388 !important;
+}
 
-    background-color: #DFC388;
-    background-repeat: no-repeat;
-}
 .sheet-panel-destine h3{
-    padding-top: 0;
-    margin-top: 0;
-    margin-bottom: 0;
+    color: #53332a;
 }
-.sheet-panel-destine input{
-    font-size: 1.5em;
-}
+
 .sheet-panel-vitalite h3, .sheet-panel-stress h3,.sheet-panel-action h3, .sheet-panel-vitalite ,.sheet-panel-stress{
-    background-color: #2D120F;
+    background-color: #2D120F !important;
     color: white !important;
 }
 
 .sheet-panel-vitalite .sheet-alive ,.sheet-panel-stress .sheet-alive {
-    background-color: white;
+    background-color: white !important;
     color: black !important;
 }
 
 .sheet-panel-vitalite .sheet-wounded ,.sheet-panel-stress .sheet-wounded {
-    background-color: #7B594F;
+    background-color: #7B594F !important;
     color : black !important;
-    font-weight: bold;
+    font-weight: bold !important;
 }
 
 .sheet-panel-vitalite .sheet-dead ,.sheet-panel-stress .sheet-dead {
     background-color: black !important;
-    font-weight: bolder;
+    font-weight: bolder !important;
 }
 
 .sheet-attr_vie_notes_bottom{
-    background-color: white;
+    background-color: white !important;
     color: black !important;
-    margin-top: -1px;
+    margin-top: -1px !important;
 }
 
-.sheet-panel-ini,.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-magie,.sheet-panel-pretre,.sheet-panel-avantages,.sheet-panel-equipement,.sheet-panel-attaques{
-    background-color: #DFC388;
-    background-size: 100% 100%;
+.sheet-panel-ini,.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-magie,.sheet-panel-pretre,.sheet-panel-avantages,.sheet-panel-social,.sheet-panel-equipement,.sheet-panel-attaques{
+    background-color: #DFC388 !important;
+    background-size: 100% 100% !important;
     background-repeat: no-repeat;
 }
 
-.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-equipement,.sheet-panel-magie,.sheet-panel-pretre,.sheet-panel-avantages,.sheet-panel-attaques{
-    margin-top:1.6rem !important;
+.sheet-panel-armes,.sheet-panel-protection,.sheet-panel-equipement,.sheet-panel-magie,.sheet-panel-pretre,.sheet-panel-avantages,.sheet-panel-social,.sheet-panel-attaques{
+    margin-top: 1em !important;
+    margin-left: 0.25em !important;
+    margin-right: 0.25em !important;
+}
+
+.sheet-panel-social label{
+    font-weight: bold;
 }
 
 .sheet-top-label{
     padding: 0 !important;
-    margin-top: 0 !important;;
-    margin-bottom: 0 !important;;
-    margin-left: 0.1em !important;;
-    margin-right: 0.1em !important;;
+    margin-top: 0 !important; !important;
+    margin-bottom: 0 !important; !important;
+    margin-left: 0.1em !important; !important;
+    margin-right: 0.1em !important; !important;
 }
 
-.sheet-top-label input,.sheet-top-label label{
+.sheet-top-label input,.sheet-top-label label,.sheet-nomargin{
     margin: 0 !important;
 }
 
@@ -389,12 +388,12 @@ input,textarea{
 }
 
 .sheet-panel-resistance{
-    background-color: #DFC388;
-    background-size: 100% 100%;
+    background-color: #DFC388 !important;
+    background-size: 100% 100% !important;
     background-repeat: no-repeat;
-    padding-left: 1em;
-    padding-top: 0.2em;
-    padding-right: 0.4em;
+    padding-left: 1em !important;
+    padding-top: 0.2em !important;
+    padding-right: 0.4em !important;
 }
 .sheet-panel-resistance label,.sheet-panel-ini label,.sheet-panel-equipement label,.sheet-panel-pretre label.sheet-center-text ,.sheet-panel-magie label.sheet-center-text ,.sheet-panel-avantages label,.sheet-panel-attaques label{
     text-align: center !important;
@@ -409,8 +408,8 @@ input,textarea{
 h3.sheet-BlackImgBg{
     color: white !important;
     width: 40% !important;
-    margin-top: -1em !important;
-    margin-left: -0.3em !important;
+    margin-top: -0.75em !important;
+    margin-left: -0.4em !important;
 
     background-color: black !important;
     background-position: left center,right center,center center !important;
@@ -419,32 +418,32 @@ h3.sheet-BlackImgBg{
 }
 
 .sheet-over-small{
-    align-self: center;
+    align-self: center !important;
     width: 1.5em !important;
-    height: 1.5em;
-    text-align: center;
-    font-weight: bold;
-    font-size: 0.75em;
-    margin: 0;
-    background: white;
-    border: black solid 2px;
-    border-radius: 50%;
-    margin-left: -0.5em;
-    margin-right: -0.5em;
+    height: 1.5em !important;
+    text-align: center !important;
+    font-weight: bold !important;
+    font-size: 0.75em !important;
+    margin: 0 !important;
+    background: white !important;
+    border: black solid 2px !important;
+    border-radius: 50% !important;
+    margin-left: -0.5em !important;
+    margin-right: -0.5em !important;
 }
 
 .sheet-tr{
-    background: rgba(255,255,255,0.7);
-    margin-top: -1px;
-    margin-bottom: 0;
-    border-left: 1px #53332a solid;
-    border-bottom: 1px #53332a solid;
-    border-top: 1px #53332a solid;
+    background: rgba(255,255,255,0.7) !important;
+    margin-top: -1px !important;
+    margin-bottom: 0 !important;
+    border-left: 1px #53332a solid !important;
+    border-bottom: 1px #53332a solid !important;
+    border-top: 1px #53332a solid !important;
 }
 
 .sheet-th{
-    font-weight: bold;
-    font-size: 1em;
+    font-weight: bold !important;
+    font-size: 1em !important;
 }
 
 button[type="roll"]{
@@ -455,29 +454,33 @@ button[type="roll"]{
 
 .sheet-tr label{
     margin: 0 !important;
-    border-right: 1px #53332a solid !important;;
+    border-right: 1px #53332a solid !important; !important;
 }
 
 .custom-checkbox{
-    appearance: none;
-    background: rgba(0,0,0,0.45);
-    color: rgba(0,0,0,0.0);
-    border: #2D120F 2px solid;
+    appearance: none !important;
+    background: rgba(0,0,0,0.45) !important;
+    color: rgba(0,0,0,0.0) !important;
+    border: #2D120F 2px solid !important;
     border-radius: 4px !important;
-    margin: 0.1em;
-    text-align: center;
-    vertical-align: center;
-    padding: 0;
+    margin: 0.1em !important;
+    text-align: center !important;
+    vertical-align: center !important;
+    padding: 0 !important;
     height: 95% !important;
 }
 .custom-checkbox:after{
-    content: "__";
+    content: "__" !important;
 }
 
 .custom-checkbox:checked{
-    color: #2D120F;
-    font-weight: bolder;
+    color: #2D120F !important;
+    font-weight: bolder !important;
 }
 .custom-checkbox:checked:after{
-    content: "\2713";
+    content: "\2713" !important;
+}
+
+.label-row-close{
+    margin-bottom: -0.7em !important;
 }
