@@ -27,7 +27,7 @@
         <div class="sheet-tab sheet-fi-12">
             <div class="sheet-tab-content">
                 <div class="sheet-flex-row sheet-fi-12">
-                    <div class="sheet-flex-column sheet-tab-content sheet-fi-6 sheet-margin sheet-margin-compensate sheet-">
+                    <div class="sheet-flex-column sheet-panel-social sheet-fi-6 sheet-margin ">
                         <h3 class="sheet-BlackImgBg">Personnage</h3>
                         <div class="sheet-flex-row">
                             <label class="sheet-fi-5">Taille (C, D ou E)</label>
@@ -38,8 +38,16 @@
                             <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_poids"/>
                         </div>
                         <div class="sheet-flex-row">
+                            <label class="sheet-fi-5">Corpulence</label>
+                            <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_corpulence"/>
+                        </div>
+                        <div class="sheet-flex-row">
                             <label class="sheet-fi-5">Peau</label>
                             <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_peau"/>
+                        </div>
+                        <div class="sheet-flex-row">
+                            <label class="sheet-fi-5">Cheveux</label>
+                            <input class="sheet-fi-7 sheet-input_editable sheet-margin" type="text" name="attr_cheveux"/>
                         </div>
                         <div class="sheet-flex-row">
                             <label class="sheet-fi-5">Yeux</label>
@@ -56,30 +64,31 @@
                                    name="attr_main_directrice"/>
                         </div>
                         <div class="sheet-hr"></div>
-                        <div class="sheet-flex-row">
-                            <label class="sheet-fi-8">Nuit Complète (-10 stress)</label>
-                            <div class="sheet-fi-4 sheet-margin sheet-complex_input">
-                                <input class="sheet-fi-11 sheet-input_editable" type="text" name="attr_nuit_complete"/>
-                                <div class="sheet-fi-1 sheet-input_editable">h</div>
-                            </div>
+                        <div class="sheet-flex-row sheet-nopad sheet-flex-bottom sheet-fi-12">
+                            <h4 class="sheet-left sheet-fi-10">Déplacement</h4>
+                            <label class="sheet-fi-2" style="position:relative;top:0.75em;">
+                                <input type="checkbox" name="attr_vole">
+                                Vole
+                            </label>
                         </div>
-                        <div class="sheet-flex-row">
-                            <label class="sheet-fi-8">Nuit Incomplète (-5 stress)</label>
-                            <div class="sheet-fi-4 sheet-margin sheet-complex_input">
-                                <input class="sheet-fi-11 sheet-input_editable" type="text"
-                                       name="attr_nuit_incomplete"/>
-                                <div class="sheet-fi-1 sheet-input_editable">h</div>
-                            </div>
+                        <div class="sheet-flex-row sheet-fi-12 sheet-flex-bottom label-row-close">
+                            <label class="sheet-fi-3 sheet-center-text">Normal<br>m/T</label>
+                            <label class="sheet-fi-3 sheet-center-text">Normal<br>Km/h</label>
+                            <label class="sheet-fi-3 sheet-center-text">Rapide<br>m/T</label>
+                            <label class="sheet-fi-3 sheet-center-text">Rapide<br>Km/h</label>
                         </div>
-                        <div class="sheet-flex-row">
-                            <label class="sheet-fi-8">Nuit Courte (0 stress)</label>
-                            <div class="sheet-fi-4 sheet-complex_input">
-                                <input class="sheet-fi-11 sheet-input_editable" type="text" name="attr_nuit_courte"/>
-                                <div class="sheet-fi-1 sheet-input_editable">h</div>
-                            </div>
+                        <div class="sheet-flex-row sheet-fi-12 label-row-close">
+                            <input type="number" name="attr_deplacement_normal_mt" class="sheet-fi-3 sheet-input_calc"/>
+                            <input type="number" name="attr_deplacement_normal_kmh" class="sheet-fi-3 sheet-input_calc"/>
+                            <input type="number" name="attr_deplacement_rapide_mt" style="z-index: 1" class="sheet-fi-3 sheet-input_calc"/>
+                            <input type="number" name="attr_deplacement_rapide_kmh" style="z-index: 1" class="sheet-fi-3 sheet-input_calc"/>
+                        </div>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <label class="sheet-fi-7 sheet-center-text">&nbsp;</label>
+                            <label class="sheet-fi-4 sheet-center-text sheet-input_calc sheet-nopad" style="z-index: 0">-3 aux comp #</label>
                         </div>
                     </div>
-                    <div class="sheet-flex-column sheet-tab-content sheet-fi-6 sheet-margin">
+                    <div class="sheet-flex-column sheet-panel-social sheet-fi-6 sheet-margin">
                         <h3 class="sheet-BlackImgBg">Attributs</h3>
                         <div class="sheet-flex-row">
                             <div class="sheet-fi-2">Niveau</div>
@@ -189,6 +198,47 @@
                 </div>
                 <div class="sheet-flex-row sheet-fi-12">
                     <div class="sheet-fi-7 sheet-flex-column">
+                        <div class="sheet-fi-12 sheet-flex-column sheet-panel-social">
+                            <h3 class="sheet-BlackImgBg">Divers</h3>
+
+                            <div class="sheet-flex-row sheet-fi-12">
+                                <label class="sheet-fi-8 sheet-margin">Expérience</label>
+                                <div class="sheet-fi-4 sheet-nopad sheet-margin sheet-complex_input">
+                                    <input class="sheet-fi-5 sheet-right sheet-input_editable" type="text" name="attr_exp_restant"/>
+                                    <div class="sheet-fi-2 sheet-center-text sheet-input_editable">/</div>
+                                    <input class="sheet-fi-5 sheet-left sheet-input_editable" type="text" name="attr_exp_total"/>
+                                </div>
+                            </div>
+                            <div class="sheet-hr"></div>
+                            <div class="sheet-flex-row sheet-fi-12">
+                                <label class="sheet-fi-8 sheet-margin">Nuit Complète (-10 stress)</label>
+                                <div class="sheet-fi-4 sheet-nopad sheet-margin sheet-complex_input">
+                                    <input class="sheet-fi-11 sheet-input_editable" type="text" name="attr_nuit_complete"/>
+                                    <div class="sheet-fi-1 sheet-input_editable">h</div>
+                                </div>
+                            </div>
+                            <div class="sheet-flex-row sheet-fi-12">
+                                <label class="sheet-fi-8 sheet-margin">Nuit Incomplète (-5 stress)</label>
+                                <div class="sheet-fi-4 sheet-nopad sheet-margin sheet-complex_input">
+                                    <input class="sheet-fi-11 sheet-input_editable" type="text"
+                                           name="attr_nuit_incomplete"/>
+                                    <div class="sheet-fi-1 sheet-input_editable">h</div>
+                                </div>
+                            </div>
+                            <div class="sheet-flex-row sheet-fi-12">
+                                <label class="sheet-fi-8 sheet-margin">Nuit Courte (0 stress)</label>
+                                <div class="sheet-fi-4 sheet-nopad sheet-margin sheet-complex_input">
+                                    <input class="sheet-fi-11 sheet-input_editable" type="text" name="attr_nuit_courte"/>
+                                    <div class="sheet-fi-1 sheet-input_editable">h</div>
+                                </div>
+                            </div>
+                            <div class="sheet-flex-row sheet-fi-12">
+                                <label class="sheet-fi-8 sheet-margin">Nuit Blanche (+5 stress)</label>
+                                    <input class="sheet-fi-4 sheet-margin sheet-input_editable" type="text" name="attr_nuit_blanche"/>
+                            </div>
+                            <label class="sheet-margin sheet-left sheet-fi-8">Activité Relaxante</label>
+                            <textarea class="sheet-fi-12 sheet-margin" name="attr_activite_relaxante"></textarea>
+                        </div>
                         <div class="sheet-flex-column sheet-fi-12 sheet-panel-avantages">
                             <h3 class="sheet-BlackImgBg">Avantages</h3>
                             <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap">
@@ -270,8 +320,64 @@
 
                     </div>
                     <div class="sheet-fi-5 sheet-flex-column">
-                        <div class="sheet-flex-column sheet-fi-12 sheet-panel-avantages">
-                            <h3 class="sheet-BlackImgBg">Rang Social et autres merdes</h3>
+                        <div class="sheet-flex-column sheet-fi-12 sheet-panel-social">
+                            <h3 class="sheet-BlackImgBg">Social & BG</h3>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <label class="sheet-fi-5 sheet-margin">Rang Social</label>
+                                <input class="sheet-fi-7 sheet-margin sheet-input_editable" name="attr_social_rs" type="text" />
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <label class="sheet-fi-5 sheet-margin">Caste</label>
+                                <input class="sheet-fi-7 sheet-margin sheet-input_editable" name="attr_social_caste" type="text" />
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <label class="sheet-fi-5 sheet-margin">Fonction</label>
+                                <input class="sheet-fi-7 sheet-margin sheet-input_editable" name="attr_social_fonction" type="text" />
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <label class="sheet-fi-5 sheet-margin">Renommée</label>
+                                <input class="sheet-fi-7 sheet-margin sheet-input_editable" name="attr_social_renommee" type="text" />
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <label class="sheet-fi-5 sheet-margin">Quartier d'origine</label>
+                                <div class="sheet-nopad sheet-margin sheet-complex_input sheet-fi-7">
+                                    <input class="sheet-fi-10 sheet-input_editable sheet-right" name="attr_social_renommmee_quartier" type="text" />
+                                    <div class="sheet-fi-2 sheet-input_editable sheet-left">+6</div>
+                                </div>
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <label class="sheet-fi-5 sheet-margin">Ville d'origine</label>
+                                <div class="sheet-nopad sheet-margin sheet-complex_input sheet-fi-7">
+                                    <input class="sheet-fi-10 sheet-input_editable sheet-right" name="attr_social_renommmee_ville" type="text" />
+                                    <div class="sheet-fi-2 sheet-input_editable sheet-left">+4</div>
+                                </div>
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <label class="sheet-fi-5 sheet-margin sheet-margin">Pays d'origine</label>
+                                <div class="sheet-nopad sheet-margin sheet-complex_input sheet-fi-7">
+                                    <input class="sheet-fi-10 sheet-input_editable sheet-right" name="attr_social_renommmee_pays" type="text" />
+                                    <div class="sheet-fi-2 sheet-input_editable sheet-left">+2</div>
+                                </div>
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row label-row-close">
+                                <label class="sheet-fi-5 sheet-margin" >Notes Rennomée</label>
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <textarea name="attr_social_renommee_notes" class="sheet-fi-12 sheet-margin"></textarea>
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <label class="sheet-fi-5 sheet-margin">Gloire</label>
+                                <div class="sheet-nopad sheet-margin sheet-complex_input sheet-fi-7">
+                                    <input class="sheet-fi-10 sheet-input_editable sheet-right" name="attr_social_renommmee_pays" type="text" />
+                                    <div class="sheet-fi-2 sheet-input_editable sheet-left">%</div>
+                                </div>
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row label-row-close">
+                                <label class="sheet-fi-5 sheet-margin" >Notes Background</label>
+                            </div>
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                <textarea name="attr_social_bg_notes" class="sheet-fi-12 sheet-margin"></textarea>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -304,7 +410,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_jet_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_cmb_jet_armure"/>
+                                       name="attr_competence_cmb_jet_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_jet_total"/>
                             </div>
@@ -322,7 +428,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_trait_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_cmb_trait_armure"/>
+                                       name="attr_competence_cmb_trait_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_trait_total"/>
                             </div>
@@ -340,7 +446,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_boucliers_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_cmb_boucliers_armure"/>
+                                       name="attr_competence_cmb_boucliers_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_boucliers_total"/>
                             </div>
@@ -358,7 +464,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_epees_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_cmb_epees_armure"/>
+                                       name="attr_competence_cmb_epees_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_epees_total"/>
                             </div>
@@ -376,7 +482,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_esquive_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_cmb_esquive_armure"/>
+                                       name="attr_competence_cmb_esquive_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_esquive_total"/>
                             </div>
@@ -394,7 +500,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_haches_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_cmb_haches_armure"/>
+                                       name="attr_competence_cmb_haches_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_haches_total"/>
                             </div>
@@ -412,7 +518,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_poignards_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_cmb_poignards_armure"/>
+                                       name="attr_competence_cmb_poignards_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_poignards_total"/>
                             </div>
@@ -430,7 +536,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_pugilat_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_cmb_pugilat_armure"/>
+                                       name="attr_competence_cmb_pugilat_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_pugilat_total"/>
                             </div>
@@ -447,7 +553,7 @@
                                        name="attr_competence_cmb_strategie_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_strategie_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_strategie_total"/>
                             </div>
@@ -469,7 +575,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_cmb_custom_1_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_cmb_custom_1_nom} : [[0 + @{competence_cmb_custom_1_total} - 1d10]]"
@@ -488,7 +594,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_cmb_custom_2_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_cmb_custom_2_nom} : [[0 + @{competence_cmb_custom_2_total} - 1d10]]"
@@ -515,7 +621,7 @@
                                        name="attr_competence_soc_baratin_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_baratin_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_baratin_total"/>
                             </div>
@@ -532,7 +638,7 @@
                                        name="attr_competence_soc_diplomatie_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_diplomatie_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_diplomatie_total"/>
                             </div>
@@ -549,7 +655,7 @@
                                        name="attr_competence_soc_empathie_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_empathie_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_empathie_total"/>
                             </div>
@@ -566,7 +672,7 @@
                                        name="attr_competence_soc_etiquette_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_etiquette_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_etiquette_total"/>
                             </div>
@@ -583,7 +689,7 @@
                                        name="attr_competence_soc_interrogatoire_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_interrogatoire_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_interrogatoire_total"/>
                             </div>
@@ -600,7 +706,7 @@
                                        name="attr_competence_soc_intimidation_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_intimidation_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_intimidation_total"/>
                             </div>
@@ -617,7 +723,7 @@
                                        name="attr_competence_soc_marchandage_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_marchandage_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_marchandage_total"/>
                             </div>
@@ -634,7 +740,7 @@
                                        name="attr_competence_soc_seduction_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_seduction_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_seduction_total"/>
                             </div>
@@ -651,7 +757,7 @@
                                        name="attr_competence_soc_reseau_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_reseau_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_reseau_total"/>
                             </div>
@@ -668,11 +774,11 @@
                                        name="attr_competence_soc_custom_1_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_custom_1_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_soc_custom_1_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_soc_custom_1_nom} : [[0 + @{competence_soc_custom_1_total} - 1d10]]"
@@ -686,11 +792,11 @@
                                        name="attr_competence_soc_custom_2_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_custom_2_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_soc_custom_2_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_soc_custom_2_nom} : [[0 + @{competence_soc_custom_2_total} - 1d10]]"
@@ -721,7 +827,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_acrobatie_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_acrobatie_armure"/>
+                                       name="attr_competence_phy_acrobatie_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_acrobatie_total"/>
                             </div>
@@ -739,7 +845,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_course_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_course_armure"/>
+                                       name="attr_competence_phy_course_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_course_total"/>
                             </div>
@@ -757,7 +863,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_discretion_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_discretion_armure"/>
+                                       name="attr_competence_phy_discretion_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_discretion_total"/>
                             </div>
@@ -775,7 +881,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_escalade_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_escalade_armure"/>
+                                       name="attr_competence_phy_escalade_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_escalade_total"/>
                             </div>
@@ -793,7 +899,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_equitation_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_equitation_armure"/>
+                                       name="attr_competence_phy_equitation_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_equitation_total"/>
                             </div>
@@ -811,7 +917,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_filature_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_filature_armure"/>
+                                       name="attr_competence_phy_filature_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_filature_total"/>
                             </div>
@@ -829,7 +935,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_forge_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_forge_armure"/>
+                                       name="attr_competence_phy_forge_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_forge_total"/>
                             </div>
@@ -847,7 +953,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_natation_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_natation_armure"/>
+                                       name="attr_competence_phy_natation_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_natation_total"/>
                             </div>
@@ -865,7 +971,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_pickpocket_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_pickpocket_armure"/>
+                                       name="attr_competence_phy_pickpocket_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_pickpocket_total"/>
                             </div>
@@ -883,7 +989,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_survie_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_survie_armure"/>
+                                       name="attr_competence_phy_survie_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_survie_total"/>
                             </div>
@@ -901,7 +1007,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_recherche_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_recherche_armure"/>
+                                       name="attr_competence_phy_recherche_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_recherche_total"/>
                             </div>
@@ -919,7 +1025,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_vigilance_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_phy_vigilance_armure"/>
+                                       name="attr_competence_phy_vigilance_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_vigilance_total"/>
                             </div>
@@ -941,7 +1047,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_phy_custom_1_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_phy_custom_1_nom} : [[0 + @{competence_phy_custom_1_total} - 1d10]]"
@@ -960,7 +1066,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_phy_custom_2_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_phy_custom_2_nom} : [[0 + @{competence_phy_custom_2_total} - 1d10]]"
@@ -988,7 +1094,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_artisanat_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_con_artisanat_armure"/>
+                                       name="attr_competence_con_artisanat_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_artisanat_total"/>
                             </div>
@@ -1005,7 +1111,7 @@
                                        name="attr_competence_con_cartographie_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_cartographie_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_cartographie_total"/>
                             </div>
@@ -1022,7 +1128,7 @@
                                        name="attr_competence_con_conduite_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_conduite_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_conduite_total"/>
                             </div>
@@ -1040,7 +1146,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_crochetage_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_con_crochetage_armure"/>
+                                       name="attr_competence_con_crochetage_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_crochetage_total"/>
                             </div>
@@ -1058,7 +1164,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_dissimulation_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_con_dissimulation_armure"/>
+                                       name="attr_competence_con_dissimulation_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_dissimulation_total"/>
                             </div>
@@ -1075,7 +1181,7 @@
                                        name="attr_competence_con_evaluation_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_evaluation_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_evaluation_total"/>
                             </div>
@@ -1092,7 +1198,7 @@
                                        name="attr_competence_con_faune_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_faune_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_faune_total"/>
                             </div>
@@ -1109,7 +1215,7 @@
                                        name="attr_competence_con_heraldique_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_heraldique_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_heraldique_total"/>
                             </div>
@@ -1126,7 +1232,7 @@
                                        name="attr_competence_con_jeu_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_jeu_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_jeu_total"/>
                             </div>
@@ -1144,7 +1250,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_musique_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_con_musique_armure"/>
+                                       name="attr_competence_con_musique_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_musique_total"/>
                             </div>
@@ -1161,7 +1267,7 @@
                                        name="attr_competence_con_politique_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_politique_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_politique_total"/>
                             </div>
@@ -1178,7 +1284,7 @@
                                        name="attr_competence_con_theologie_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_theologie_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_theologie_total"/>
                             </div>
@@ -1200,7 +1306,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_con_custom_1_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_con_custom_1_nom} : [[0 + @{competence_con_custom_1_total} - 1d10]]"
@@ -1219,7 +1325,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_con_custom_2_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_con_custom_2_nom} : [[0 + @{competence_con_custom_2_total} - 1d10]]"
@@ -1248,11 +1354,11 @@
                                        name="attr_competence_lang_1_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_1_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_lang_1_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_1_nom} : [[0 + @{competence_lang_1_total} - 1d10]]"
@@ -1266,11 +1372,11 @@
                                        name="attr_competence_lang_2_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_2_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_lang_2_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_2_nom} : [[0 + @{competence_lang_2_total} - 1d10]]"
@@ -1284,11 +1390,11 @@
                                        name="attr_competence_lang_3_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_3_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_3_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_lang_3_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_3_nom} : [[0 + @{competence_lang_3_total} - 1d10]]"
@@ -1302,11 +1408,11 @@
                                        name="attr_competence_lang_4_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_4_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_4_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_lang_4_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_4_nom} : [[0 + @{competence_lang_4_total} - 1d10]]"
@@ -1320,11 +1426,11 @@
                                        name="attr_competence_lang_5_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_5_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_5_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_lang_5_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_5_nom} : [[0 + @{competence_lang_5_total} - 1d10]]"
@@ -1338,11 +1444,11 @@
                                        name="attr_competence_lang_6_maitrise"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_6_modif"/>
-                                <div class="sheet-fi-20 sheet-margin"></div>
+                                <input class="sheet-fi-20 sheet-margin sheet-input_editable" readonly type="text" value="-" style="text-align: center!important;">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_6_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_lang_6_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_6_nom} : [[0 + @{competence_lang_6_total} - 1d10]]"
@@ -1370,7 +1476,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_spe_alchimie_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_spe_alchimie_armure"/>
+                                       name="attr_competence_spe_alchimie_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_alchimie_total"/>
                             </div>
@@ -1388,7 +1494,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_spe_medicine_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_spe_medicine_armure"/>
+                                       name="attr_competence_spe_medicine_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_medicine_total"/>
                             </div>
@@ -1406,7 +1512,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_spe_vision_faon_modif"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                       name="attr_competence_spe_vision_faon_armure"/>
+                                       name="attr_competence_spe_vision_faon_armure" readonly/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_vision_faon_total"/>
                             </div>
@@ -1428,7 +1534,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_spe_custom_1_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_spe_custom_1_nom} : [[0 + @{competence_spe_custom_1_total} - 1d10]]"
@@ -1447,7 +1553,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_spe_custom_2_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_spe_custom_2_nom} : [[0 + @{competence_spe_custom_2_total} - 1d10]]"
@@ -1466,7 +1572,7 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_custom_3_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable" type="text"
+                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
                                    name="attr_competence_spe_custom_3_nom"/>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_spe_custom_3_nom} : [[0 + @{competence_spe_custom_3_total} - 1d10]]"
@@ -1625,7 +1731,7 @@
                         </div>
                         <div class="sheet-fi-2 sheet-flex-column">
                             <label class="sheet-fi-12 sheet-margin">- Armure</label>
-                            <input class="sheet-fi-12 sheet-margin" type="number" step="1" name="attr_ini_armure"/>
+                            <input class="sheet-fi-12 sheet-margin" type="number" step="1" name="attr_ini_armure" readonly/>
                         </div>
                         <div class="sheet-fi-2 sheet-flex-column">
                             <label class="sheet-fi-12 sheet-margin">Divers</label>
@@ -1640,16 +1746,22 @@
                     <div class="sheet-flex-row sheet-fi-5 sheet-nopad">
                         <div class="sheet-flex-column sheet-fi-4 sheet-margin sheet-panel-action">
                             <h3>Actions</h3>
+                            <div class="sheet-flex-row sheet-nopad sheet-fi-12">
                             <input type="number" class="sheet-fi-12 sheet-alive sheet-margin" name="attr_actions"
                                    readonly="true"/>
+                            </div>
                         </div>
-                        <div class="sheet-flex-column sheet-fi-6 sheet-margin sheet-panel-destine">
+                        <div class="sheet-flex-column sheet-fi-4 sheet-margin sheet-panel-destine">
                             <h3>Destinée</h3>
+                            <div class="sheet-flex-row sheet-nopad sheet-fi-12">
                             <input type="number" class="sheet-fi-12 sheet-alive sheet-margin" name="attr_destiny"/>
+                            </div>
                         </div>
-                        <div class="sheet-flex-column sheet-fi-6 sheet-margin sheet-panel-destine">
+                        <div class="sheet-flex-column sheet-fi-4 sheet-margin sheet-panel-action">
                             <h3>Nécrose</h3>
+                            <div class="sheet-flex-row sheet-nopad sheet-fi-12">
                             <input type="number" class="sheet-fi-12 sheet-alive sheet-margin" name="attr_necrose"/>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1709,8 +1821,75 @@
                             </div>
                         </fieldset>
                     </div>
-                    <div class="sheet-flex-row sheet-fi-5 sheet-margin sheet-panel-protection">
+                    <div class="sheet-flex-column sheet-fi-5 sheet-margin sheet-panel-protection">
                         <h3 class="sheet-BlackImgBg">Protection</h3>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <label class="sheet-fi-2">Type : </label>
+                            <input class="sheet-fi-10 sheet-margin sheet-input_editable" type="text" name="attr_protection_type" />
+                        </div>
+                        <div class="sheet-flex-row sheet-fi-12">
+                            <div class="sheet-fi-4 sheet-flex-column">
+                                <div class="sheet-fi-12 sheet-flex-row">
+                                    <label class="sheet-fi-6 sheet-margin">Res</label>
+                                    <input type="number" step="1" class="sheet-fi-6 sheet-input_editable sheet-margin" name="attr_protection_res">
+                                </div>
+                                <div class="sheet-fi-12 sheet-flex-row">
+                                    <label class="sheet-fi-6 sheet-margin">Malus</label>
+                                    <input type="number" step="1" class="sheet-fi-6 sheet-input_editable sheet-margin" name="attr_protection_malus">
+                                </div>
+                                <div class="sheet-fi-12 sheet-flex-row">
+                                    <label class="sheet-fi-6 sheet-margin">Init</label>
+                                    <input type="number" step="1" class="sheet-fi-6 sheet-input_editable sheet-margin" name="attr_protection_init">
+                                </div>
+                            </div>
+                            <div class="sheet-fi-8 sheet-flex-column">
+                                <label class="sheet-fi-12 sheet-nopad sheet-left">Localisations</label>
+                                <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                    <label class="sheet-fi-6 sheet-left sheet-nopad sheet-margin">
+                                        <input type="checkbox" name="attr_protection_tete">1 Tête
+                                    </label>
+                                    <label class="sheet-fi-6 sheet-left sheet-nopad sheet-margin">
+                                        <input type="checkbox" name="attr_protection_tronc">2-4 Tronc
+                                    </label>
+                                </div>
+                                <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                    <label class="sheet-fi-6 sheet-left sheet-nopad sheet-margin">
+                                        <input type="checkbox" name="attr_protection_bras_d">5 Bras D
+                                    </label>
+                                    <label class="sheet-fi-6 sheet-left sheet-nopad sheet-margin">
+                                        <input type="checkbox" name="attr_protection_bras_g">6 Bras G
+                                    </label>
+                                </div>
+                                <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                    <label class="sheet-fi-6 sheet-left sheet-nopad sheet-margin">
+                                        <input type="checkbox" name="attr_protection_jambe_d">7 Jambe D
+                                    </label>
+                                    <label class="sheet-fi-6 sheet-left sheet-nopad sheet-margin">
+                                        <input type="checkbox" name="attr_protection_jambe_g">8 Jambe G
+                                    </label>
+                                </div>
+                                <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
+                                    <label class="sheet-fi-6 sheet-left sheet-nopad sheet-margin">
+                                        <input type="checkbox" disabled name="attr_protection_ailes">9 Ailes
+                                    </label>
+                                    <label class="sheet-fi-6 sheet-left sheet-nopad sheet-margin">
+                                        <input type="checkbox" name="attr_protection_queue">0 Queue
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sheet-flex-row sheet-flex-bottom sheet-nopad sheet-nomargin sheet-fi-12">
+                            <label class="sheet-fi-3 sheet-center-text sheet-margin">Constitution</label>
+                            <label class="sheet-fi-3 sheet-center-text sheet-margin">Bonus<br>Divers</label>
+                            <label class="sheet-fi-3 sheet-center-text sheet-margin">Armure</label>
+                            <label class="sheet-fi-3 sheet-center-text sheet-margin">Total</label>
+                        </div>
+                        <div class="sheet-flex-row sheet-flex-bottom sheet-nopad sheet-nomargin sheet-fi-12">
+                            <input type="number" class="sheet-fi-3 sheet-margin sheet-input_editable" readonly name="attr_protection_c"/>
+                            <input type="number" class="sheet-fi-3 sheet-margin sheet-input_editable" name="attr_protection_divers"/>
+                            <input type="number" class="sheet-fi-3 sheet-margin sheet-input_editable" name="attr_protection_armure"/>
+                            <input type="number" class="sheet-fi-3 sheet-margin sheet-input_calc" readonly name="attr_protection_total"/>
+                        </div>
                     </div>
                 </div>
                 <div class="sheet-flex-column sheet-fi-12 sheet-panel-attaques">
@@ -1769,7 +1948,7 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_air_modif"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                           name="attr_competence_spe_custom_1_armure"/>
+                                           name="attr_competence_maj_air_armure" readonly/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_air_total"/>
                                 </div>
@@ -1787,7 +1966,7 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_eau_modif"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                           name="attr_competence_maj_eau_armure"/>
+                                           name="attr_competence_maj_eau_armure" readonly/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_eau_total"/>
                                 </div>
@@ -1805,7 +1984,7 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_energie_modif"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                           name="attr_competence_maj_energie_armure"/>
+                                           name="attr_competence_maj_energie_armure" readonly/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_energie_total"/>
                                 </div>
@@ -1823,7 +2002,7 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_necrose_modif"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                           name="attr_competence_maj_necrose_armure"/>
+                                           name="attr_competence_maj_necrose_armure" readonly/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_necrose_total"/>
                                 </div>
@@ -1841,7 +2020,7 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_terre_modif"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                           name="attr_competence_maj_terre_armure"/>
+                                           name="attr_competence_maj_terre_armure" readonly/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_terre_total"/>
                                 </div>
@@ -1859,7 +2038,7 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_vitae_modif"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
-                                           name="attr_competence_maj_vitae_armure"/>
+                                           name="attr_competence_maj_vitae_armure" readonly/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_vitae_total"/>
                                 </div>

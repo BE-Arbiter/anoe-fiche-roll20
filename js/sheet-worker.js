@@ -117,17 +117,18 @@ function updateActions() {
 }
 
 function updateInit() {
-    getAttrs([`carac_r_tot`, `carac_i_tot`, `ini_armes`, `ini_armure`, `ini_mod`], function (values) {
+    getAttrs([`carac_r_tot`, `carac_i_tot`, `ini_armes`, `protection_init`, `ini_mod`], function (values) {
         let intelligence = getNumber(values[`carac_i_tot`]) || 0;
         let rapidite = getNumber(values[`carac_r_tot`]) || 0;
         let armes = getNumber(values[`ini_armes`]) || 0;
-        let armure = getNumber(values[`ini_armure`]) || 0;
+        let armure = getNumber(values[`protection_init`]) || 0;
         let mod = getNumber(values[`ini_mod`]) || 0;
         let init_base = Math.ceil((intelligence + rapidite) / 2);
         let init_tot = init_base - armure + armes + mod;
         let saveobj = {};
         saveobj[`ini_attr`] = init_base;
         saveobj[`ini_total`] = init_tot;
+        saveobj[`ini_armure`] = armure;
         setAttrs(saveobj);
     });
 }
@@ -245,14 +246,27 @@ function updateRangMagique(){
     });
 }
 
+function updateArmor(){
+    getAttrs(["carac_c_tot","protection_divers","protection_armure"],function(values){
+        let constit = getNumber(values["carac_c_tot"]) || 0;
+        let divers = getNumber(values[`protection_divers`]) || 0;
+        let armure = getNumber(values[`protection_armure`]) || 0;
+        let total = constit+divers+armure;
+        let saveobj = {};
+        saveobj[`protection_c`] = constit;
+        saveobj[`protection_total`] = total;
+        setAttrs(saveobj);
+    })
+}
+
 function updateCompetence(competence, attribut) {
     getAttrs([`carac_${attribut}_tot`], function (values) {
         let max = getNumber(values[`carac_${attribut}_tot`]) || 0;
-        getAttrs([`competence_${competence}_niveau`, `competence_${competence}_maitrise`, `competence_${competence}_modif`, `competence_${competence}_armure`], function (values) {
+        getAttrs([`competence_${competence}_niveau`, `competence_${competence}_maitrise`, `competence_${competence}_modif`, `competence_${competence}_armure`, "protection_malus"], function (values) {
             let niveau = getNumber(values[`competence_${competence}_niveau`]) || 0;
             let maitrise = getNumber(values[`competence_${competence}_maitrise`]) || 0;
             let modif = getNumber(values[`competence_${competence}_modif`]) || 0;
-            let armure = getNumber(values[`competence_${competence}_armure`]) || 0;
+            let armure = competence.includes("custom") ? (getNumber(values[`competence_${competence}_armure`]) || 0) : (getNumber(values[`protection_malus`]) || 0);
             if (niveau === 0) {
                 niveau = Math.ceil(max / 3)
             } else {
@@ -260,6 +274,9 @@ function updateCompetence(competence, attribut) {
             }
             let total = niveau + maitrise + modif - armure;
             let saveobj = {};
+            if(!competence.includes("custom")) {
+                saveobj[`competence_${competence}_armure`] = armure;
+            }
             saveobj[`competence_${competence}_total`] = total;
             setAttrs(saveobj);
         });
@@ -289,6 +306,7 @@ function updateAttribut(attribut) {
             updateVitalite();
             updateResMag();
             updateResChoc();
+            updateArmor();
         } else if (attribut === "f") {
             updateVitalite();
         } else if (attribut === "fm") {
@@ -310,6 +328,18 @@ function updateAttribut(attribut) {
 
 console.log("update_attribut initialized");
 
+on("change:protection_malus",function(){
+    for (const property in comp_attr) {
+        if (!property.includes("maj")) {
+            updateCompetence(property, comp_attr[property]);
+        }
+        else{
+            updateMagie(property, comp_attr[property],comp_attr2[property]);
+        }
+    }
+})
+
+on("change:protection_init",function(){updateInit()});
 on("change:carac_a_niv change:carac_a_mod", function () {
     updateAttribut("a");
 });
@@ -348,6 +378,9 @@ on("change:res_maj_mod", function () {
     updateResMag();
 });
 
+on("change:protection_armure change:protection_divers",function(){
+   updateArmor();
+});
 on("change:competence_maj_air_niveau change:competence_maj_air_maitrise change:competence_maj_air_modif change:competence_maj_air_armure",function(){
    updateMagie("maj_air",comp_attr["maj_air"],comp_attr2["maj_air"]);
 });
