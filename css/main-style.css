@@ -1,9 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Spectral:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
-.sheet-flex-row > input{
-    height: 85%;
-}
 div,input,textarea,label{
     font-family: 'Spectral', serif !important; !important;
     box-sizing: border-box !important;
