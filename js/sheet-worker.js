@@ -1,4 +1,5 @@
 console.log("comp_attr initializing");
+let armorComp = ["cmb_jet","cmb_trait","cmb_boucliers","cmb_epees","cmb_esquive","cmb_haches","cmb_poignards","cmb_pugilat","phy_acrobatie","phy_course","phy_discretion","phy_escalade","phy_equitation","phy_filature","phy_forge","phy_natation","phy_pickpocket","phy_survie","phy_recherche","phy_vigilance","con_artisanat","con_crochetage","con_dissimulation","con_musique","spe_alchimie","spe_medicine","spe_vision_faon"];
 let comp_attr = {};
 comp_attr["cmb_jet"] = "p";
 comp_attr["cmb_trait"] = "p";
@@ -211,8 +212,8 @@ function updateRangMagique(){
         let terre = getNumber(values["competence_maj_terre_total"]) || 0;
         let vitae = getNumber(values["competence_maj_vitae_total"]) || 0;
         let totalMagie = air+eau+energie+necrose+terre+vitae;
-        let rang = 0
-        let rsMagique = 0
+        let rang;
+        let rsMagique;
         if(totalMagie < 6){
             rang = 0;
             rsMagique = 0;
@@ -269,7 +270,9 @@ function updateCompetence(competence, attribut) {
             let niveau = getNumber(values[`competence_${competence}_niveau`]) || 0;
             let maitrise = getNumber(values[`competence_${competence}_maitrise`]) || 0;
             let modif = getNumber(values[`competence_${competence}_modif`]) || 0;
-            let armure = competence.includes("custom") ? (getNumber(values[`competence_${competence}_armure`]) || 0) : (getNumber(values[`protection_malus`]) || 0);
+            let armorDependent =  armorComp.indexOf(competence) !== -1;
+            let armure = competence.includes("custom") ? (getNumber(values[`competence_${competence}_armure`]) || 0) : (armorDependent ? (getNumber(values[`protection_malus`]) || 0) : 0 );
+
             let couplage = getNumber(values[`competence_${competence}_couplage`] || 0);
             if (niveau === 0) {
                 niveau = Math.ceil(max / 3)
@@ -278,7 +281,7 @@ function updateCompetence(competence, attribut) {
             }
             let total = niveau + maitrise + modif - armure;
             let saveobj = {};
-            if(!competence.includes("custom")) {
+            if(armorDependent && !competence.includes("custom")) {
                 saveobj[`competence_${competence}_armure`] = armure;
             }
             saveobj[`competence_${competence}_total`] = total;
