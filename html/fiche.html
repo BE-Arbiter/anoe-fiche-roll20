@@ -391,18 +391,21 @@
                 <div class="sheet-flex-row">
                     <div class="sheet-tab-content sheet-margin sheet-flex-column sheet-fi-6">
                         <h3>Combat</h3>
-                        <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                        <div class="sheet-flex-row sheet-flex-bottom">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niv.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Mait.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Mod.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Arm.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Total</label>
                             </div>
-                            <label class="sheet-fi-4 sheet-left"></label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-2 sheet-center-text sheet-margin">Att.</label>
+                                <label class="sheet-fi-10 sheet-center-text sheet-margin">&nbsp;</label>
+                            </div>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_jet_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -414,13 +417,15 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_jet_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Armes de jet #</label>
-                            <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Armes : [[0 + @{competence_cmb_jet_total} - 1d10]]"
-                                    name="roll_competence_cmb_jet_total"></button>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_jet_couplage" name="attr_competence_cmb_jet_couplage" value="1"/>
+                                <label name="label_competence_cmb_jet_couplage" for="attr_competence_cmb_jet_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Armes de jet #</label>
+                            </div>
+                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Armes : [[0 + @{competence_cmb_jet_total} - 1d10]]" name="roll_competence_cmb_jet_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_trait_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -432,13 +437,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_trait_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Armes de trait #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_trait_couplage" name="attr_competence_cmb_trait_couplage" value="1"/>
+                                <label name="label_competence_cmb_trait_couplage" for="attr_competence_cmb_trait_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Armes de trait #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Armes : [[0 + @{competence_cmb_trait_total} - 1d10]]"
                                     name="roll_competence_cmb_trait_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_boucliers_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -450,13 +459,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_boucliers_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Boucliers #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_boucliers_couplage" name="attr_competence_cmb_boucliers_couplage" value="1"/>
+                                <label name="label_competence_cmb_boucliers_couplage" for="attr_competence_cmb_boucliers_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">F</label>
+                                <label class="sheet-fi-10 sheet-left">Boucliers #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Boucliers : [[0 + @{competence_cmb_boucliers_total} - 1d10]]"
                                     name="roll_competence_cmb_boucliers_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_epees_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -468,13 +481,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_epees_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Épées #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_epees_couplage" name="attr_competence_cmb_epees_couplage" value="1"/>
+                                <label name="label_competence_cmb_epees_couplage" for="attr_competence_cmb_epees_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Épées #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Épées : [[0 + @{competence_cmb_epees_total} - 1d10]]"
                                     name="roll_competence_cmb_epees_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_esquive_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -486,13 +503,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_esquive_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Esquive #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_esquive_couplage" name="attr_competence_cmb_esquive_couplage" value="1"/>
+                                <label name="label_competence_cmb_esquive_couplage" for="attr_competence_cmb_esquive_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Esquive #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Esquive : [[0 + @{competence_cmb_esquive_total} - 1d10]]"
                                     name="roll_competence_cmb_esquive_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_haches_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -504,13 +525,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_haches_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Haches&amp;Masses #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_haches_couplage" name="attr_competence_cmb_haches_couplage" value="1"/>
+                                <label name="label_competence_cmb_haches_couplage" for="attr_competence_cmb_haches_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">F</label>
+                                <label class="sheet-fi-10 sheet-left">Haches&amp;Masses #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Haches&amp;Masses : [[0 + @{competence_cmb_haches_total} - 1d10]]"
                                     name="roll_competence_cmb_haches_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_poignards_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -522,13 +547,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_poignards_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Poignards #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_poignards_couplage" name="attr_competence_cmb_poignards_couplage" value="1"/>
+                                <label name="label_competence_cmb_poignards_couplage" for="attr_competence_cmb_poignards_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Poignards #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Poignards : [[0 + @{competence_cmb_poignards_total} - 1d10]]"
                                     name="roll_competence_cmb_poignards_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_pugilat_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -540,13 +569,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_pugilat_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Pugilat #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_pugilat_couplage" name="attr_competence_cmb_pugilat_couplage" value="1"/>
+                                <label name="label_competence_cmb_pugilat_couplage" for="attr_competence_cmb_pugilat_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Pugilat #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Pugilat : [[0 + @{competence_cmb_pugilat_total} - 1d10]]"
                                     name="roll_competence_cmb_pugilat_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_strategie_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -557,13 +590,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_strategie_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Strategie</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_cmb_strategie_couplage" name="attr_competence_cmb_strategie_couplage" value="1"/>
+                                <label name="label_competence_cmb_strategie_couplage" for="attr_competence_cmb_strategie_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Strategie</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Strategie : [[0 + @{competence_cmb_strategie_total} - 1d10]]"
                                     name="roll_competence_cmb_strategie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_custom_1_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -575,14 +612,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_cmb_custom_1_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet sheet-center-text -left sheet-margin" type="text"
+                                       name="attr_competence_cmb_custom_1_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_cmb_custom_1_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_cmb_custom_1_nom} : [[0 + @{competence_cmb_custom_1_total} - 1d10]]"
                                     name="roll_competence_cmb_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_cmb_custom_2_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -594,27 +635,34 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_cmb_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_cmb_custom_2_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet sheet-center-text -left sheet-margin" type="text"
+                                       name="attr_competence_cmb_custom_2_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_cmb_custom_2_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_cmb_custom_2_nom} : [[0 + @{competence_cmb_custom_2_total} - 1d10]]"
                                     name="roll_competence_cmb_custom_2_total"></button>
                         </div>
                     </div>
                     <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
-                        <h3>Sociale</h3>
-                        <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                        <h3>Sociales</h3>
+                        <div class="sheet-flex-row sheet-flex-bottom">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niv.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Mait.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Mod.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Arm.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Total</label>
                             </div>
-                            <label class="sheet-fi-4 sheet-left"></label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-2 sheet-center-text sheet-margin">Att.</label>
+                                <label class="sheet-fi-10 sheet-center-text sheet-margin">&nbsp;</label>
+                            </div>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_baratin_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -625,13 +673,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_baratin_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Baratin</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_soc_baratin_couplage" name="attr_competence_soc_baratin_couplage" value="1"/>
+                                <label name="label_competence_soc_baratin_couplage" for="attr_competence_soc_baratin_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">Ch</label>
+                                <label class="sheet-fi-10 sheet-left">Baratin</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Baratin : [[0 + @{competence_soc_baratin_total} - 1d10]]"
                                     name="roll_competence_soc_baratin_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_diplomatie_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -642,13 +694,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_diplomatie_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Diplomatie</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_soc_diplomatie_couplage" name="attr_competence_soc_diplomatie_couplage" value="1"/>
+                                <label name="label_competence_soc_diplomatie_couplage" for="attr_competence_soc_diplomatie_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">Ch</label>
+                                <label class="sheet-fi-10 sheet-left">Diplomatie</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Diplomatie : [[0 + @{competence_soc_diplomatie_total} - 1d10]]"
                                     name="roll_competence_soc_diplomatie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_empathie_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -659,13 +715,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_empathie_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Empathie</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_soc_empathie_couplage" name="attr_competence_soc_empathie_couplage" value="1"/>
+                                <label name="label_competence_soc_empathie_couplage" for="attr_competence_soc_empathie_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Empathie</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Empathie : [[0 + @{competence_soc_empathie_total} - 1d10]]"
                                     name="roll_competence_soc_empathie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_etiquette_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -676,13 +736,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_etiquette_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Étiquette</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_soc_etiquette_couplage" name="attr_competence_soc_etiquette_couplage" value="1"/>
+                                <label name="label_competence_soc_etiquette_couplage" for="attr_competence_soc_etiquette_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Étiquette</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Étiquette : [[0 + @{competence_soc_etiquette_total} - 1d10]]"
                                     name="roll_competence_soc_etiquette_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_interrogatoire_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -693,13 +757,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_interrogatoire_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Interrogatoire</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_soc_interrogatoire_couplage" name="attr_competence_soc_interrogatoire_couplage" value="1"/>
+                                <label name="label_competence_soc_interrogatoire_couplage" for="attr_competence_soc_interrogatoire_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Interrogatoire</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Interrogatoire : [[0 + @{competence_soc_interrogatoire_total} - 1d10]]"
                                     name="roll_competence_soc_interrogatoire_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_intimidation_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -710,13 +778,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_intimidation_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Intimidation</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_soc_intimidation_couplage" name="attr_competence_soc_intimidation_couplage" value="1"/>
+                                <label name="label_competence_soc_intimidation_couplage" for="attr_competence_soc_intimidation_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">C</label>
+                                <label class="sheet-fi-10 sheet-left">Intimidation</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Intimidation : [[0 + @{competence_soc_intimidation_total} - 1d10]]"
                                     name="roll_competence_soc_intimidation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_marchandage_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -727,13 +799,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_marchandage_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Marchandage</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_soc_marchandage_couplage" name="attr_competence_soc_marchandage_couplage" value="1"/>
+                                <label name="label_competence_soc_marchandage_couplage" for="attr_competence_soc_marchandage_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">Ch</label>
+                                <label class="sheet-fi-10 sheet-left">Marchandage</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Marchandage : [[0 + @{competence_soc_marchandage_total} - 1d10]]"
                                     name="roll_competence_soc_marchandage_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_seduction_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -744,13 +820,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_seduction_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Séduction</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_soc_seduction_couplage" name="attr_competence_soc_seduction_couplage" value="1"/>
+                                <label name="label_competence_soc_seduction_couplage" for="attr_competence_soc_seduction_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">Ch</label>
+                                <label class="sheet-fi-10 sheet-left">Séduction</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Séduction : [[0 + @{competence_soc_seduction_total} - 1d10]]"
                                     name="roll_competence_soc_seduction_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_reseau_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -761,13 +841,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_reseau_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Réseau</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_soc_reseau_couplage" name="attr_competence_soc_reseau_couplage" value="1"/>
+                                <label name="label_competence_soc_reseau_couplage" for="attr_competence_soc_reseau_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">Ch</label>
+                                <label class="sheet-fi-10 sheet-left">Réseau</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Réseau : [[0 + @{competence_soc_reseau_total} - 1d10]]"
                                     name="roll_competence_soc_reseau_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_custom_1_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -778,14 +862,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_soc_custom_1_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet sheet-center-text -left sheet-margin" type="text"
+                                       name="attr_competence_soc_custom_1_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_soc_custom_1_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_soc_custom_1_nom} : [[0 + @{competence_soc_custom_1_total} - 1d10]]"
                                     name="roll_competence_soc_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_soc_custom_2_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -796,8 +884,12 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_soc_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_soc_custom_2_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet sheet-center-text -left sheet-margin" type="text"
+                                       name="attr_competence_soc_custom_2_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_soc_custom_2_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_soc_custom_2_nom} : [[0 + @{competence_soc_custom_2_total} - 1d10]]"
                                     name="roll_competence_soc_custom_2_total"></button>
@@ -808,18 +900,21 @@
                 <div class="sheet-flex-row">
                     <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
                         <h3>Physiques</h3>
-                        <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                        <div class="sheet-flex-row sheet-flex-bottom">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niv.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Mait.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Mod.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Arm.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Total</label>
                             </div>
-                            <label class="sheet-fi-4 sheet-left"></label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-2 sheet-center-text sheet-margin">Att.</label>
+                                <label class="sheet-fi-10 sheet-center-text sheet-margin">&nbsp;</label>
+                            </div>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_acrobatie_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -831,13 +926,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_acrobatie_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Acrobatie #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_acrobatie_couplage" name="attr_competence_phy_acrobatie_couplage" value="1"/>
+                                <label name="label_competence_phy_acrobatie_couplage" for="attr_competence_phy_acrobatie_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Acrobatie #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Acrobatie : [[0 + @{competence_phy_acrobatie_total} - 1d10]]"
                                     name="roll_competence_phy_acrobatie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_course_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -849,13 +948,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_course_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Course&amp;Vol #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_course_couplage" name="attr_competence_phy_course_couplage" value="1"/>
+                                <label name="label_competence_phy_course_couplage" for="attr_competence_phy_course_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">R</label>
+                                <label class="sheet-fi-10 sheet-left">Course&amp;Vol #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Course&amp;Vol : [[0 + @{competence_phy_course_total} - 1d10]]"
                                     name="roll_competence_phy_course_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_discretion_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -867,13 +970,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_discretion_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Discrétion #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_discretion_couplage" name="attr_competence_phy_discretion_couplage" value="1"/>
+                                <label name="label_competence_phy_discretion_couplage" for="attr_competence_phy_discretion_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Discrétion #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Discrétion : [[0 + @{competence_phy_discretion_total} - 1d10]]"
                                     name="roll_competence_phy_discretion_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_escalade_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -885,13 +992,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_escalade_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Escalade #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_escalade_couplage" name="attr_competence_phy_escalade_couplage" value="1"/>
+                                <label name="label_competence_phy_escalade_couplage" for="attr_competence_phy_escalade_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Escalade #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Escalade : [[0 + @{competence_phy_escalade_total} - 1d10]]"
                                     name="roll_competence_phy_escalade_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_equitation_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -903,13 +1014,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_equitation_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Équitation #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_equitation_couplage" name="attr_competence_phy_equitation_couplage" value="1"/>
+                                <label name="label_competence_phy_equitation_couplage" for="attr_competence_phy_equitation_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Équitation #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Équitation : [[0 + @{competence_phy_equitation_total} - 1d10]]"
                                     name="roll_competence_phy_equitation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_filature_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -921,13 +1036,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_filature_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Filature #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_filature_couplage" name="attr_competence_phy_filature_couplage" value="1"/>
+                                <label name="label_competence_phy_filature_couplage" for="attr_competence_phy_filature_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Filature #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Filature : [[0 + @{competence_phy_filature_total} - 1d10]]"
                                     name="roll_competence_phy_filature_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_forge_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -939,13 +1058,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_forge_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Forge #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_forge_couplage" name="attr_competence_phy_forge_couplage" value="1"/>
+                                <label name="label_competence_phy_forge_couplage" for="attr_competence_phy_forge_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Forge #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Forge : [[0 + @{competence_phy_forge_total} - 1d10]]"
                                     name="roll_competence_phy_forge_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_natation_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -957,13 +1080,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_natation_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Natation #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_natation_couplage" name="attr_competence_phy_natation_couplage" value="1"/>
+                                <label name="label_competence_phy_natation_couplage" for="attr_competence_phy_natation_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">R</label>
+                                <label class="sheet-fi-10 sheet-left">Natation #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Natation : [[0 + @{competence_phy_natation_total} - 1d10]]"
                                     name="roll_competence_phy_natation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_pickpocket_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -975,13 +1102,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_pickpocket_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Pickpocket #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_pickpocket_couplage" name="attr_competence_phy_pickpocket_couplage" value="1"/>
+                                <label name="label_competence_phy_pickpocket_couplage" for="attr_competence_phy_pickpocket_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Pickpocket #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Pickpocket : [[0 + @{competence_phy_pickpocket_total} - 1d10]]"
                                     name="roll_competence_phy_pickpocket_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_survie_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -993,13 +1124,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_survie_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Survie #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_survie_couplage" name="attr_competence_phy_survie_couplage" value="1"/>
+                                <label name="label_competence_phy_survie_couplage" for="attr_competence_phy_survie_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">C</label>
+                                <label class="sheet-fi-10 sheet-left">Survie #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Survie : [[0 + @{competence_phy_survie_total} - 1d10]]"
                                     name="roll_competence_phy_survie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_recherche_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1011,13 +1146,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_recherche_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Recherche #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_recherche_couplage" name="attr_competence_phy_recherche_couplage" value="1"/>
+                                <label name="label_competence_phy_recherche_couplage" for="attr_competence_phy_recherche_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Recherche #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Recherche : [[0 + @{competence_phy_recherche_total} - 1d10]]"
                                     name="roll_competence_phy_recherche_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_vigilance_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1029,13 +1168,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_vigilance_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Vigilance #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_phy_vigilance_couplage" name="attr_competence_phy_vigilance_couplage" value="1"/>
+                                <label name="label_competence_phy_vigilance_couplage" for="attr_competence_phy_vigilance_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Vigilance #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Vigilance : [[0 + @{competence_phy_vigilance_total} - 1d10]]"
                                     name="roll_competence_phy_vigilance_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_custom_1_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1047,14 +1190,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_phy_custom_1_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet sheet-center-text -left sheet-margin" type="text"
+                                       name="attr_competence_phy_custom_1_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_phy_custom_1_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_phy_custom_1_nom} : [[0 + @{competence_phy_custom_1_total} - 1d10]]"
                                     name="roll_competence_phy_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_phy_custom_2_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1066,8 +1213,12 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_phy_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_phy_custom_2_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet sheet-center-text -left sheet-margin" type="text"
+                                       name="attr_competence_phy_custom_2_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_phy_custom_2_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_phy_custom_2_nom} : [[0 + @{competence_phy_custom_2_total} - 1d10]]"
                                     name="roll_competence_phy_custom_2_total"></button>
@@ -1075,18 +1226,21 @@
                     </div>
                     <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
                         <h3>Connaissances</h3>
-                        <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                        <div class="sheet-flex-row sheet-flex-bottom">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niv.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Mait.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Mod.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Arm.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Total</label>
                             </div>
-                            <label class="sheet-fi-4 sheet-left"></label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-2 sheet-center-text sheet-margin">Att.</label>
+                                <label class="sheet-fi-10 sheet-center-text sheet-margin">&nbsp;</label>
+                            </div>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_artisanat_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1098,13 +1252,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_artisanat_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Artisanat #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_artisanat_couplage" name="attr_competence_con_artisanat_couplage" value="1"/>
+                                <label name="label_competence_con_artisanat_couplage" for="attr_competence_con_artisanat_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Artisanat #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Artisanat : [[0 + @{competence_con_artisanat_total} - 1d10]]"
                                     name="roll_competence_con_artisanat_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_cartographie_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1115,13 +1273,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_cartographie_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Cartographie</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_cartographie_couplage" name="attr_competence_con_cartographie_couplage" value="1"/>
+                                <label name="label_competence_con_cartographie_couplage" for="attr_competence_con_cartographie_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Cartographie</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Cartographie : [[0 + @{competence_con_conduite_total} - 1d10]]"
                                     name="roll_competence_con_conduite_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_conduite_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1132,13 +1294,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_conduite_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Conduite</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_conduite_couplage" name="attr_competence_con_conduite_couplage" value="1"/>
+                                <label name="label_competence_con_conduite_couplage" for="attr_competence_con_conduite_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Conduite</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Conduite : [[0 + @{competence_con_conduite_total} - 1d10]]"
                                     name="roll_competence_con_conduite_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_crochetage_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1150,13 +1316,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_crochetage_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Crochetage #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_crochetage_couplage" name="attr_competence_con_crochetage_couplage" value="1"/>
+                                <label name="label_competence_con_crochetage_couplage" for="attr_competence_con_crochetage_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Crochetage #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Crochetage : [[0 + @{competence_con_crochetage_total} - 1d10]]"
                                     name="roll_competence_con_crochetage_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_dissimulation_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1168,13 +1338,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_dissimulation_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Dissimulation #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_dissimulation_couplage" name="attr_competence_con_dissimulation_couplage" value="1"/>
+                                <label name="label_competence_con_dissimulation_couplage" for="attr_competence_con_dissimulation_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">A</label>
+                                <label class="sheet-fi-10 sheet-left">Dissimulation #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Dissimulation : [[0 + @{competence_con_dissimulation_total} - 1d10]]"
                                     name="roll_competence_con_dissimulation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_evaluation_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1185,13 +1359,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_evaluation_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Évaluation #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_evaluation_couplage" name="attr_competence_con_evaluation_couplage" value="1"/>
+                                <label name="label_competence_con_evaluation_couplage" for="attr_competence_con_evaluation_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Évaluation</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Évaluation : [[0 + @{competence_con_evaluation_total} - 1d10]]"
                                     name="roll_competence_con_evaluation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_faune_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1202,13 +1380,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_faune_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Faune&amp;Flore</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_faune_couplage" name="attr_competence_con_faune_couplage" value="1"/>
+                                <label name="label_competence_con_faune_couplage" for="attr_competence_con_faune_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Faune&amp;Flore</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Faune&amp;Flore : [[0 + @{competence_con_faune_total} - 1d10]]"
                                     name="roll_competence_con_faune_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_heraldique_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1219,13 +1401,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_heraldique_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Héraldique</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_heraldique_couplage" name="attr_competence_con_heraldique_couplage" value="1"/>
+                                <label name="label_competence_con_heraldique_couplage" for="attr_competence_con_heraldique_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Héraldique</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Héraldique : [[0 + @{competence_con_heraldique_total} - 1d10]]"
                                     name="roll_competence_con_heraldique_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_jeu_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1236,13 +1422,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_jeu_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Jeu</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_jeu_couplage" name="attr_competence_con_jeu_couplage" value="1"/>
+                                <label name="label_competence_con_jeu_couplage" for="attr_competence_con_jeu_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">R</label>
+                                <label class="sheet-fi-10 sheet-left">Jeu</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Jeu : [[0 + @{competence_con_jeu_total} - 1d10]]"
                                     name="roll_competence_con_jeu_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_musique_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1254,13 +1444,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_musique_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Musique #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_musique_couplage" name="attr_competence_con_musique_couplage" value="1"/>
+                                <label name="label_competence_con_musique_couplage" for="attr_competence_con_musique_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
+                                <label class="sheet-fi-10 sheet-left">Musique #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Musique : [[0 + @{competence_con_musique_total} - 1d10]]"
                                     name="roll_competence_con_musique_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_politique_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1271,13 +1465,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_politique_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Politique</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_politique_couplage" name="attr_competence_con_politique_couplage" value="1"/>
+                                <label name="label_competence_con_politique_couplage" for="attr_competence_con_politique_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Politique</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Politique : [[0 + @{competence_con_politique_total} - 1d10]]"
                                     name="roll_competence_con_politique_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_theologie_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1288,13 +1486,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_theologie_total"/>
                             </div>
-                            <label class="sheet-fi-4 sheet-left">Théologie</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_con_theologie_couplage" name="attr_competence_con_theologie_couplage" value="1"/>
+                                <label name="label_competence_con_theologie_couplage" for="attr_competence_con_theologie_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Théologie</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Théologie : [[0 + @{competence_con_theologie_total} - 1d10]]"
                                     name="roll_competence_con_theologie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_custom_1_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1306,14 +1508,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_con_custom_1_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet sheet-center-text -left sheet-margin" type="text"
+                                       name="attr_competence_con_custom_1_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_con_custom_1_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_con_custom_1_nom} : [[0 + @{competence_con_custom_1_total} - 1d10]]"
                                     name="roll_competence_con_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_con_custom_2_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1325,8 +1531,12 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_con_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_con_custom_2_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet sheet-center-text -left sheet-margin" type="text"
+                                       name="attr_competence_con_custom_2_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_con_custom_2_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_con_custom_2_nom} : [[0 + @{competence_con_custom_2_total} - 1d10]]"
                                     name="roll_competence_con_custom_2_total"></button>
@@ -1336,18 +1546,21 @@
                 <div class="sheet-flex-row">
                     <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
                         <h3>Langages</h3>
-                        <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                        <div class="sheet-flex-row sheet-flex-bottom">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niv.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Mait.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Mod.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Arm.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Total</label>
                             </div>
-                            <label class="sheet-fi-4 sheet-left"></label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-2 sheet-center-text sheet-margin">Att.</label>
+                                <label class="sheet-fi-10 sheet-center-text sheet-margin">&nbsp;</label>
+                            </div>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_1_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1358,14 +1571,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_lang_1_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_lang_1_couplage" name="attr_competence_lang_1_couplage" value="1"/>
+                                <label name="label_competence_lang_1_couplage" for="attr_competence_lang_1_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_lang_1_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_1_nom} : [[0 + @{competence_lang_1_total} - 1d10]]"
                                     name="roll_competence_lang_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_2_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1376,14 +1593,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_lang_2_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_lang_2_couplage" name="attr_competence_lang_2_couplage" value="1"/>
+                                <label name="label_competence_lang_2_couplage" for="attr_competence_lang_2_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_lang_2_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_2_nom} : [[0 + @{competence_lang_2_total} - 1d10]]"
                                     name="roll_competence_lang_2_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_3_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1394,14 +1615,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_3_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_lang_3_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_lang_3_couplage" name="attr_competence_lang_3_couplage" value="1"/>
+                                <label name="label_competence_lang_3_couplage" for="attr_competence_lang_3_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_lang_3_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_3_nom} : [[0 + @{competence_lang_3_total} - 1d10]]"
                                     name="roll_competence_lang_3_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_4_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1412,14 +1637,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_4_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_lang_4_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_lang_4_couplage" name="attr_competence_lang_4_couplage" value="1"/>
+                                <label name="label_competence_lang_4_couplage" for="attr_competence_lang_4_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_lang_4_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_4_nom} : [[0 + @{competence_lang_4_total} - 1d10]]"
                                     name="roll_competence_lang_4_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_5_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1430,14 +1659,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_5_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_lang_5_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_lang_5_couplage" name="attr_competence_lang_5_couplage" value="1"/>
+                                <label name="label_competence_lang_5_couplage" for="attr_competence_lang_5_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_lang_5_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_5_nom} : [[0 + @{competence_lang_5_total} - 1d10]]"
                                     name="roll_competence_lang_5_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_lang_6_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1448,8 +1681,12 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_lang_6_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_lang_6_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_lang_6_couplage" name="attr_competence_lang_6_couplage" value="1"/>
+                                <label name="label_competence_lang_6_couplage" for="attr_competence_lang_6_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_lang_6_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_lang_6_nom} : [[0 + @{competence_lang_6_total} - 1d10]]"
                                     name="roll_competence_lang_6_total"></button>
@@ -1459,16 +1696,16 @@
                         <h3>Spéciales (x3)</h3>
                         <div class="sheet-flex-row">
                             <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
-                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Niv.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Mait.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Mod.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Arm.</label>
+                                <label class="sheet-fi-20 sheet-center-text sheet-margin">Total</label>
                             </div>
                             <label class="sheet-fi-4 sheet-left"></label>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_spe_alchimie_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1480,13 +1717,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_alchimie_total"/>
                             </div>
-                            <label class="sheet-fi-4">Alchimie #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_spe_alchimie_couplage" name="attr_competence_spe_alchimie_couplage" value="1"/>
+                                <label name="label_competence_spe_alchimie_couplage" for="attr_competence_spe_alchimie_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Alchimie #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Alchimie : [[0 + @{competence_spe_alchimie_total} - 1d10]]"
                                     name="roll_competence_spe_alchimie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_spe_medicine_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1498,13 +1739,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_medicine_total"/>
                             </div>
-                            <label class="sheet-fi-4">Médecine #</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_spe_medicine_couplage" name="attr_competence_spe_medicine_couplage" value="1"/>
+                                <label name="label_competence_spe_medicine_couplage" for="attr_competence_spe_medicine_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Médecine #</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Médecine : [[0 + @{competence_spe_medicine_total} - 1d10]]"
                                     name="roll_competence_spe_medicine_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_spe_vision_faon_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1516,13 +1761,17 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_vision_faon_total"/>
                             </div>
-                            <label class="sheet-fi-4">Vision-Faon #M</label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_spe_vision_faon_couplage" name="attr_competence_spe_vision_faon_couplage" value="1"/>
+                                <label name="label_competence_spe_vision_faon_couplage" for="attr_competence_spe_vision_faon_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">I</label>
+                                <label class="sheet-fi-10 sheet-left">Vision-Faon #M</label>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance Vision-Faon : [[0 + @{competence_spe_vision_faon_total} - 1d10]]"
                                     name="roll_competence_spe_vision_faon_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_spe_custom_1_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1534,14 +1783,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_custom_1_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_spe_custom_1_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet-center-text  sheet-left sheet-margin" type="text"
+                                       name="attr_competence_spe_custom_1_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_spe_custom_1_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_spe_custom_1_nom} : [[0 + @{competence_spe_custom_1_total} - 1d10]]"
                                     name="roll_competence_spe_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_spe_custom_2_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1553,14 +1806,18 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_custom_2_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_spe_custom_2_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet-center-text  sheet-left sheet-margin" type="text"
+                                       name="attr_competence_spe_custom_2_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_spe_custom_2_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_spe_custom_2_nom} : [[0 + @{competence_spe_custom_2_total} - 1d10]]"
                                     name="roll_competence_spe_custom_2_total"></button>
                         </div>
                         <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                        name="attr_competence_spe_custom_3_niveau"/>
                                 <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1572,8 +1829,12 @@
                                 <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true" type="number"
                                        step="1" name="attr_competence_spe_custom_3_total"/>
                             </div>
-                            <input class="sheet-fi-4 sheet-input_editable sheet-margin" type="text"
-                                   name="attr_competence_spe_custom_3_nom"/>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                <input class="sheet-fi-2 sheet-input_editable sheet-center-text  sheet-left sheet-margin" type="text"
+                                       name="attr_competence_spe_custom_3_carac"/>
+                                <input class="sheet-fi-10 sheet-input_editable sheet-left sheet-margin" type="text"
+                                       name="attr_competence_spe_custom_3_nom"/>
+                            </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
                                     value="/em lance @{competence_spe_custom_3_nom} : [[0 + @{competence_spe_custom_3_total} - 1d10]]"
                                     name="roll_competence_spe_custom_3_total"></button>
@@ -1929,18 +2190,21 @@
                     <div class="sheet-flex-row sheet-fi-12">
                         <div class="sheet-panel-magie sheet-flex-column sheet-margin sheet-fi-6">
                             <h3 class="sheet-BlackImgBg">Comp. Magiques</h3>
-                            <div class="sheet-flex-row ">
-                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
-                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">Niveau</label>
-                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Maitrise</label>
-                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Modif</label>
-                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Armure</label>
-                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">Score</label>
+                            <div class="sheet-flex-row sheet-flex-bottom">
+                                <div class="sheet-fi-6 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">Niv.</label>
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Mait.</label>
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Mod.</label>
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Arm.</label>
+                                    <label class="sheet-fi-20 sheet-center-text sheet-margin">Total</label>
                                 </div>
-                                <label class="sheet-fi-4 sheet-left"></label>
+                                <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                    <label class="sheet-fi-2 sheet-center-text sheet-margin">Att.</label>
+                                    <label class="sheet-fi-10 sheet-center-text sheet-margin">&nbsp;</label>
+                                </div>
                             </div>
                             <div class="sheet-flex-row">
-                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_air_niveau"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1952,13 +2216,17 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_air_total"/>
                                 </div>
-                                <label class="sheet-fi-4 sheet-left">Air</label>
+                                <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                    <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_maj_air_couplage" name="attr_competence_maj_air_couplage" value="1"/>
+                                    <label name="label_competence_maj_air_couplage" for="attr_competence_maj_air_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">R/P</label>
+                                    <label class="sheet-fi-10 sheet-left">Air #</label>
+                                </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
                                         value="/em lance Air : [[0 + @{competence_maj_air_total} - 1d10]]"
                                         name="roll_competence_maj_air_total"></button>
                             </div>
                             <div class="sheet-flex-row">
-                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_eau_niveau"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1970,13 +2238,17 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_eau_total"/>
                                 </div>
-                                <label class="sheet-fi-4 sheet-left">Eau</label>
+                                <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                    <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_maj_eau_couplage" name="attr_competence_maj_eau_couplage" value="1"/>
+                                    <label name="label_competence_maj_eau_couplage" for="attr_competence_maj_eau_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">F/I</label>
+                                    <label class="sheet-fi-10 sheet-left">Eau #</label>
+                                </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
                                         value="/em lance Eau : [[0 + @{competence_maj_eau_total} - 1d10]]"
                                         name="roll_competence_maj_eau_total"></button>
                             </div>
                             <div class="sheet-flex-row">
-                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_energie_niveau"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -1988,13 +2260,17 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_energie_total"/>
                                 </div>
-                                <label class="sheet-fi-4 sheet-left">Énergie</label>
+                                <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                    <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_maj_energie_couplage" name="attr_competence_maj_energie_couplage" value="1"/>
+                                    <label name="label_competence_maj_energie_couplage" for="attr_competence_maj_energie_couplage" class="sheet-fi-2 sheet-small sheet-nopad sheet-margin sheet-coupler-label">A/Ch</label>
+                                    <label class="sheet-fi-10 sheet-left">Énergie #</label>
+                                </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
                                         value="/em lance Énergie : [[0 + @{competence_maj_energie_total} - 1d10]]"
                                         name="roll_competence_maj_energie_total"></button>
                             </div>
                             <div class="sheet-flex-row">
-                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_necrose_niveau"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -2006,13 +2282,17 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_necrose_total"/>
                                 </div>
-                                <label class="sheet-fi-4 sheet-left">Nécrose</label>
+                                <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                    <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_maj_necrose_couplage" name="attr_competence_maj_necrose_couplage" value="1"/>
+                                    <label name="label_competence_maj_necrose_couplage" for="attr_competence_maj_necrose_couplage" class="sheet-fi-2 sheet-small sheet-nopad sheet-margin sheet-coupler-label">I/Fm</label>
+                                    <label class="sheet-fi-10 sheet-left">Nécrose #</label>
+                                </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
                                         value="/em lance Nécrose : [[0 + @{competence_maj_necrose_total} - 1d10]]"
                                         name="roll_competence_maj_necrose_total"></button>
                             </div>
                             <div class="sheet-flex-row">
-                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_terre_niveau"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -2024,13 +2304,17 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_terre_total"/>
                                 </div>
-                                <label class="sheet-fi-4 sheet-left">Terre</label>
+                                <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                    <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_maj_terre_couplage" name="attr_competence_maj_terre_couplage" value="1"/>
+                                    <label name="label_competence_maj_terre_couplage" for="attr_competence_maj_terre_couplage" class="sheet-fi-2 sheet-small sheet-nopad sheet-margin sheet-coupler-label">C/Fm</label>
+                                    <label class="sheet-fi-10 sheet-left">Terre #</label>
+                                </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
                                         value="/em lance Terre : [[0 + @{competence_maj_terre_total} - 1d10]]"
                                         name="roll_competence_maj_terre_total"></button>
                             </div>
                             <div class="sheet-flex-row">
-                                <div class="sheet-fi-7 sheet-nopad sheet-flex-row">
+                                <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
                                            name="attr_competence_maj_vitae_niveau"/>
                                     <input class="sheet-fi-20 sheet-margin sheet-input_editable" type="number" step="1"
@@ -2042,7 +2326,11 @@
                                     <input class="sheet-fi-20 sheet-margin sheet-input_calc" readonly="true"
                                            type="number" step="1" name="attr_competence_maj_vitae_total"/>
                                 </div>
-                                <label class="sheet-fi-4 sheet-left">Vitaë</label>
+                                <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-v-center">
+                                    <input type="checkbox" class="sheet-hide sheet-coupler" id="attr_competence_maj_vitae_couplage" name="attr_competence_maj_vitae_couplage" value="1"/>
+                                    <label name="label_competence_maj_vitae_couplage" for="attr_competence_maj_vitae_couplage" class="sheet-fi-2 sheet-small sheet-nopad sheet-margin sheet-coupler-label">I/Fm</label>
+                                    <label class="sheet-fi-10 sheet-left">Vitaë #</label>
+                                </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
                                         value="/em lance Vitaë : [[0 + @{competence_maj_vitae_total} - 1d10]]"
                                         name="roll_competence_maj_vitae_total"></button>
