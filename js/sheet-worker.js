@@ -179,9 +179,10 @@ function updateResMag() {
 }
 
 function updateMagie(competence, attribut1, attribut2) {
-    getAttrs([`carac_${attribut1}_tot`, `carac_${attribut2}_tot`, `competence_${competence}_niveau`, `competence_${competence}_maitrise`, `competence_${competence}_modif`, `competence_${competence}_armure`], function (values) {
+    getAttrs([`carac_${attribut1}_tot`, `carac_${attribut2}_tot`, `competence_${competence}_niveau`, `competence_${competence}_maitrise`, `competence_${competence}_modif`,`competence_${competence}_couplage`, `competence_${competence}_armure`], function (values) {
         let carac1 = getNumber(values[`carac_${attribut1}_tot`]) || 0;
         let carac2 = getNumber(values[`carac_${attribut2}_tot`]) || 0;
+        let couplage = getNumber(values[`competence_${competence}_couplage`] || 0);
         let max = 0;
         if (carac1 !== 0 && carac2 !== 0) {
             max = Math.ceil((carac1 + carac2) / 2);
@@ -190,7 +191,9 @@ function updateMagie(competence, attribut1, attribut2) {
         let maitrise = getNumber(values[`competence_${competence}_maitrise`]) || 0;
         let modif = getNumber(values[`competence_${competence}_modif`]) || 0;
         let armure = getNumber(values[`competence_${competence}_armure`]) || 0;
-        niveau = (niveau < max || max <= 0) ? niveau : max;
+        if(couplage === 0 && niveau > max && max > 0){
+            niveau = max;
+        }
         let total = niveau + maitrise + modif - armure;
         let saveobj = {};
         saveobj[`competence_${competence}_total`] = total;
@@ -382,50 +385,50 @@ on("change:res_maj_mod", function () {
 on("change:protection_armure change:protection_divers",function(){
    updateArmor();
 });
-on("change:competence_maj_air_niveau change:competence_maj_air_maitrise change:competence_maj_air_modif change:competence_maj_air_armure",function(){
+on("change:competence_maj_air_niveau change:competence_maj_air_couplage change:competence_maj_air_maitrise change:competence_maj_air_modif change:competence_maj_air_armure",function(){
    updateMagie("maj_air",comp_attr["maj_air"],comp_attr2["maj_air"]);
 });
-on("change:competence_maj_eau_niveau change:competence_maj_eau_maitrise change:competence_maj_eau_modif change:competence_maj_eau_armure",function(){
+on("change:competence_maj_eau_niveau change:competence_maj_eau_couplage change:competence_maj_eau_maitrise change:competence_maj_eau_modif change:competence_maj_eau_armure",function(){
    updateMagie("maj_eau",comp_attr["maj_eau"],comp_attr2["maj_eau"]);
 });
-on("change:competence_maj_energie_niveau change:competence_maj_energie_maitrise change:competence_maj_energie_modif change:competence_maj_energie_armure",function(){
+on("change:competence_maj_energie_niveau change:competence_maj_energie_couplage change:competence_maj_energie_maitrise change:competence_maj_energie_modif change:competence_maj_energie_armure",function(){
    updateMagie("maj_energie",comp_attr["maj_energie"],comp_attr2["maj_energie"]);
 });
-on("change:competence_maj_necrose_niveau change:competence_maj_necrose_maitrise change:competence_maj_necrose_modif change:competence_maj_necrose_armure",function(){
+on("change:competence_maj_necrose_niveau change:competence_maj_necrose_couplage change:competence_maj_necrose_maitrise change:competence_maj_necrose_modif change:competence_maj_necrose_armure",function(){
    updateMagie("maj_necrose",comp_attr["maj_necrose"],comp_attr2["maj_necrose"]);
 });
-on("change:competence_maj_terre_niveau change:competence_maj_terre_maitrise change:competence_maj_terre_modif change:competence_maj_terre_armure",function(){
+on("change:competence_maj_terre_niveau change:competence_maj_terre_couplage change:competence_maj_terre_maitrise change:competence_maj_terre_modif change:competence_maj_terre_armure",function(){
    updateMagie("maj_terre",comp_attr["maj_terre"],comp_attr2["maj_terre"]);
 });
-on("change:competence_maj_vitae_niveau change:competence_maj_vitae_maitrise change:competence_maj_vitae_modif change:competence_maj_vitae_armure",function(){
+on("change:competence_maj_vitae_niveau change:competence_maj_vitae_couplage change:competence_maj_vitae_maitrise change:competence_maj_vitae_modif change:competence_maj_vitae_armure",function(){
    updateMagie("maj_vitae",comp_attr["maj_vitae"],comp_attr2["maj_vitae"]);
 });
 
-on("change:competence_cmb_jet_niveau change:competence_cmb_jet_maitrise change:competence_cmb_jet_modif change:competence_cmb_jet_armure", function () {
+on("change:competence_cmb_jet_niveau change:competence_cmb_jet_couplage change:competence_cmb_jet_maitrise change:competence_cmb_jet_modif change:competence_cmb_jet_armure", function () {
     updateCompetence("cmb_jet", comp_attr["cmb_jet"]);
 });
-on("change:competence_cmb_trait_niveau change:competence_cmb_trait_maitrise change:competence_cmb_trait_modif change:competence_cmb_trait_armure", function () {
+on("change:competence_cmb_trait_niveau change:competence_cmb_trait_couplage change:competence_cmb_trait_maitrise change:competence_cmb_trait_modif change:competence_cmb_trait_armure", function () {
     updateCompetence("cmb_trait", comp_attr["cmb_trait"]);
 });
-on("change:competence_cmb_boucliers_niveau change:competence_cmb_boucliers_maitrise change:competence_cmb_boucliers_modif change:competence_cmb_boucliers_armure", function () {
+on("change:competence_cmb_boucliers_niveau change:competence_cmb_boucliers_couplage change:competence_cmb_boucliers_maitrise change:competence_cmb_boucliers_modif change:competence_cmb_boucliers_armure", function () {
     updateCompetence("cmb_boucliers", comp_attr["cmb_boucliers"]);
 });
-on("change:competence_cmb_epees_niveau change:competence_cmb_epees_maitrise change:competence_cmb_epees_modif change:competence_cmb_epees_armure", function () {
+on("change:competence_cmb_epees_niveau change:competence_cmb_epees_couplage change:competence_cmb_epees_maitrise change:competence_cmb_epees_modif change:competence_cmb_epees_armure", function () {
     updateCompetence("cmb_epees", comp_attr["cmb_epees"]);
 });
-on("change:competence_cmb_esquive_niveau change:competence_cmb_esquive_maitrise change:competence_cmb_esquive_modif change:competence_cmb_esquive_armure", function () {
+on("change:competence_cmb_esquive_niveau change:competence_cmb_esquive_couplage change:competence_cmb_esquive_maitrise change:competence_cmb_esquive_modif change:competence_cmb_esquive_armure", function () {
     updateCompetence("cmb_esquive", comp_attr["cmb_esquive"]);
 });
-on("change:competence_cmb_haches_niveau change:competence_cmb_haches_maitrise change:competence_cmb_haches_modif change:competence_cmb_haches_armure", function () {
+on("change:competence_cmb_haches_niveau change:competence_cmb_haches_couplage change:competence_cmb_haches_maitrise change:competence_cmb_haches_modif change:competence_cmb_haches_armure", function () {
     updateCompetence("cmb_haches", comp_attr["cmb_haches"]);
 });
-on("change:competence_cmb_poignards_niveau change:competence_cmb_poignards_maitrise change:competence_cmb_poignards_modif change:competence_cmb_poignards_armure", function () {
+on("change:competence_cmb_poignards_niveau change:competence_cmb_poignards_couplage change:competence_cmb_poignards_maitrise change:competence_cmb_poignards_modif change:competence_cmb_poignards_armure", function () {
     updateCompetence("cmb_poignards", comp_attr["cmb_poignards"]);
 });
-on("change:competence_cmb_pugilat_niveau change:competence_cmb_pugilat_maitrise change:competence_cmb_pugilat_modif change:competence_cmb_pugilat_armure", function () {
+on("change:competence_cmb_pugilat_niveau change:competence_cmb_pugilat_couplage change:competence_cmb_pugilat_maitrise change:competence_cmb_pugilat_modif change:competence_cmb_pugilat_armure", function () {
     updateCompetence("cmb_pugilat", comp_attr["cmb_pugilat"]);
 });
-on("change:competence_cmb_strategie_niveau change:competence_cmb_strategie_maitrise change:competence_cmb_strategie_modif change:competence_cmb_strategie_armure", function () {
+on("change:competence_cmb_strategie_niveau change:competence_cmb_strategie_couplage change:competence_cmb_strategie_maitrise change:competence_cmb_strategie_modif change:competence_cmb_strategie_armure", function () {
     updateCompetence("cmb_strategie", comp_attr["cmb_strategie"]);
 });
 on("change:competence_cmb_custom_1_niveau change:competence_cmb_custom_1_maitrise change:competence_cmb_custom_1_modif change:competence_cmb_custom_1_armure", function () {
@@ -434,31 +437,31 @@ on("change:competence_cmb_custom_1_niveau change:competence_cmb_custom_1_maitris
 on("change:competence_cmb_custom_2_niveau change:competence_cmb_custom_2_maitrise change:competence_cmb_custom_2_modif change:competence_cmb_custom_2_armure", function () {
     updateCompetence("cmb_custom_2", comp_attr["cmb_custom_2"]);
 });
-on("change:competence_soc_baratin_niveau change:competence_soc_baratin_maitrise change:competence_soc_baratin_modif change:competence_soc_baratin_armure", function () {
+on("change:competence_soc_baratin_niveau change:competence_soc_baratin_couplage change:competence_soc_baratin_maitrise change:competence_soc_baratin_modif change:competence_soc_baratin_armure", function () {
     updateCompetence("soc_baratin", comp_attr["soc_baratin"]);
 });
-on("change:competence_soc_diplomatie_niveau change:competence_soc_diplomatie_maitrise change:competence_soc_diplomatie_modif change:competence_soc_diplomatie_armure", function () {
+on("change:competence_soc_diplomatie_niveau change:competence_soc_diplomatie_couplage change:competence_soc_diplomatie_maitrise change:competence_soc_diplomatie_modif change:competence_soc_diplomatie_armure", function () {
     updateCompetence("soc_diplomatie", comp_attr["soc_diplomatie"]);
 });
-on("change:competence_soc_empathie_niveau change:competence_soc_empathie_maitrise change:competence_soc_empathie_modif change:competence_soc_empathie_armure", function () {
+on("change:competence_soc_empathie_niveau change:competence_soc_empathie_couplage change:competence_soc_empathie_maitrise change:competence_soc_empathie_modif change:competence_soc_empathie_armure", function () {
     updateCompetence("soc_empathie", comp_attr["soc_empathie"]);
 });
-on("change:competence_soc_etiquette_niveau change:competence_soc_etiquette_maitrise change:competence_soc_etiquette_modif change:competence_soc_etiquette_armure", function () {
+on("change:competence_soc_etiquette_niveau change:competence_soc_etiquette_couplage change:competence_soc_etiquette_maitrise change:competence_soc_etiquette_modif change:competence_soc_etiquette_armure", function () {
     updateCompetence("soc_etiquette", comp_attr["soc_etiquette"]);
 });
-on("change:competence_soc_interrogatoire_niveau change:competence_soc_interrogatoire_maitrise change:competence_soc_interrogatoire_modif change:competence_soc_interrogatoire_armure", function () {
+on("change:competence_soc_interrogatoire_niveau change:competence_soc_interrogatoire_couplage change:competence_soc_interrogatoire_maitrise change:competence_soc_interrogatoire_modif change:competence_soc_interrogatoire_armure", function () {
     updateCompetence("soc_interrogatoire", comp_attr["soc_interrogatoire"]);
 });
-on("change:competence_soc_intimidation_niveau change:competence_soc_intimidation_maitrise change:competence_soc_intimidation_modif change:competence_soc_intimidation_armure", function () {
+on("change:competence_soc_intimidation_niveau change:competence_soc_intimidation_couplage change:competence_soc_intimidation_maitrise change:competence_soc_intimidation_modif change:competence_soc_intimidation_armure", function () {
     updateCompetence("soc_intimidation", comp_attr["soc_intimidation"]);
 });
-on("change:competence_soc_marchandage_niveau change:competence_soc_marchandage_maitrise change:competence_soc_marchandage_modif change:competence_soc_marchandage_armure", function () {
+on("change:competence_soc_marchandage_niveau change:competence_soc_marchandage_couplage change:competence_soc_marchandage_maitrise change:competence_soc_marchandage_modif change:competence_soc_marchandage_armure", function () {
     updateCompetence("soc_marchandage", comp_attr["soc_marchandage"]);
 });
-on("change:competence_soc_seduction_niveau change:competence_soc_seduction_maitrise change:competence_soc_seduction_modif change:competence_soc_seduction_armure", function () {
+on("change:competence_soc_seduction_niveau change:competence_soc_seduction_couplage change:competence_soc_seduction_maitrise change:competence_soc_seduction_modif change:competence_soc_seduction_armure", function () {
     updateCompetence("soc_seduction", comp_attr["soc_seduction"]);
 });
-on("change:competence_soc_reseau_niveau change:competence_soc_reseau_maitrise change:competence_soc_reseau_modif change:competence_soc_reseau_armure", function () {
+on("change:competence_soc_reseau_niveau change:competence_soc_reseau_couplage change:competence_soc_reseau_maitrise change:competence_soc_reseau_modif change:competence_soc_reseau_armure", function () {
     updateCompetence("soc_reseau", comp_attr["soc_reseau"]);
 });
 on("change:competence_soc_custom_1_niveau change:competence_soc_custom_1_maitrise change:competence_soc_custom_1_modif change:competence_soc_custom_1_armure", function () {
@@ -467,40 +470,40 @@ on("change:competence_soc_custom_1_niveau change:competence_soc_custom_1_maitris
 on("change:competence_soc_custom_2_niveau change:competence_soc_custom_2_maitrise change:competence_soc_custom_2_modif change:competence_soc_custom_2_armure", function () {
     updateCompetence("soc_custom_2", comp_attr["soc_custom_2"]);
 });
-on("change:competence_phy_acrobatie_niveau change:competence_phy_acrobatie_maitrise change:competence_phy_acrobatie_modif change:competence_phy_acrobatie_armure", function () {
+on("change:competence_phy_acrobatie_niveau change:competence_phy_acrobatie_couplage change:competence_phy_acrobatie_maitrise change:competence_phy_acrobatie_modif change:competence_phy_acrobatie_armure", function () {
     updateCompetence("phy_acrobatie", comp_attr["phy_acrobatie"]);
 });
-on("change:competence_phy_course_niveau change:competence_phy_course_maitrise change:competence_phy_course_modif change:competence_phy_course_armure", function () {
+on("change:competence_phy_course_niveau change:competence_phy_course_couplage change:competence_phy_course_maitrise change:competence_phy_course_modif change:competence_phy_course_armure", function () {
     updateCompetence("phy_course", comp_attr["phy_course"]);
 });
-on("change:competence_phy_discretion_niveau change:competence_phy_discretion_maitrise change:competence_phy_discretion_modif change:competence_phy_discretion_armure", function () {
+on("change:competence_phy_discretion_niveau change:competence_phy_discretion_couplage change:competence_phy_discretion_maitrise change:competence_phy_discretion_modif change:competence_phy_discretion_armure", function () {
     updateCompetence("phy_discretion", comp_attr["phy_discretion"]);
 });
-on("change:competence_phy_escalade_niveau change:competence_phy_escalade_maitrise change:competence_phy_escalade_modif change:competence_phy_escalade_armure", function () {
+on("change:competence_phy_escalade_niveau change:competence_phy_escalade_couplage change:competence_phy_escalade_maitrise change:competence_phy_escalade_modif change:competence_phy_escalade_armure", function () {
     updateCompetence("phy_escalade", comp_attr["phy_escalade"]);
 });
-on("change:competence_phy_equitation_niveau change:competence_phy_equitation_maitrise change:competence_phy_equitation_modif change:competence_phy_equitation_armure", function () {
+on("change:competence_phy_equitation_niveau change:competence_phy_equitation_couplage change:competence_phy_equitation_maitrise change:competence_phy_equitation_modif change:competence_phy_equitation_armure", function () {
     updateCompetence("phy_equitation", comp_attr["phy_equitation"]);
 });
-on("change:competence_phy_filature_niveau change:competence_phy_filature_maitrise change:competence_phy_filature_modif change:competence_phy_filature_armure", function () {
+on("change:competence_phy_filature_niveau change:competence_phy_filature_couplage change:competence_phy_filature_maitrise change:competence_phy_filature_modif change:competence_phy_filature_armure", function () {
     updateCompetence("phy_filature", comp_attr["phy_filature"]);
 });
-on("change:competence_phy_forge_niveau change:competence_phy_forge_maitrise change:competence_phy_forge_modif change:competence_phy_forge_armure", function () {
+on("change:competence_phy_forge_niveau change:competence_phy_forge_couplage change:competence_phy_forge_maitrise change:competence_phy_forge_modif change:competence_phy_forge_armure", function () {
     updateCompetence("phy_forge", comp_attr["phy_forge"]);
 });
-on("change:competence_phy_natation_niveau change:competence_phy_natation_maitrise change:competence_phy_natation_modif change:competence_phy_natation_armure", function () {
+on("change:competence_phy_natation_niveau change:competence_phy_natation_couplage change:competence_phy_natation_maitrise change:competence_phy_natation_modif change:competence_phy_natation_armure", function () {
     updateCompetence("phy_natation", comp_attr["phy_natation"]);
 });
-on("change:competence_phy_pickpocket_niveau change:competence_phy_pickpocket_maitrise change:competence_phy_pickpocket_modif change:competence_phy_pickpocket_armure", function () {
+on("change:competence_phy_pickpocket_niveau change:competence_phy_pickpocket_couplage change:competence_phy_pickpocket_maitrise change:competence_phy_pickpocket_modif change:competence_phy_pickpocket_armure", function () {
     updateCompetence("phy_pickpocket", comp_attr["phy_pickpocket"]);
 });
-on("change:competence_phy_survie_niveau change:competence_phy_survie_maitrise change:competence_phy_survie_modif change:competence_phy_survie_armure", function () {
+on("change:competence_phy_survie_niveau change:competence_phy_survie_couplage change:competence_phy_survie_maitrise change:competence_phy_survie_modif change:competence_phy_survie_armure", function () {
     updateCompetence("phy_survie", comp_attr["phy_survie"]);
 });
-on("change:competence_phy_recherche_niveau change:competence_phy_recherche_maitrise change:competence_phy_recherche_modif change:competence_phy_recherche_armure", function () {
+on("change:competence_phy_recherche_niveau change:competence_phy_recherche_couplage change:competence_phy_recherche_maitrise change:competence_phy_recherche_modif change:competence_phy_recherche_armure", function () {
     updateCompetence("phy_recherche", comp_attr["phy_recherche"]);
 });
-on("change:competence_phy_vigilance_niveau change:competence_phy_vigilance_maitrise change:competence_phy_vigilance_modif change:competence_phy_vigilance_armure", function () {
+on("change:competence_phy_vigilance_niveau change:competence_phy_vigilance_couplage change:competence_phy_vigilance_maitrise change:competence_phy_vigilance_modif change:competence_phy_vigilance_armure", function () {
     updateCompetence("phy_vigilance", comp_attr["phy_vigilance"]);
 });
 on("change:competence_phy_custom_1_niveau change:competence_phy_custom_1_maitrise change:competence_phy_custom_1_modif change:competence_phy_custom_1_armure", function () {
@@ -509,40 +512,40 @@ on("change:competence_phy_custom_1_niveau change:competence_phy_custom_1_maitris
 on("change:competence_phy_custom_2_niveau change:competence_phy_custom_2_maitrise change:competence_phy_custom_2_modif change:competence_phy_custom_2_armure", function () {
     updateCompetence("phy_custom_2", comp_attr["phy_custom_2"]);
 });
-on("change:competence_con_artisanat_niveau change:competence_con_artisanat_maitrise change:competence_con_artisanat_modif change:competence_con_artisanat_armure", function () {
+on("change:competence_con_artisanat_niveau change:competence_con_artisanat_couplage change:competence_con_artisanat_maitrise change:competence_con_artisanat_modif change:competence_con_artisanat_armure", function () {
     updateCompetence("con_artisanat", comp_attr["con_artisanat"]);
 });
-on("change:competence_con_cartographie_niveau change:competence_con_cartographie_maitrise change:competence_con_cartographie_modif change:competence_con_cartographie_armure", function () {
+on("change:competence_con_cartographie_niveau change:competence_con_cartographie_couplage change:competence_con_cartographie_maitrise change:competence_con_cartographie_modif change:competence_con_cartographie_armure", function () {
     updateCompetence("con_cartographie", comp_attr["con_cartographie"]);
 });
-on("change:competence_con_conduite_niveau change:competence_con_conduite_maitrise change:competence_con_conduite_modif change:competence_con_conduite_armure", function () {
+on("change:competence_con_conduite_niveau change:competence_con_conduite_couplage change:competence_con_conduite_maitrise change:competence_con_conduite_modif change:competence_con_conduite_armure", function () {
     updateCompetence("con_conduite", comp_attr["con_conduite"]);
 });
-on("change:competence_con_crochetage_niveau change:competence_con_crochetage_maitrise change:competence_con_crochetage_modif change:competence_con_crochetage_armure", function () {
+on("change:competence_con_crochetage_niveau change:competence_con_crochetage_couplage change:competence_con_crochetage_maitrise change:competence_con_crochetage_modif change:competence_con_crochetage_armure", function () {
     updateCompetence("con_crochetage", comp_attr["con_crochetage"]);
 });
-on("change:competence_con_dissimulation_niveau change:competence_con_dissimulation_maitrise change:competence_con_dissimulation_modif change:competence_con_dissimulation_armure", function () {
+on("change:competence_con_dissimulation_niveau change:competence_con_dissimulation_couplage change:competence_con_dissimulation_maitrise change:competence_con_dissimulation_modif change:competence_con_dissimulation_armure", function () {
     updateCompetence("con_dissimulation", comp_attr["con_dissimulation"]);
 });
-on("change:competence_con_evaluation_niveau change:competence_con_evaluation_maitrise change:competence_con_evaluation_modif change:competence_con_evaluation_armure", function () {
+on("change:competence_con_evaluation_niveau change:competence_con_evaluation_couplage change:competence_con_evaluation_maitrise change:competence_con_evaluation_modif change:competence_con_evaluation_armure", function () {
     updateCompetence("con_evaluation", comp_attr["con_evaluation"]);
 });
-on("change:competence_con_faune_niveau change:competence_con_faune_maitrise change:competence_con_faune_modif change:competence_con_faune_armure", function () {
+on("change:competence_con_faune_niveau change:competence_con_faune_couplage change:competence_con_faune_maitrise change:competence_con_faune_modif change:competence_con_faune_armure", function () {
     updateCompetence("con_faune", comp_attr["con_faune"]);
 });
-on("change:competence_con_heraldique_niveau change:competence_con_heraldique_maitrise change:competence_con_heraldique_modif change:competence_con_heraldique_armure", function () {
+on("change:competence_con_heraldique_niveau change:competence_con_heraldique_couplage change:competence_con_heraldique_maitrise change:competence_con_heraldique_modif change:competence_con_heraldique_armure", function () {
     updateCompetence("con_heraldique", comp_attr["con_heraldique"]);
 });
-on("change:competence_con_jeu_niveau change:competence_con_jeu_maitrise change:competence_con_jeu_modif change:competence_con_jeu_armure", function () {
+on("change:competence_con_jeu_niveau change:competence_con_jeu_couplage change:competence_con_jeu_maitrise change:competence_con_jeu_modif change:competence_con_jeu_armure", function () {
     updateCompetence("con_jeu", comp_attr["con_jeu"]);
 });
-on("change:competence_con_musique_niveau change:competence_con_musique_maitrise change:competence_con_musique_modif change:competence_con_musique_armure", function () {
+on("change:competence_con_musique_niveau change:competence_con_musique_couplage change:competence_con_musique_maitrise change:competence_con_musique_modif change:competence_con_musique_armure", function () {
     updateCompetence("con_musique", comp_attr["con_musique"]);
 });
-on("change:competence_con_politique_niveau change:competence_con_politique_maitrise change:competence_con_politique_modif change:competence_con_politique_armure", function () {
+on("change:competence_con_politique_niveau change:competence_con_politique_couplage change:competence_con_politique_maitrise change:competence_con_politique_modif change:competence_con_politique_armure", function () {
     updateCompetence("con_politique", comp_attr["con_politique"]);
 });
-on("change:competence_con_theologie_niveau change:competence_con_theologie_maitrise change:competence_con_theologie_modif change:competence_con_theologie_armure", function () {
+on("change:competence_con_theologie_niveau change:competence_con_theologie_couplage change:competence_con_theologie_maitrise change:competence_con_theologie_modif change:competence_con_theologie_armure", function () {
     updateCompetence("con_theologie", comp_attr["con_theologie"]);
 });
 on("change:competence_con_custom_1_niveau change:competence_con_custom_1_maitrise change:competence_con_custom_1_modif change:competence_con_custom_1_armure", function () {
@@ -551,31 +554,31 @@ on("change:competence_con_custom_1_niveau change:competence_con_custom_1_maitris
 on("change:competence_con_custom_2_niveau change:competence_con_custom_2_maitrise change:competence_con_custom_2_modif change:competence_con_custom_2_armure", function () {
     updateCompetence("con_custom_2", comp_attr["con_custom_2"]);
 });
-on("change:competence_lang_1_niveau change:competence_lang_1_maitrise change:competence_lang_1_modif change:competence_lang_1_armure", function () {
+on("change:competence_lang_1_niveau change:competence_lang_1_couplage change:competence_lang_1_maitrise change:competence_lang_1_modif change:competence_lang_1_armure", function () {
     updateCompetence("lang_1", comp_attr["lang_1"]);
 });
-on("change:competence_lang_2_niveau change:competence_lang_2_maitrise change:competence_lang_2_modif change:competence_lang_2_armure", function () {
+on("change:competence_lang_2_niveau change:competence_lang_2_couplage change:competence_lang_2_maitrise change:competence_lang_2_modif change:competence_lang_2_armure", function () {
     updateCompetence("lang_2", comp_attr["lang_2"]);
 });
-on("change:competence_lang_3_niveau change:competence_lang_3_maitrise change:competence_lang_3_modif change:competence_lang_3_armure", function () {
+on("change:competence_lang_3_niveau change:competence_lang_3_couplage change:competence_lang_3_maitrise change:competence_lang_3_modif change:competence_lang_3_armure", function () {
     updateCompetence("lang_3", comp_attr["lang_3"]);
 });
-on("change:competence_lang_4_niveau change:competence_lang_4_maitrise change:competence_lang_4_modif change:competence_lang_4_armure", function () {
+on("change:competence_lang_4_niveau change:competence_lang_4_couplage change:competence_lang_4_maitrise change:competence_lang_4_modif change:competence_lang_4_armure", function () {
     updateCompetence("lang_4", comp_attr["lang_4"]);
 });
-on("change:competence_lang_5_niveau change:competence_lang_5_maitrise change:competence_lang_5_modif change:competence_lang_5_armure", function () {
+on("change:competence_lang_5_niveau change:competence_lang_5_couplage change:competence_lang_5_maitrise change:competence_lang_5_modif change:competence_lang_5_armure", function () {
     updateCompetence("lang_5", comp_attr["lang_5"]);
 });
-on("change:competence_lang_6_niveau change:competence_lang_6_maitrise change:competence_lang_6_modif change:competence_lang_6_armure", function () {
+on("change:competence_lang_6_niveau change:competence_lang_6_couplage change:competence_lang_6_maitrise change:competence_lang_6_modif change:competence_lang_6_armure", function () {
     updateCompetence("lang_6", comp_attr["lang_6"]);
 });
-on("change:competence_spe_alchimie_niveau change:competence_spe_alchimie_maitrise change:competence_spe_alchimie_modif change:competence_spe_alchimie_armure", function () {
+on("change:competence_spe_alchimie_niveau change:competence_spe_alchimie_couplage change:competence_spe_alchimie_maitrise change:competence_spe_alchimie_modif change:competence_spe_alchimie_armure", function () {
     updateCompetence("spe_alchimie", comp_attr["spe_alchimie"]);
 });
-on("change:competence_spe_medicine_niveau change:competence_spe_medicine_maitrise change:competence_spe_medicine_modif change:competence_spe_medicine_armure", function () {
+on("change:competence_spe_medicine_niveau change:competence_spe_medicine_couplage change:competence_spe_medicine_maitrise change:competence_spe_medicine_modif change:competence_spe_medicine_armure", function () {
     updateCompetence("spe_medicine", comp_attr["spe_medicine"]);
 });
-on("change:competence_spe_vision_faon_niveau change:competence_spe_vision_faon_maitrise change:competence_spe_vision_faon_modif change:competence_spe_vision_faon_armure", function () {
+on("change:competence_spe_vision_faon_niveau change:competence_spe_vision_faon_couplage change:competence_spe_vision_faon_maitrise change:competence_spe_vision_faon_modif change:competence_spe_vision_faon_armure", function () {
     updateCompetence("spe_vision_faon", comp_attr["spe_vision_faon"]);
 });
 on("change:competence_spe_custom_1_niveau change:competence_spe_custom_1_maitrise change:competence_spe_custom_1_modif change:competence_spe_custom_1_armure", function () {
