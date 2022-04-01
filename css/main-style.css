@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Spectral:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
 div,input,textarea,label{
     font-family: 'Spectral', serif !important; !important;
@@ -464,26 +465,22 @@ button[type="roll"]{
 
 .custom-checkbox{
     appearance: none !important;
-    background: rgba(0,0,0,0.45) !important;
-    color: rgba(0,0,0,0.0) !important;
-    border: #2D120F 2px solid !important;
-    border-radius: 4px !important;
-    margin: 0.1em !important;
     text-align: center !important;
     vertical-align: center !important;
+    color: #53332a !important;
     padding: 0 !important;
-    height: 95% !important;
+    position: absolute;
+    top: -0.2em;
+    right: -0.1em;
+    font-size: 2.2em;
 }
 .custom-checkbox:after{
-    content: "__" !important;
+    font-family: 'Material Icons';
+    content: "\e745" !important;
 }
 
 .custom-checkbox:checked{
-    color: #2D120F !important;
-    font-weight: bolder !important;
-}
-.custom-checkbox:checked:after{
-    content: "\2713" !important;
+    color: #ffcc !important;
 }
 
 .label-row-close{
