@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Spectral:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 
+.sheet-flex-row > input{
+    height: 85%;
+}
 div,input,textarea,label{
     font-family: 'Spectral', serif !important; !important;
     box-sizing: border-box !important;
@@ -453,16 +456,30 @@ h3.sheet-BlackImgBg{
 }
 
 button[type="roll"]{
-    padding: 0 !important;
-    margin: 0 !important;
     box-sizing: border-box !important;
+    background: rgba(0,0,0,0.1) !important;
+    border-color: #53332a !important;
+    color: #53332a !important;
+    font-weight: bolder !important;
+    text-shadow: none !important;
+    box-shadow: none !important;
+    height: 95% !important;
 }
+/*
+.charactersheet  button[type="roll"]:before{
+    font-family: 'Material Icons' !important;
+    content: "\eb40" !important;
+}*/
+
 
 .sheet-tr label{
     margin: 0 !important;
     border-right: 1px #53332a solid !important; !important;
 }
 
+.custom-checkbox:focus,.custom-checkbox:focus-visible {
+    outline:  none !important;
+}
 .custom-checkbox{
     appearance: none !important;
     text-align: center !important;
@@ -470,9 +487,9 @@ button[type="roll"]{
     color: #53332a !important;
     padding: 0 !important;
     position: absolute;
-    top: -0.2em;
+    top: -0.1em;
     right: -0.1em;
-    font-size: 2.2em;
+    font-size: 2.5em;
 }
 .custom-checkbox:after{
     font-family: 'Material Icons';
