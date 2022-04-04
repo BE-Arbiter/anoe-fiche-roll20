@@ -570,9 +570,12 @@ button[type="roll"]:hover,button[type="roll"]:active{
 }
 .sheet-rolltemplate-jet .sheet-flex-row div{
     background-color: rgba(255,255,255,0.3) !important;
-    width: 100% !important;
+    width: 60% !important;
     margin: 0!important;
     padding: 0.3em !important;
+}
+.sheet-rolltemplate-jet .sheet-flex-row div.sheet-fi-12{
+    width: 100% !important;
 }
 
 .sheet-rolltemplate-jet .sheet-flex-row:last-of-type{

@@ -15,8 +15,8 @@
                 <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_age"/>
                 <label class="sheet-fi-1">Pays</label>
                 <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_pays"/>
-                <label class="sheet-fi-1">Métier</label>
-                <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_metier"/>
+                <label class="sheet-fi-1">Titre</label>
+                <input class="sheet-fi-3 sheet-input_editable sheet-margin" type="text" name="attr_exp_titre" readonly/>
             </div>
         </div>
     </div>
@@ -2328,17 +2328,8 @@
                             <h3 class="sheet-BlackImgBg">Autre</h3>
                             <div class="sheet-flex-row sheet-fi-12 sheet-nopad">
                                 <label class="sheet-fi-4 sheet-th">Grade de magie</label>
-                                <select name="attr_maj_grade" class="sheet-fi-4" disabled="true">
-                                    <option value="0">Aucun</option>
-                                    <option value="1">Novice</option>
-                                    <option value="2">Apprenti</option>
-                                    <option value="3">Initié</option>
-                                    <option value="4">Adepte</option>
-                                    <option value="5">Mage</option>
-                                    <option value="6">Maître Mage</option>
-                                    <option value="7">Grand Maître Mage</option>
-                                    <option value="8">Archimage</option>
-                                </select>
+                                <input type="text" name="attr_maj_grade" class="sheet-fi-4" readonly />
+                                <input type="hidden" name="attr_maj_grade_val"/>
                                 <label class="sheet-fi-2 sheet-th">R.S.</label>
                                 <input type="text" class="sheet-fi-2 sheet-input_calc" readonly="readonly"
                                        name="attr_maj_rs"/>
@@ -2841,20 +2832,20 @@
 </div>
 <rolltemplate class="sheet-rolltemplate-jet">
     <div class="sheet-panel-roll sheet-flex-column">
-        <div class="sheet-header sheet-fi-12">{{nom}}</div>
+        <div class="sheet-header">{{nom}}</div>
         {{#commentaire}}
-        <div class="sheet-sub-header sheet-fi-12">{{commentaire}}</div>
+        <div class="sheet-sub-header">{{commentaire}}</div>
         {{/commentaire}}
         {{#jet}}
             {{#rollWasFumble() jet}}
-                <div class="sheet-flex-row sheet-fi-12">
+                <div class="sheet-flex-row">
                     <label >Marge:</label>
                     <div class="sheet-criticalRoll">{{critique}}</div>
                 </div>
             {{/rollWasFumble() jet}}
             {{#rollWasCrit() jet}}
                 {{#rollGreater() critique 43}}
-                <div class="sheet-flex-row sheet-fi-12">
+                <div class="sheet-flex-row">
                     <label >Marge:</label>
                     <div class="sheet-fumbleRoll">-7</div>
                 </div>
@@ -2866,43 +2857,43 @@
                 </div>
                 {{/rollBetween() critique 31 42}}
                 {{#rollBetween() critique 21 31}}
-                <div class="sheet-flex-row sheet-fi-12">
+                <div class="sheet-flex-row">
                     <label >Marge:</label>
                     <div class="sheet-fumbleRoll">-15</div>
                 </div>
                 {{/rollBetween() critique 21 31}}
                 {{#rollLess() critique 21}}
-                <div class="sheet-flex-row sheet-fi-12">
+                <div class="sheet-flex-row">
                     <label >Marge:</label>
                     <div class="sheet-fumbleRoll">-20</div>
                 </div>
                 {{/rollLess() critique 21}}
             {{/rollWasCrit() jet}}
             {{#^rollWasCrit() jet}} {{#^rollWasFumble() jet}}
-                <div class="sheet-flex-row sheet-fi-12">
+                <div class="sheet-flex-row">
                     <label >Marge:</label>
                     <div>{{jet}}</div>
                 </div>
             {{/^rollWasFumble() jet}} {{/^rollWasCrit() jet}}
         {{/jet}}
         {{#degats}}
-        <div class="sheet-flex-row sheet-fi-12">
+        <div class="sheet-flex-row">
             <label >Dégats:</label>
             <div>{{degats}}</div>
         </div>
-        <div class="sheet-flex-row sheet-fi-12">
+        <div class="sheet-flex-row">
             <label >Localisation: </label>
             <div>{{localisation}}</div>
         </div>
         {{#rollWasFumble() jet}} {{#degatsCritiques}}
-        <div class="sheet-flex-row sheet-fi-12">
+        <div class="sheet-flex-row">
             <label >Critique:</label>
             <div>{{degatsCritiques}}</div>
         </div>
         {{/degatsCritiques}}{{/rollWasFumble() jet}}
         {{/degats}}
         {{#allprops() nom jet attaque degats localisation critique degatsCritiques description commentaire}}
-        <div class="sheet-flex-row sheet-fi-12">
+        <div class="sheet-flex-row">
             <label >{{key}}:</label>
             <div><b>{{value}}</b></div>
         </div>

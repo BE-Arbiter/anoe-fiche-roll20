@@ -134,13 +134,40 @@ function updateInit() {
     });
 }
 
+let xpThres =[0,250,500,750,1000,2000,4000,6000,10000];
+function getXpVal(xp){
+    for(let i = xpThres.length-1 ; i >= 1 ;i--){
+        if(xp >= xpThres[i]){
+            return i;
+        }
+    }
+    return 0;
+}
+
+let xpName = ["Pousse-Caillou","Gamin","Molosse","Écumeur","Gris","Prétentieux","Haut-Fait","Vieux","Légendaire"];
+function updateXp(){
+    getAttrs(['exp_total'], function (values) {
+        let xpTotal = getNumber(values['exp_total']) || 0;
+        let xpIndex = getXpVal(xpTotal);
+        let saveobj = {};
+        saveobj[`exp_titre`] = xpName[xpIndex];
+        setAttrs(saveobj);
+        updateResMag();
+        updateResChoc();
+        updateResSoc();
+    });
+}
+
+let xpRC = [0,1,1,2,2,2,3,4,5];
 function updateResChoc() {
-    getAttrs([`carac_c_tot`, `carac_fm_tot`, `res_choc_mod`], function (values) {
+    getAttrs([`carac_c_tot`, `carac_fm_tot`, `res_choc_mod`,'exp_total'], function (values) {
         let constitution = getNumber(values[`carac_c_tot`]) || 0;
         let forcementale = getNumber(values[`carac_fm_tot`]) || 0;
         let mod = getNumber(values[`res_choc_mod`]) || 0;
+        let xpTotal = getNumber(values['exp_total']) || 0;
+        let xpIndex = getXpVal(xpTotal);
         let res_base = Math.ceil((constitution + forcementale) / 10);
-        let res_tot = res_base + mod;
+        let res_tot = res_base + mod + xpRC[xpIndex];
         let saveobj = {};
         saveobj[`res_choc_val`] = res_base;
         saveobj[`res_choc_total`] = res_tot;
@@ -148,14 +175,17 @@ function updateResChoc() {
     });
 }
 
+let xpRS = [0,1,1,2,2,3,3,4,5];
 function updateResSoc() {
-    getAttrs([`carac_ch_tot`, `carac_i_tot`, `carac_fm_tot`, `res_soc_mod`], function (values) {
+    getAttrs([`carac_ch_tot`, `carac_i_tot`, `carac_fm_tot`, `res_soc_mod`,'exp_total'], function (values) {
         let charisme = getNumber(values[`carac_ch_tot`]) || 0;
         let forcementale = getNumber(values[`carac_fm_tot`]) || 0;
         let intelligence = getNumber(values[`carac_i_tot`]) || 0;
         let mod = getNumber(values[`res_soc_mod`]) || 0;
+        let xpTotal = getNumber(values['exp_total']) || 0;
+        let xpIndex = getXpVal(xpTotal);
         let res_base = Math.ceil((charisme + intelligence + forcementale) / 10);
-        let res_tot = res_base + mod;
+        let res_tot = res_base + mod+ xpRS[xpIndex];
         let saveobj = {};
         saveobj[`res_soc_val`] = res_base;
         saveobj[`res_soc_total`] = res_tot;
@@ -163,15 +193,18 @@ function updateResSoc() {
     });
 }
 
-let gradeRM = [0,1,1,2,2,3,3,4,5]
+let gradeRM = [0,1,1,2,2,3,3,4,5];
+let xpRM = [0,0,0,0,1,1,1,2,3];
 function updateResMag() {
-    getAttrs([`carac_c_tot`, `carac_fm_tot`, `res_maj_mod`,`maj_grade`], function (values) {
+    getAttrs([`carac_c_tot`, `carac_fm_tot`, `res_maj_mod`,`maj_grade_val`,'exp_total'], function (values) {
         let constitution = getNumber(values[`carac_c_tot`]) || 0;
         let forcementale = getNumber(values[`carac_fm_tot`]) || 0;
-        let grade = getNumber(values['maj_grade'])||0;
+        let grade = getNumber(values['maj_grade_val'])||0;
         let mod = getNumber(values[`res_maj_mod`]) || 0;
+        let xpTotal = getNumber(values['exp_total']) || 0;
+        let xpIndex = getXpVal(xpTotal);
         let res_base = Math.ceil((constitution + forcementale) / 10);
-        let res_tot = res_base + mod + gradeRM[grade];
+        let res_tot = res_base + mod + gradeRM[grade] + xpRM[xpIndex];
         let saveobj = {};
         saveobj[`res_maj_val`] = res_base;
         saveobj[`res_maj_total`] = res_tot;
@@ -202,6 +235,8 @@ function updateMagie(competence, attribut1, attribut2) {
         updateRangMagique();
     });
 }
+
+let rangTab=["Aucun", "Novice", "Apprenti", "Initié", "Adepte", "Mage", "Maître Mage", "Grand Maître Mage", "Archimage"];
 
 function updateRangMagique(){
     getAttrs(['competence_maj_air_total','competence_maj_eau_total','competence_maj_energie_total','competence_maj_necrose_total','competence_maj_terre_total','competence_maj_vitae_total'],function (values){
@@ -243,7 +278,8 @@ function updateRangMagique(){
             rsMagique = 14;
         }
         let saveobj = {};
-        saveobj[`maj_grade`] = rang;
+        saveobj[`maj_grade_val`] = rang;
+        saveobj[`maj_grade`] = rangTab[rang];
         saveobj[`maj_rs`] = rsMagique;
         setAttrs(saveobj);
         updateResMag();
@@ -605,6 +641,10 @@ on("change:competence_spe_custom_2_niveau change:competence_spe_custom_2_carac c
 });
 on("change:competence_spe_custom_3_niveau change:competence_spe_custom_3_carac change:competence_spe_custom_3_maitrise change:competence_spe_custom_3_modif change:competence_spe_custom_3_armure", function () {
     updateCompetence("spe_custom_3");
+});
+
+on("change:exp_total",function(){
+    updateXp();
 });
 
 console.log("worker fully initialized");
