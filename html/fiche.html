@@ -71,13 +71,13 @@
                                 Vole
                             </label>
                         </div>
-                        <div class="sheet-flex-row sheet-fi-12 sheet-flex-bottom label-row-close">
+                        <div class="sheet-flex-row sheet-fi-12 sheet-flex-bottom sheet-label-row-close">
                             <label class="sheet-fi-3 sheet-center-text">Normal<br>m/T</label>
                             <label class="sheet-fi-3 sheet-center-text">Normal<br>Km/h</label>
                             <label class="sheet-fi-3 sheet-center-text">Rapide<br>m/T</label>
                             <label class="sheet-fi-3 sheet-center-text">Rapide<br>Km/h</label>
                         </div>
-                        <div class="sheet-flex-row sheet-fi-12 label-row-close">
+                        <div class="sheet-flex-row sheet-fi-12 sheet-label-row-close">
                             <input type="number" name="attr_deplacement_normal_mt" class="sheet-fi-3 sheet-input_calc"/>
                             <input type="number" name="attr_deplacement_normal_kmh" class="sheet-fi-3 sheet-input_calc"/>
                             <input type="number" name="attr_deplacement_rapide_mt" style="z-index: 1" class="sheet-fi-3 sheet-input_calc"/>
@@ -106,7 +106,7 @@
                                    readonly="true" name="attr_carac_a_tot"/>
                             <label class="sheet-fi-5 sheet-left">Agilité (A)</label>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Agilité : [[0 + @{carac__tot} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Agilité}} {{jet=[[0+@{carac_a_tot}-1d10]]}} {{critique=[[@{carac_a_tot} * 2]] }}"
                                     name="roll_carac__tot"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -118,8 +118,8 @@
                                    readonly="true" name="attr_carac_ch_tot"/>
                             <label class="sheet-fi-5 sheet-left">Charisme (Ch)</label>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Charisme : [[0 + @{carac_ch_tot} - 1d10]]"
-                                    name="roll_carac_ch_tot"></button>
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Charisme}} {{jet=[[0+@{carac_ch_tot}-1d10]]}} {{critique=[[@{carac_ch_tot} * 2]] }}"
+                                    name="roll_carac__tot"></button>
                         </div>
                         <div class="sheet-flex-row">
                             <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1"
@@ -130,8 +130,8 @@
                                    readonly="true" name="attr_carac_c_tot"/>
                             <label class="sheet-fi-5 sheet-left">Constitution (C)</label>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Constitution : [[0 + @{carac_c_tot} - 1d10]]"
-                                    name="roll_carac_c_tot"></button>
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Constitution}} {{jet=[[0+@{carac_c_tot}-1d10]]}} {{critique=[[@{carac_c_tot} * 2]] }}"
+                                    name="roll_carac__tot"></button>
                         </div>
                         <div class="sheet-flex-row">
                             <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1"
@@ -142,8 +142,8 @@
                                    readonly="true" name="attr_carac_f_tot"/>
                             <label class="sheet-fi-5 sheet-left">Force (F)</label>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Force : [[0 + @{carac_f_tot} - 1d10]]"
-                                    name="roll_carac_f_tot"></button>
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Force}} {{jet=[[0+@{carac_f_tot}-1d10]]}} {{critique=[[@{carac_f_tot} * 2]] }}"
+                                    name="roll_carac__tot"></button>
                         </div>
                         <div class="sheet-flex-row">
                             <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1"
@@ -154,8 +154,8 @@
                                    readonly="true" name="attr_carac_fm_tot"/>
                             <label class="sheet-fi-5 sheet-left">Force Mentale (FM)</label>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Formce Mentale : [[0 + @{carac_fm_tot} - 1d10]]"
-                                    name="roll_carac_fm_tot"></button>
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Force Mentale}} {{jet=[[0+@{carac_fm_tot}-1d10]]}} {{critique=[[@{carac_fm_tot} * 2]] }}"
+                                    name="roll_carac__tot"></button>
                         </div>
                         <div class="sheet-flex-row">
                             <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1"
@@ -166,8 +166,8 @@
                                    readonly="true" name="attr_carac_i_tot"/>
                             <label class="sheet-fi-5 sheet-left">Intelligence (I)</label>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Intelligence : [[0 + @{carac_i_tot} - 1d10]]"
-                                    name="roll_carac_i_tot"></button>
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Intelligence}} {{jet=[[0+@{carac_i_tot}-1d10]]}} {{critique=[[@{carac_i_tot} * 2]] }}"
+                                    name="roll_carac__tot"></button>
                         </div>
                         <div class="sheet-flex-row">
                             <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1"
@@ -178,8 +178,8 @@
                                    readonly="true" name="attr_carac_p_tot"/>
                             <label class="sheet-fi-5 sheet-left">Perception (P)</label>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Perception : [[0 + @{carac_p_tot} - 1d10]]"
-                                    name="roll_carac_p_tot"></button>
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Perception}} {{jet=[[0+@{carac_p_tot}-1d10]]}} {{critique=[[@{carac_p_tot} * 2]] }}"
+                                    name="roll_carac__tot"></button>
                         </div>
                         <div class="sheet-flex-row">
                             <input class="sheet-fi-2 sheet-input_editable sheet-margin" type="number" step="1"
@@ -191,8 +191,8 @@
                                    readonly="true" name="attr_carac_r_tot"/>
                             <label class="sheet-fi-5 sheet-left">Rapidité (R)</label>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Rapidité : [[0 + @{carac_r_tot} - 1d10]]"
-                                    name="roll_carac_r_tot"></button>
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Rapidité}} {{jet=[[0+@{carac_r_tot}-1d10]]}} {{critique=[[@{carac_r_tot} * 2]] }}"
+                                    name="roll_carac__tot"></button>
                         </div>
                     </div>
                 </div>
@@ -254,7 +254,7 @@
                                 <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
                                     <div class="sheet-fi-1 sheet-small-pad">
                                         <button type="roll" class="sheet-fi-12"
-                                                value="/em @{avantage_nom}(niv @{avantage_niv}) pour @{avantage_stress} stress \n @{avantage_desc}"
+                                                value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{avantage_nom} (@{avantage_niv}) }} {{stress=@{avantage_stress} }} {{description=@{avantage_desc} }}"
                                                 name="roll_avantage_desc"></button>
                                     </div>
                                     <div class="sheet-fi-6 sheet-small-pad">
@@ -277,7 +277,7 @@
                                         <input type="number" class="sheet-fi-12 sheet-input_editable"
                                                name="attr_avantage_px"/>
                                     </div>
-                                    <input type="checkbox" name="attr_avantage_show_desc" class="custom-checkbox sheet-fi-0-7 sheet-hider"/>
+                                    <input type="checkbox" name="attr_avantage_show_desc" class="sheet-custom-checkbox sheet-fi-0-7 sheet-hider"/>
 
                                     <textarea class="sheet-fi-12 sheet-hide" name="attr_avantage_desc"></textarea>
                                 </div>
@@ -296,7 +296,7 @@
                                 <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
                                     <div class="sheet-fi-1 sheet-small-pad">
                                         <button type="roll" class="sheet-fi-12"
-                                                value="/em @{faiblesse_nom} : \n @{faiblesse_desc}"
+                                                value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{faiblesse_nom} }} {{description=@{faiblesse_desc} }}"
                                                 name="roll_faiblesse_desc"></button>
                                     </div>
                                     <div class="sheet-fi-8 sheet-small-pad">
@@ -311,7 +311,7 @@
                                         <input type="number" class="sheet-fi-12 sheet-input_editable"
                                                name="attr_faiblesse_px"/>
                                     </div>
-                                    <input type="checkbox" name="attr_faiblesse_show_desc" class="custom-checkbox sheet-fi-0-7 sheet-hider"/>
+                                    <input type="checkbox" name="attr_faiblesse_show_desc" class="sheet-custom-checkbox sheet-fi-0-7 sheet-hider"/>
 
                                     <textarea class="sheet-fi-12 sheet-hide" name="attr_faiblesse_desc"></textarea>
                                 </div>
@@ -359,7 +359,7 @@
                                     <div class="sheet-fi-2 sheet-input_editable sheet-left">+2</div>
                                 </div>
                             </div>
-                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row label-row-close">
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row sheet-label-row-close">
                                 <label class="sheet-fi-5 sheet-margin" >Notes Rennomée</label>
                             </div>
                             <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
@@ -372,7 +372,7 @@
                                     <div class="sheet-fi-2 sheet-input_editable sheet-left">%</div>
                                 </div>
                             </div>
-                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row label-row-close">
+                            <div class="sheet-fi-12 sheet-nopad sheet-flex-row sheet-label-row-close">
                                 <label class="sheet-fi-5 sheet-margin" >Notes Background</label>
                             </div>
                             <div class="sheet-fi-12 sheet-nopad sheet-flex-row">
@@ -422,7 +422,9 @@
                                 <label name="label_competence_cmb_jet_couplage" for="attr_competence_cmb_jet_couplage" class="sheet-fi-2 sheet-nopad sheet-margin sheet-coupler-label">P</label>
                                 <label class="sheet-fi-10 sheet-left">Armes de jet #</label>
                             </div>
-                            <button type="roll" class="sheet-fi-1 sheet-margin" value="/em lance Armes : [[0 + @{competence_cmb_jet_total} - 1d10]]" name="roll_competence_cmb_jet_total"></button>
+                            <button type="roll" class="sheet-fi-1 sheet-margin"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Armes de jet}} {{jet=[[0+@{competence_cmb_jet_total}-1d10]]}} {{critique=[[@{competence_cmb_jet_total} * 2]] }}"
+                                    name="roll_competence_cmb_jet_total"></button>
                         </div>
                         <div class="sheet-flex-row">
                             <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
@@ -443,7 +445,7 @@
                                 <label class="sheet-fi-10 sheet-left">Armes de trait #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Armes : [[0 + @{competence_cmb_trait_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Armes de trait}} {{jet=[[0+@{competence_cmb_trait_total}-1d10]]}} {{critique=[[@{competence_cmb_trait_total} * 2]] }}"
                                     name="roll_competence_cmb_trait_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -465,7 +467,7 @@
                                 <label class="sheet-fi-10 sheet-left">Boucliers #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Boucliers : [[0 + @{competence_cmb_boucliers_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Boucliers}} {{jet=[[0+@{competence_cmb_boucliers_total}-1d10]]}} {{critique=[[@{competence_cmb_boucliers_total} * 2]] }}"
                                     name="roll_competence_cmb_boucliers_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -487,7 +489,7 @@
                                 <label class="sheet-fi-10 sheet-left">Épées #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Épées : [[0 + @{competence_cmb_epees_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Épées}} {{jet=[[0+@{competence_cmb_epees_total}-1d10]]}} {{critique=[[@{competence_cmb_epees_total} * 2]] }}"
                                     name="roll_competence_cmb_epees_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -509,7 +511,7 @@
                                 <label class="sheet-fi-10 sheet-left">Esquive #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Esquive : [[0 + @{competence_cmb_esquive_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Esquive}} {{jet=[[0+@{competence_cmb_esquive_total}-1d10]]}} {{critique=[[@{competence_cmb_esquive_total} * 2]] }}"
                                     name="roll_competence_cmb_esquive_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -531,7 +533,7 @@
                                 <label class="sheet-fi-10 sheet-left">Haches&amp;Masses #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Haches&amp;Masses : [[0 + @{competence_cmb_haches_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Haches&amp;Masses}} {{jet=[[0+@{competence_cmb_haches_total}-1d10]]}} {{critique=[[@{competence_cmb_haches_total} * 2]] }}"
                                     name="roll_competence_cmb_haches_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -553,7 +555,7 @@
                                 <label class="sheet-fi-10 sheet-left">Poignards #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Poignards : [[0 + @{competence_cmb_poignards_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Poignards}} {{jet=[[0+@{competence_cmb_poignards_couplage}-1d10]]}} {{critique=[[@{competence_cmb_poignards_couplage} * 2]] }}"
                                     name="roll_competence_cmb_poignards_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -575,7 +577,7 @@
                                 <label class="sheet-fi-10 sheet-left">Pugilat #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Pugilat : [[0 + @{competence_cmb_pugilat_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Pugilat}} {{jet=[[0+@{competence_cmb_pugilat_total}-1d10]]}} {{critique=[[@{competence_cmb_pugilat_total} * 2]] }}"
                                     name="roll_competence_cmb_pugilat_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -596,7 +598,7 @@
                                 <label class="sheet-fi-10 sheet-left">Strategie</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Strategie : [[0 + @{competence_cmb_strategie_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Strategie}} {{jet=[[0+@{competence_cmb_strategie_total}-1d10]]}} {{critique=[[@{competence_cmb_strategie_total} * 2]] }}"
                                     name="roll_competence_cmb_strategie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -619,7 +621,7 @@
                                        name="attr_competence_cmb_custom_1_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_cmb_custom_1_nom} : [[0 + @{competence_cmb_custom_1_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_cmb_custom_1_nom} }} {{jet=[[0+@{competence_cmb_custom_1_total}-1d10]]}} {{critique=[[@{competence_cmb_custom_1_total} * 2]] }}"
                                     name="roll_competence_cmb_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -642,7 +644,7 @@
                                        name="attr_competence_cmb_custom_2_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_cmb_custom_2_nom} : [[0 + @{competence_cmb_custom_2_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_cmb_custom_2_nom} }} {{jet=[[0+@{competence_cmb_custom_2_total}-1d10]]}} {{critique=[[@{competence_cmb_custom_2_total} * 2]] }}"
                                     name="roll_competence_cmb_custom_2_total"></button>
                         </div>
                     </div>
@@ -679,7 +681,7 @@
                                 <label class="sheet-fi-10 sheet-left">Baratin</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Baratin : [[0 + @{competence_soc_baratin_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Baratin}} {{jet=[[0+@{competence_soc_baratin_total}-1d10]]}} {{critique=[[@{competence_soc_baratin_total} * 2]] }}"
                                     name="roll_competence_soc_baratin_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -700,7 +702,7 @@
                                 <label class="sheet-fi-10 sheet-left">Diplomatie</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Diplomatie : [[0 + @{competence_soc_diplomatie_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Diplomatie}} {{jet=[[0+@{competence_soc_diplomatie_total}-1d10]]}} {{critique=[[@{competence_soc_diplomatie_total} * 2]] }}"
                                     name="roll_competence_soc_diplomatie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -721,7 +723,7 @@
                                 <label class="sheet-fi-10 sheet-left">Empathie</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Empathie : [[0 + @{competence_soc_empathie_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Empathie}} {{jet=[[0+@{competence_soc_empathie_total}-1d10]]}} {{critique=[[@{competence_soc_empathie_total} * 2]] }}"
                                     name="roll_competence_soc_empathie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -742,7 +744,7 @@
                                 <label class="sheet-fi-10 sheet-left">Étiquette</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Étiquette : [[0 + @{competence_soc_etiquette_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Étiquette}} {{jet=[[0+@{competence_soc_etiquette_total}-1d10]]}} {{critique=[[@{competence_soc_etiquette_total} * 2]] }}"
                                     name="roll_competence_soc_etiquette_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -763,7 +765,7 @@
                                 <label class="sheet-fi-10 sheet-left">Interrogatoire</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Interrogatoire : [[0 + @{competence_soc_interrogatoire_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Interrogatoire}} {{jet=[[0+@{competence_soc_interrogatoire_total}-1d10]]}} {{critique=[[@{competence_soc_interrogatoire_total} * 2]] }}"
                                     name="roll_competence_soc_interrogatoire_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -784,7 +786,7 @@
                                 <label class="sheet-fi-10 sheet-left">Intimidation</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Intimidation : [[0 + @{competence_soc_intimidation_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Intimidation}} {{jet=[[0+@{competence_soc_intimidation_total}-1d10]]}} {{critique=[[@{competence_soc_intimidation_total} * 2]] }}"
                                     name="roll_competence_soc_intimidation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -805,7 +807,7 @@
                                 <label class="sheet-fi-10 sheet-left">Marchandage</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Marchandage : [[0 + @{competence_soc_marchandage_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Marchandage}} {{jet=[[0+@{competence_soc_marchandage_total}-1d10]]}} {{critique=[[@{competence_soc_marchandage_total} * 2]] }}"
                                     name="roll_competence_soc_marchandage_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -826,7 +828,7 @@
                                 <label class="sheet-fi-10 sheet-left">Séduction</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Séduction : [[0 + @{competence_soc_seduction_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Séduction}} {{jet=[[0+@{competence_soc_seduction_total}-1d10]]}} {{critique=[[@{competence_soc_seduction_total} * 2]] }}"
                                     name="roll_competence_soc_seduction_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -847,7 +849,7 @@
                                 <label class="sheet-fi-10 sheet-left">Réseau</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Réseau : [[0 + @{competence_soc_reseau_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Réseau}} {{jet=[[0+@{competence_soc_reseau_total}-1d10]]}} {{critique=[[@{competence_soc_reseau_total} * 2]] }}"
                                     name="roll_competence_soc_reseau_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -869,7 +871,7 @@
                                        name="attr_competence_soc_custom_1_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_soc_custom_1_nom} : [[0 + @{competence_soc_custom_1_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_soc_custom_1_nom} }} {{jet=[[0+@{competence_soc_custom_1_total}-1d10]]}} {{critique=[[@{competence_soc_custom_1_total} * 2]] }}"
                                     name="roll_competence_soc_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -891,7 +893,7 @@
                                        name="attr_competence_soc_custom_2_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_soc_custom_2_nom} : [[0 + @{competence_soc_custom_2_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_soc_custom_2_nom} }} {{jet=[[0+@{competence_soc_custom_2_total}-1d10]]}} {{critique=[[@{competence_soc_custom_2_total} * 2]] }}"
                                     name="roll_competence_soc_custom_2_total"></button>
                         </div>
 
@@ -932,7 +934,7 @@
                                 <label class="sheet-fi-10 sheet-left">Acrobatie #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Acrobatie : [[0 + @{competence_phy_acrobatie_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Acrobatie}} {{jet=[[0+@{competence_phy_acrobatie_total}-1d10]]}} {{critique=[[@{competence_phy_acrobatie_total} * 2]] }}"
                                     name="roll_competence_phy_acrobatie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -954,7 +956,7 @@
                                 <label class="sheet-fi-10 sheet-left">Course&amp;Vol #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Course&amp;Vol : [[0 + @{competence_phy_course_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Course}} {{jet=[[0+@{competence_phy_course_total}-1d10]]}} {{critique=[[@{competence_phy_course_total} * 2]] }}"
                                     name="roll_competence_phy_course_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -976,7 +978,7 @@
                                 <label class="sheet-fi-10 sheet-left">Discrétion #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Discrétion : [[0 + @{competence_phy_discretion_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Discrétion}} {{jet=[[0+@{competence_phy_discretion_total}-1d10]]}} {{critique=[[@{competence_phy_discretion_total} * 2]] }}"
                                     name="roll_competence_phy_discretion_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -998,7 +1000,7 @@
                                 <label class="sheet-fi-10 sheet-left">Escalade #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Escalade : [[0 + @{competence_phy_escalade_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Escalade}} {{jet=[[0+@{competence_phy_escalade_total}-1d10]]}} {{critique=[[@{competence_phy_escalade_total} * 2]] }}"
                                     name="roll_competence_phy_escalade_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1020,7 +1022,7 @@
                                 <label class="sheet-fi-10 sheet-left">Équitation #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Équitation : [[0 + @{competence_phy_equitation_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Équitation}} {{jet=[[0+@{competence_phy_equitation_total}-1d10]]}} {{critique=[[@{competence_phy_equitation_total} * 2]] }}"
                                     name="roll_competence_phy_equitation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1042,7 +1044,7 @@
                                 <label class="sheet-fi-10 sheet-left">Filature #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Filature : [[0 + @{competence_phy_filature_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Filature}} {{jet=[[0+@{competence_phy_filature_total}-1d10]]}} {{critique=[[@{competence_phy_filature_total} * 2]] }}"
                                     name="roll_competence_phy_filature_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1064,7 +1066,7 @@
                                 <label class="sheet-fi-10 sheet-left">Forge #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Forge : [[0 + @{competence_phy_forge_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Forge}} {{jet=[[0+@{competence_phy_forge_total}-1d10]]}} {{critique=[[@{competence_phy_forge_total} * 2]] }}"
                                     name="roll_competence_phy_forge_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1086,7 +1088,7 @@
                                 <label class="sheet-fi-10 sheet-left">Natation #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Natation : [[0 + @{competence_phy_natation_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Natation}} {{jet=[[0+@{competence_phy_natation_total}-1d10]]}} {{critique=[[@{competence_phy_natation_total} * 2]] }}"
                                     name="roll_competence_phy_natation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1108,7 +1110,7 @@
                                 <label class="sheet-fi-10 sheet-left">Pickpocket #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Pickpocket : [[0 + @{competence_phy_pickpocket_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Pickpocket}} {{jet=[[0+@{competence_phy_pickpocket_total}-1d10]]}} {{critique=[[@{competence_phy_pickpocket_total} * 2]] }}"
                                     name="roll_competence_phy_pickpocket_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1130,7 +1132,7 @@
                                 <label class="sheet-fi-10 sheet-left">Survie #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Survie : [[0 + @{competence_phy_survie_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Survie}} {{jet=[[0+@{competence_phy_survie_total}-1d10]]}} {{critique=[[@{competence_phy_survie_total} * 2]] }}"
                                     name="roll_competence_phy_survie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1152,7 +1154,7 @@
                                 <label class="sheet-fi-10 sheet-left">Recherche #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Recherche : [[0 + @{competence_phy_recherche_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Recherche}} {{jet=[[0+@{competence_phy_recherche_total}-1d10]]}} {{critique=[[@{competence_phy_recherche_total} * 2]] }}"
                                     name="roll_competence_phy_recherche_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1174,7 +1176,7 @@
                                 <label class="sheet-fi-10 sheet-left">Vigilance #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Vigilance : [[0 + @{competence_phy_vigilance_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Vigilance}} {{jet=[[0+@{competence_phy_vigilance_total}-1d10]]}} {{critique=[[@{competence_phy_vigilance_total} * 2]] }}"
                                     name="roll_competence_phy_vigilance_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1197,7 +1199,7 @@
                                        name="attr_competence_phy_custom_1_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_phy_custom_1_nom} : [[0 + @{competence_phy_custom_1_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_phy_custom_1_nom} }} {{jet=[[0+@{competence_phy_custom_1_total}-1d10]]}} {{critique=[[@{competence_phy_custom_1_total} * 2]] }}"
                                     name="roll_competence_phy_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1220,7 +1222,7 @@
                                        name="attr_competence_phy_custom_2_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_phy_custom_2_nom} : [[0 + @{competence_phy_custom_2_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_phy_custom_2_nom} }} {{jet=[[0+@{competence_phy_custom_2_total}-1d10]]}} {{critique=[[@{competence_phy_custom_2_total} * 2]] }}"
                                     name="roll_competence_phy_custom_2_total"></button>
                         </div>
                     </div>
@@ -1258,7 +1260,7 @@
                                 <label class="sheet-fi-10 sheet-left">Artisanat #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Artisanat : [[0 + @{competence_con_artisanat_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Artisanat}} {{jet=[[0+@{competence_con_artisanat_total}-1d10]]}} {{critique=[[@{competence_con_artisanat_total} * 2]] }}"
                                     name="roll_competence_con_artisanat_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1279,7 +1281,7 @@
                                 <label class="sheet-fi-10 sheet-left">Cartographie</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Cartographie : [[0 + @{competence_con_conduite_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Cartographie} {{jet=[[0+@{competence_con_cartographie_total}-1d10]]}} {{critique=[[@{competence_con_cartographie_total} * 2]] }}"
                                     name="roll_competence_con_conduite_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1300,7 +1302,7 @@
                                 <label class="sheet-fi-10 sheet-left">Conduite</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Conduite : [[0 + @{competence_con_conduite_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Conduite}} {{jet=[[0+@{competence_con_conduite_total}-1d10]]}} {{critique=[[@{competence_con_conduite_total} * 2]] }}"
                                     name="roll_competence_con_conduite_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1322,7 +1324,7 @@
                                 <label class="sheet-fi-10 sheet-left">Crochetage #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Crochetage : [[0 + @{competence_con_crochetage_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Crochetage}} {{jet=[[0+@{competence_con_crochetage_total}-1d10]]}} {{critique=[[@{competence_con_crochetage_total} * 2]] }}"
                                     name="roll_competence_con_crochetage_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1344,7 +1346,7 @@
                                 <label class="sheet-fi-10 sheet-left">Dissimulation #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Dissimulation : [[0 + @{competence_con_dissimulation_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Dissimulation} {{jet=[[0 + @{competence_con_dissimulation_total}-1d10]]}} {{critique=[[@{competence_con_dissimulation_total} * 2]] }}"
                                     name="roll_competence_con_dissimulation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1365,7 +1367,7 @@
                                 <label class="sheet-fi-10 sheet-left">Évaluation</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Évaluation : [[0 + @{competence_con_evaluation_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Évaluation}} {{jet=[[0+@{competence_con_evaluation_total}-1d10]]}} {{critique=[[@{competence_con_evaluation_total} * 2]] }}"
                                     name="roll_competence_con_evaluation_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1386,7 +1388,7 @@
                                 <label class="sheet-fi-10 sheet-left">Faune&amp;Flore</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Faune&amp;Flore : [[0 + @{competence_con_faune_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Faune&amp;Flore}} {{jet=[[0+@{competence_con_faune_total}-1d10]]}} {{critique=[[@{competence_con_faune_total} * 2]] }}"
                                     name="roll_competence_con_faune_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1407,7 +1409,7 @@
                                 <label class="sheet-fi-10 sheet-left">Héraldique</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Héraldique : [[0 + @{competence_con_heraldique_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Héraldique}} {{jet=[[0+@{competence_con_heraldique_total}-1d10]]}} {{critique=[[@{competence_con_heraldique_total} * 2]] }}"
                                     name="roll_competence_con_heraldique_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1428,7 +1430,7 @@
                                 <label class="sheet-fi-10 sheet-left">Jeu</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Jeu : [[0 + @{competence_con_jeu_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Jeu}} {{jet=[[0+@{competence_con_jeu_total}-1d10]]}} {{critique=[[@{competence_con_jeu_total} * 2]] }}"
                                     name="roll_competence_con_jeu_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1450,7 +1452,7 @@
                                 <label class="sheet-fi-10 sheet-left">Musique #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Musique : [[0 + @{competence_con_musique_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Musique}} {{jet=[[0+@{competence_con_musique_total}-1d10]]}} {{critique=[[@{competence_con_musique_total} * 2]] }}"
                                     name="roll_competence_con_musique_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1471,7 +1473,7 @@
                                 <label class="sheet-fi-10 sheet-left">Politique</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Politique : [[0 + @{competence_con_politique_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Politique}} {{jet=[[0+@{competence_con_politique_total}-1d10]]}} {{critique=[[@{competence_con_politique_total} * 2]] }}"
                                     name="roll_competence_con_politique_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1492,7 +1494,7 @@
                                 <label class="sheet-fi-10 sheet-left">Théologie</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Théologie : [[0 + @{competence_con_theologie_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Théologie}} {{jet=[[0+@{competence_con_theologie_total}-1d10]]}} {{critique=[[@{competence_con_theologie_total} * 2]] }}"
                                     name="roll_competence_con_theologie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1515,7 +1517,7 @@
                                        name="attr_competence_con_custom_1_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_con_custom_1_nom} : [[0 + @{competence_con_custom_1_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_con_custom_1_nom} }} {{jet=[[0+@{competence_con_custom_1_total}-1d10]]}} {{critique=[[@{competence_con_custom_1_total} * 2]] }}"
                                     name="roll_competence_con_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1538,7 +1540,7 @@
                                        name="attr_competence_con_custom_2_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_con_custom_2_nom} : [[0 + @{competence_con_custom_2_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_con_custom_1_nom}}} {{jet=[[0+@{competence_con_custom_2_total}-1d10]]}} {{critique=[[@{competence_con_custom_2_total} * 2]] }}"
                                     name="roll_competence_con_custom_2_total"></button>
                         </div>
                     </div>
@@ -1578,7 +1580,7 @@
                                        name="attr_competence_lang_1_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_lang_1_nom} : [[0 + @{competence_lang_1_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_lang_1_nom} }} {{jet=[[0+@{competence_lang_1_total}-1d10]]}} {{critique=[[@{competence_lang_1_total} * 2]] }}"
                                     name="roll_competence_lang_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1600,7 +1602,7 @@
                                        name="attr_competence_lang_2_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_lang_2_nom} : [[0 + @{competence_lang_2_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_lang_2_nom} }} {{jet=[[0+@{competence_lang_2_total}-1d10]]}} {{critique=[[@{competence_lang_2_total} * 2]] }}"
                                     name="roll_competence_lang_2_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1622,7 +1624,7 @@
                                        name="attr_competence_lang_3_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_lang_3_nom} : [[0 + @{competence_lang_3_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_lang_3_nom} }} {{jet=[[0+@{competence_lang_3_total}-1d10]]}} {{critique=[[@{competence_lang_3_total} * 2]] }}"
                                     name="roll_competence_lang_3_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1644,7 +1646,7 @@
                                        name="attr_competence_lang_4_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_lang_4_nom} : [[0 + @{competence_lang_4_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_lang_4_nom} }} {{jet=[[0+@{competence_lang_4_total}-1d10]]}} {{critique=[[@{competence_lang_4_total} * 2]] }}"
                                     name="roll_competence_lang_4_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1666,7 +1668,7 @@
                                        name="attr_competence_lang_5_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_lang_5_nom} : [[0 + @{competence_lang_5_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_lang_5_nom} }} {{jet=[[0+@{competence_lang_5_total}-1d10]]}} {{critique=[[@{competence_lang_5_total} * 2]] }}"
                                     name="roll_competence_lang_5_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1688,21 +1690,24 @@
                                        name="attr_competence_lang_6_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_lang_6_nom} : [[0 + @{competence_lang_6_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_lang_6_nom} }} {{jet=[[0+@{competence_lang_6_total}-1d10]]}} {{critique=[[@{competence_lang_6_total} * 2]] }}"
                                     name="roll_competence_lang_6_total"></button>
                         </div>
                     </div>
                     <div class="sheet-tab-content sheet-flex-column sheet-margin sheet-fi-6">
                         <h3>Spéciales (x3)</h3>
-                        <div class="sheet-flex-row">
-                            <div class="sheet-fi-7 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                        <div class="sheet-flex-row sheet-flex-bottom">
+                            <div class="sheet-fi-6 sheet-nopad sheet-flex-row sheet-flex-bottom">
                                 <label class="sheet-fi-20 sheet-center-text sheet-margin">Niv.</label>
                                 <label class="sheet-fi-20 sheet-center-text sheet-margin">+<br>Mait.</label>
                                 <label class="sheet-fi-20 sheet-center-text sheet-margin">+/-<br>Mod.</label>
                                 <label class="sheet-fi-20 sheet-center-text sheet-margin">-<br>Arm.</label>
                                 <label class="sheet-fi-20 sheet-center-text sheet-margin">Total</label>
                             </div>
-                            <label class="sheet-fi-4 sheet-left"></label>
+                            <div class="sheet-fi-5 sheet-nopad sheet-flex-row sheet-flex-bottom">
+                                <label class="sheet-fi-2 sheet-center-text sheet-margin">Att.</label>
+                                <label class="sheet-fi-10 sheet-center-text sheet-margin">&nbsp;</label>
+                            </div>
                         </div>
                         <div class="sheet-flex-row">
                             <div class="sheet-fi-6 sheet-nopad sheet-flex-row">
@@ -1723,7 +1728,7 @@
                                 <label class="sheet-fi-10 sheet-left">Alchimie #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Alchimie : [[0 + @{competence_spe_alchimie_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Alchimie}} {{jet=[[0+@{competence_spe_alchimie_total}-1d10]]}} {{critique=[[@{competence_spe_alchimie_total} * 2]] }}"
                                     name="roll_competence_spe_alchimie_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1745,7 +1750,7 @@
                                 <label class="sheet-fi-10 sheet-left">Médecine #</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Médecine : [[0 + @{competence_spe_medicine_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Médecine}} {{jet=[[0+@{competence_spe_medicine_total}-1d10]]}} {{critique=[[@{competence_spe_medicine_total} * 2]] }}"
                                     name="roll_competence_spe_medicine_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1767,7 +1772,7 @@
                                 <label class="sheet-fi-10 sheet-left">Vision-Faon #M</label>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance Vision-Faon : [[0 + @{competence_spe_vision_faon_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Vision-Faon}} {{jet=[[0+@{competence_spe_vision_faon_total}-1d10]]}} {{critique=[[@{competence_spe_vision_faon_total} * 2]] }}"
                                     name="roll_competence_spe_vision_faon_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1790,7 +1795,7 @@
                                        name="attr_competence_spe_custom_1_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_spe_custom_1_nom} : [[0 + @{competence_spe_custom_1_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_spe_custom_1_nom} }} {{jet=[[0+@{competence_spe_custom_1_total}-1d10]]}} {{critique=[[@{competence_spe_custom_1_total} * 2]] }}"
                                     name="roll_competence_spe_custom_1_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1813,7 +1818,7 @@
                                        name="attr_competence_spe_custom_2_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_spe_custom_2_nom} : [[0 + @{competence_spe_custom_2_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_spe_custom_2_nom} }} {{jet=[[0+@{competence_spe_custom_2_total}-1d10]]}} {{critique=[[@{competence_spe_custom_2_total} * 2]] }}"
                                     name="roll_competence_spe_custom_2_total"></button>
                         </div>
                         <div class="sheet-flex-row">
@@ -1836,7 +1841,7 @@
                                        name="attr_competence_spe_custom_3_nom"/>
                             </div>
                             <button type="roll" class="sheet-fi-1 sheet-margin"
-                                    value="/em lance @{competence_spe_custom_3_nom} : [[0 + @{competence_spe_custom_3_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{competence_spe_custom_3_nom} }} {{jet=[[0+@{competence_spe_custom_3_total}-1d10]]}} {{critique=[[@{competence_spe_custom_3_total} * 2]] }}"
                                     name="roll_competence_spe_custom_3_total"></button>
                         </div>
                     </div>
@@ -1908,7 +1913,7 @@
                             <div class="sheet-fi-3 sheet-flex-column">
                                 <h4 class="sheet-fi-12 sheet-margin">Rés Soc.</h4>
                                 <button type="roll" class="sheet-fi-10 sheet-margin"
-                                        value="/em lance Rés Soc. : [[0 + @{res_soc_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Rés Soc.}} {{jet=[[0+@{res_soc_total}-1d10]]}} {{critique=[[@{res_soc_total} * 2]] }}"
                                         name="roll_res_soc_total"></button>
                             </div>
                             <div class="sheet-fi-3 sheet-flex-column">
@@ -1930,7 +1935,7 @@
                             <div class="sheet-fi-3 sheet-flex-column">
                                 <h4 class="sheet-fi-12 sheet-margin">Rés Choc</h4>
                                 <button type="roll" class="sheet-fi-10 sheet-margin"
-                                        value="/em lance Rés Choc : [[0 + @{res_choc_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=>Rés Choc}} {{jet=[[0+@{res_choc_total}-1d10]]}} {{critique=[[@{res_choc_total} * 2]] }}"
                                         name="roll_res_choc_total"></button>
                             </div>
                             <div class="sheet-fi-3 sheet-flex-column">
@@ -1953,7 +1958,7 @@
                             <div class="sheet-fi-3 sheet-flex-column">
                                 <h4 class="sheet-fi-12 sheet-margin">Rés Mag.</h4>
                                 <button type="roll" class="sheet-fi-10 sheet-margin"
-                                        value="/em lance Rés Mag. : [[0 + @{res_maj_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Rés Mag.}} {{jet=[[0+@{res_maj_total}-1d10]]}} {{critique=[[@{res_maj_total} * 2]] }}"
                                         name="roll_res_maj_total"></button>
                             </div>
                             <div class="sheet-fi-3 sheet-flex-column">
@@ -1978,7 +1983,7 @@
                         <div class="sheet-fi-2 sheet-flex-column">
                             <h4 class="sheet-fi-12 sheet-margin">Ini. #</h4>
                             <button type="roll" class="sheet-fi-10 sheet-margin"
-                                    value="/em lance Initiative : [[0 + @{ini_total} - 1d10]]"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Initiative}} {{jet=[[0+@{ini_total}-1d10]]}} {{critique=[[@{ini_total} * 2]] }}"
                                     name="roll_ini_total"></button>
                         </div>
                         <div class="sheet-fi-2 sheet-flex-column">
@@ -2032,17 +2037,17 @@
                         <h3 class="sheet-BlackImgBg">Armes</h3>
                         <fieldset class="repeating_weapons">
                             <div class="sheet-flex-row sheet-fi-12 sheet-nopad sheet-top-label">
-                                <label class="sheet-fi-4 sheet-right">Nom</label>
-                                <label class="sheet-fi-4 sheet-right">Compétence</label>
+                                <label class="sheet-fi-5 sheet-right">Nom</label>
+                                <label class="sheet-fi-3 sheet-right">Compétence</label>
                                 <label class="sheet-fi-2 sheet-right">Mod</label>
                                 <label class="sheet-fi-2 sheet-right">Ini</label>
                             </div>
                             <div class="sheet-flex-row sheet-fi-12 sheet-nopad">
+                                <button type="roll" class="sheet-fi-1 sheet-margin"
+                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Attaque avec @{weapon_name} }} {{jet=[[0+@{weapon_competence}+@{weapon_mod}-1d10]]}} {{critique=[[(@{weapon_competence}+@{weapon_mod}) * 2]] }} {{degats=[[@{weapon_degats}]] }} {{localisation=[[1d10]]}} {{degatsCritiques=[[1d10]]}} {{description=@{weapon_notes}}} {{resistance=@{weapon_res} }}"
+                                        name="roll_res_maj_total"></button>
                                 <input type="text" class="sheet-fi-4 sheet-margin sheet-input_editable" name="attr_weapon_name"/>
                                 <input type="number" class="sheet-fi-3 sheet-margin sheet-input_editable" name="attr_weapon_competence"/>
-                                <button type="roll" class="sheet-fi-1 sheet-margin"
-                                                value="/em Attaque avec @{weapon_name} : [[0 + @{weapon_competence}+ @{weapon_mod} - 1d10]]"
-                                                name="roll_res_maj_total"></button>
                                 <input type="number" class="sheet-fi-2 sheet-margin sheet-input_editable"name="attr_weapon_mod"/>
                                 <input type="number" class="sheet-fi-2 sheet-margin sheet-input_editable"name="attr_weapon_init"/>
                             </div>
@@ -2052,13 +2057,10 @@
                                 <label class="sheet-fi-6 sheet-right">Notes</label>
                             </div>
                             <div class="sheet-flex-row sheet-fi-12 sheet-nopad">
-                                <input type="text" class="sheet-fi-3 sheet-margin sheet-input_editable" name="attr_weapon_degats"/>
-                                <button type="roll" class="sheet-fi-1 sheet-margin"
-                                        value="/em Dégats de @{weapon_name} : [[@{weapon_degats}]]"
-                                        name="roll_res_maj_total"></button>
+                                <input type="text" class="sheet-fi-4 sheet-margin sheet-input_editable" name="attr_weapon_degats"/>
                                     <input type="number" class="sheet-fi-2 sheet-margin sheet-input_editable" name="attr_weapon_res"/>
                                     <input type="text" class="sheet-fi-6 sheet-margin sheet-input_editable" name="attr_weapon_notes"/>
-                            </div>
+                           </div>
                         </fieldset>
                     </div>
                     <div class="sheet-flex-column sheet-fi-5 sheet-margin sheet-panel-protection">
@@ -2144,7 +2146,7 @@
                         <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
                             <div class="sheet-fi-1 sheet-small-pad">
                                 <button type="roll" class="sheet-fi-12"
-                                        value="/em Utilise @{attaque_nom} pour @{attaque_stress} stress: \n @{attaque_desc}"
+                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Attaque avec @{attaque_nom}}} {{stress=@{attaque_stress} }} {{description=@{attaque_desc} }}"
                                         name="roll_attaque_desc"></button>
                             </div>
                             <div class="sheet-fi-9 sheet-small-pad">
@@ -2154,7 +2156,7 @@
                                 <input type="number" class="sheet-fi-12 sheet-input_editable"
                                        name="attr_attaque_stress"/>
                             </div>
-                            <input type="checkbox" name="attr_attaque_show_desc" class="custom-checkbox sheet-fi-0-8 sheet-hider"/>
+                            <input type="checkbox" name="attr_attaque_show_desc" class="sheet-custom-checkbox sheet-fi-0-8 sheet-hider"/>
                             <textarea class="sheet-fi-12 sheet-hide" name="attr_attaque_desc"></textarea>
                         </div>
                     </fieldset>
@@ -2201,7 +2203,7 @@
                                     <label class="sheet-fi-10 sheet-left">Air #</label>
                                 </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
-                                        value="/em lance Air : [[0 + @{competence_maj_air_total} - 1d10]]"
+                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Air}} {{jet=[[0+@{competence_maj_air_total}-1d10]]}} {{critique=[[@{competence_maj_air_total} * 2]] }}"
                                         name="roll_competence_maj_air_total"></button>
                             </div>
                             <div class="sheet-flex-row">
@@ -2223,7 +2225,7 @@
                                     <label class="sheet-fi-10 sheet-left">Eau #</label>
                                 </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
-                                        value="/em lance Eau : [[0 + @{competence_maj_eau_total} - 1d10]]"
+                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Eau}} {{jet=[[0+@{competence_maj_eau_total}-1d10]]}} {{critique=[[@{competence_maj_eau_total} * 2]] }}"
                                         name="roll_competence_maj_eau_total"></button>
                             </div>
                             <div class="sheet-flex-row">
@@ -2245,7 +2247,7 @@
                                     <label class="sheet-fi-10 sheet-left">Énergie #</label>
                                 </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
-                                        value="/em lance Énergie : [[0 + @{competence_maj_energie_total} - 1d10]]"
+                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Énergie}} {{jet=[[0+@{competence_maj_energie_total}-1d10]]}} {{critique=[[@{competence_maj_energie_total} * 2]] }}"
                                         name="roll_competence_maj_energie_total"></button>
                             </div>
                             <div class="sheet-flex-row">
@@ -2267,7 +2269,7 @@
                                     <label class="sheet-fi-10 sheet-left">Nécrose #</label>
                                 </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
-                                        value="/em lance Nécrose : [[0 + @{competence_maj_necrose_total} - 1d10]]"
+                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Nécrose}} {{jet=[[0+@{competence_maj_necrose_total}-1d10]]}} {{critique=[[@{competence_maj_necrose_total} * 2]] }}"
                                         name="roll_competence_maj_necrose_total"></button>
                             </div>
                             <div class="sheet-flex-row">
@@ -2289,7 +2291,7 @@
                                     <label class="sheet-fi-10 sheet-left">Terre #</label>
                                 </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
-                                        value="/em lance Terre : [[0 + @{competence_maj_terre_total} - 1d10]]"
+                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Terre}} {{jet=[[0+@{competence_maj_terre_total}-1d10]]}} {{critique=[[@{competence_maj_terre_total} * 2]] }}"
                                         name="roll_competence_maj_terre_total"></button>
                             </div>
                             <div class="sheet-flex-row">
@@ -2311,7 +2313,7 @@
                                     <label class="sheet-fi-10 sheet-left">Vitaë #</label>
                                 </div>
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
-                                        value="/em lance Vitaë : [[0 + @{competence_maj_vitae_total} - 1d10]]"
+                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Vitaë}} {{jet=[[0+@{competence_maj_vitae_total}-1d10]]}} {{critique=[[@{competence_maj_vitae_total} * 2]] }}"
                                         name="roll_competence_maj_vitae_total"></button>
                             </div>
                             <div class="sheet-flex-row">
@@ -2571,7 +2573,7 @@
                             <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
                                 <div class="sheet-fi-1 sheet-small-pad">
                                     <button type="roll" class="sheet-fi-12"
-                                            value="/em lance @{sort_nom}(@{sort_competences}; MC@{sort_mc_total}) \n @{sort_desc}"
+                                            value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Lance @{sort_nom}}} {{M.C.=@{sort_mc_total} }} {{Compétences=@{sort_competences} }} {{description=@{sort_desc} }}"
                                             name="roll_sort_desc"></button>
                                 </div>
                                 <div class="sheet-fi-2 sheet-flex-row sheet-small-pad">
@@ -2590,7 +2592,7 @@
                                     <input type="number" class="sheet-fi-12 sheet-input_editable"
                                            name="attr_sort_mc_total"/>
                                 </div>
-                                <input type="checkbox" name="attr_sort_show_desc" class="custom-checkbox sheet-fi-0-8 sheet-hider"/>
+                                <input type="checkbox" name="attr_sort_show_desc" class="sheet-custom-checkbox sheet-fi-0-8 sheet-hider"/>
                                 <textarea class="sheet-fi-12 sheet-hide" name="attr_sort_desc"></textarea>
                             </div>
                     </div>
@@ -2701,7 +2703,7 @@
                                 <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
                                     <div class="sheet-fi-1 sheet-small-pad">
                                         <button type="roll" class="sheet-fi-12"
-                                                value="/em Lance @{pouvoir_nom}(@{attr_pouvoir_poids}) d'une valeur de @{pouvoir_cout} Hélias: \n @{pouvoir_desc}"
+                                                value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Lance @{pouvoir_nom} (@{pouvoir_niveau}) }} {{Stress=@{pouvoir_cout_stress} }} {{Rés Magie=@{pouvoir_res_magie} }} {{description=@{pouvoir_desc} }}"
                                                 name="roll_pouvoir_desc"></button>
                                     </div>
                                     <div class="sheet-fi-1 sheet-small-pad">
@@ -2732,7 +2734,7 @@
                                         <input type="number" class="sheet-fi-12 sheet-input_editable"
                                                name="attr_pouvoir_cible_stress"/>
                                     </div>
-                                    <input type="checkbox" name="attr_pouvoir_show_desc" class="sheet-hider sheet-fi-0-8 custom-checkbox"/>
+                                    <input type="checkbox" name="attr_pouvoir_show_desc" class="sheet-hider sheet-fi-0-8 sheet-custom-checkbox"/>
                                     <textarea class="sheet-fi-12 sheet-hide" name="attr_pouvoir_desc"></textarea>
                                 </div>
                             </fieldset>
@@ -2759,7 +2761,7 @@
                             <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
                                 <div class="sheet-fi-1 sheet-small-pad">
                                     <button type="roll" class="sheet-fi-12"
-                                            value="/em Possède @{equipement_nom}(@{attr_equipement_poids}) d'une valeur de @{equipement_cout} Hélias: \n @{equipement_desc}"
+                                            value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{equipement_nom}}} {{Valeur=@{equipement_cout} Hélias }} {{Poids=@{equipement_poids} kg }}  {{description=@{equipement_desc} }}"
                                             name="roll_equipement_desc"></button>
                                 </div>
                                 <div class="sheet-fi-8 sheet-small-pad">
@@ -2774,7 +2776,7 @@
                                     <input type="number" class="sheet-fi-12 sheet-input_editable"
                                            name="attr_equipement_poids"/>
                                 </div>
-                                <input type="checkbox" name="attr_equipement_show_desc" class="custom-checkbox sheet-fi-0-7 sheet-hider"/>
+                                <input type="checkbox" name="attr_equipement_show_desc" class="sheet-custom-checkbox sheet-fi-0-7 sheet-hider"/>
                                 <textarea class="sheet-fi-12 sheet-hide" name="attr_equipement_desc"></textarea>
                             </div>
                         </fieldset>
@@ -2804,7 +2806,7 @@
                             <div class="sheet-fi-12 sheet-flex-row sheet-flex-wrap sheet-nopad sheet-relative">
                                 <div class="sheet-fi-1 sheet-small-pad">
                                     <button type="roll" class="sheet-fi-12"
-                                            value="/em Possède @{richesse_nom}(à @{attr_richesse_lieu}) d'une valeur de @{richesse_cout} Hélias: \n @{richesse_desc}"
+                                            value="&{template:jet} {{nom=@{character_name} }} {{commentaire=@{richesse_nom}}} {{Lieu=@{richesse_lieu} }} {{Valeur=@{richesse_cout} Hélias }} {{description=@{richesse_desc} }}"
                                             name="roll_richesse_desc"></button>
                                 </div>
                                 <div class="sheet-fi-5 sheet-small-pad">
@@ -2819,7 +2821,7 @@
                                     <input type="number" class="sheet-fi-12 sheet-input_editable"
                                            name="attr_richesse_cout"/>
                                 </div>
-                                <input type="checkbox" name="attr_richesse_show_desc" class="custom-checkbox sheet-fi-0-7 sheet-hider"/>
+                                <input type="checkbox" name="attr_richesse_show_desc" class="sheet-custom-checkbox sheet-fi-0-7 sheet-hider"/>
                                 <textarea class="sheet-fi-12 sheet-hide" name="attr_richesse_desc"></textarea>
                             </div>
                         </fieldset>
@@ -2837,6 +2839,81 @@
         </div>
     </div>
 </div>
+<rolltemplate class="sheet-rolltemplate-jet">
+    <div class="sheet-panel-roll sheet-flex-column">
+        <div class="sheet-header sheet-fi-12">{{nom}}</div>
+        {{#commentaire}}
+        <div class="sheet-sub-header sheet-fi-12">{{commentaire}}</div>
+        {{/commentaire}}
+        {{#jet}}
+            {{#rollWasFumble() jet}}
+                <div class="sheet-flex-row sheet-fi-12">
+                    <label >Marge:</label>
+                    <div class="sheet-criticalRoll">{{critique}}</div>
+                </div>
+            {{/rollWasFumble() jet}}
+            {{#rollWasCrit() jet}}
+                {{#rollGreater() critique 43}}
+                <div class="sheet-flex-row sheet-fi-12">
+                    <label >Marge:</label>
+                    <div class="sheet-fumbleRoll">-7</div>
+                </div>
+                {{/rollGreater() critique 43}}
+                {{#rollBetween() critique 31 42}}
+                <div class="sheet-flex-row sheet-fi-12">
+                    <label >Marge:</label>
+                    <div class="sheet-fumbleRoll">-10</div>
+                </div>
+                {{/rollBetween() critique 31 42}}
+                {{#rollBetween() critique 21 31}}
+                <div class="sheet-flex-row sheet-fi-12">
+                    <label >Marge:</label>
+                    <div class="sheet-fumbleRoll">-15</div>
+                </div>
+                {{/rollBetween() critique 21 31}}
+                {{#rollLess() critique 21}}
+                <div class="sheet-flex-row sheet-fi-12">
+                    <label >Marge:</label>
+                    <div class="sheet-fumbleRoll">-20</div>
+                </div>
+                {{/rollLess() critique 21}}
+            {{/rollWasCrit() jet}}
+            {{#^rollWasCrit() jet}} {{#^rollWasFumble() jet}}
+                <div class="sheet-flex-row sheet-fi-12">
+                    <label >Marge:</label>
+                    <div>{{jet}}</div>
+                </div>
+            {{/^rollWasFumble() jet}} {{/^rollWasCrit() jet}}
+        {{/jet}}
+        {{#degats}}
+        <div class="sheet-flex-row sheet-fi-12">
+            <label >Dégats:</label>
+            <div>{{degats}}</div>
+        </div>
+        <div class="sheet-flex-row sheet-fi-12">
+            <label >Localisation: </label>
+            <div>{{localisation}}</div>
+        </div>
+        {{#rollWasFumble() jet}} {{#degatsCritiques}}
+        <div class="sheet-flex-row sheet-fi-12">
+            <label >Critique:</label>
+            <div>{{degatsCritiques}}</div>
+        </div>
+        {{/degatsCritiques}}{{/rollWasFumble() jet}}
+        {{/degats}}
+        {{#allprops() nom jet attaque degats localisation critique degatsCritiques description commentaire}}
+        <div class="sheet-flex-row sheet-fi-12">
+            <label >{{key}}:</label>
+            <div><b>{{value}}</b></div>
+        </div>
+        {{/allprops() nom jet attaque degats localisation critique degatsCritiques description commentaire}}
+        {{#description}}
+        <div class="sheet-flex-row">
+            <div class="sheet-fi-12">{{description}}</div>
+        </div>
+        {{/description}}
+    </div>
+</rolltemplate>
 
 <script type="text/worker">
 

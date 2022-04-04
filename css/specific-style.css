@@ -4,3 +4,12 @@ fieldset{
     margin:0;
     padding:0;
 }
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+rolltemplate{
+    width: 300px;
+}
