@@ -647,4 +647,7 @@ on("change:exp_total",function(){
     updateXp();
 });
 
+on("change:pretre_niveau",function (){
+    updateStress();
+});
 console.log("worker fully initialized");

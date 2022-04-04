@@ -1983,7 +1983,7 @@
                         <div class="sheet-fi-2 sheet-flex-column">
                             <h4 class="sheet-fi-12 sheet-margin">Ini. #</h4>
                             <button type="roll" class="sheet-fi-10 sheet-margin"
-                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Initiative}} {{jet=[[0+@{ini_total}-1d10]]}} {{critique=[[@{ini_total} * 2]] }}"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Initiative}} {{jet=[[0+@{ini_total}-1d10- &{tracker}]]}} {{critique=[[@{ini_total} * 2]]  }}"
                                     name="roll_ini_total"></button>
                         </div>
                         <div class="sheet-fi-2 sheet-flex-column">
@@ -2656,7 +2656,7 @@
 
                                 <label class="sheet-fi-12 sheet-margin">Notes :</label>
                                 <textarea class="sheet-fi-12 sheet-input_editable sheet-margin" type="text"
-                                       name="attr_pretre_symbole"></textarea>
+                                       name="attr_pretre_notes"></textarea>
                             </div>
                         </div>
                         <div class="sheet-flex-column sheet-fi-12 sheet-panel-pretre">
@@ -2820,7 +2820,7 @@
                             <div class="sheet-fi-6">&nbsp;</div>
                             <label class="sheet-fi-3">Hélias possédés</label>
                             <div class="sheet-fi-4 sheet-margin sheet-complex_input">
-                                <input class="sheet-fi-7 sheet-input_editable" type="number" name="attr_encombrement"/>
+                                <input class="sheet-fi-7 sheet-input_editable" type="number" name="attr_helias"/>
                                 <div class="sheet-fi-5 sheet-input_editable">Hélias</div>
                             </div>
                         </div>
@@ -2828,7 +2828,11 @@
                 </div>
             </div>
         </div>
+        <button type="roll" class="sheet-button-generique"
+                value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Jet générique}} {{jet=[[0+?{Valeur|0}-1d10]]}} {{critique=[[?{Valeur|0} * 2]] }}"
+                >Jet générique</button>
     </div>
+
 </div>
 <rolltemplate class="sheet-rolltemplate-jet">
     <div class="sheet-panel-roll sheet-flex-column">
