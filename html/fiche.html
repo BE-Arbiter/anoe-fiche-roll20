@@ -1891,6 +1891,7 @@
                             <div class="sheet-fi-2 sheet-margin sheet-center-text sheet-alive">0</div>
                             <input class="sheet-fi-5 sheet-center-text sheet-margin" type="number" step="1"
                                    name="attr_stress_asoc" readonly=""/>
+                            <input type="hidden" name="attr_stress_malus"/>
                             <input class="sheet-fi-5 sheet-center-text sheet-margin" type="number" step="1"
                                    name="attr_stress_sat" readonly=""/>
                         </div>
@@ -1935,7 +1936,7 @@
                             <div class="sheet-fi-3 sheet-flex-column">
                                 <h4 class="sheet-fi-12 sheet-margin">Rés Choc</h4>
                                 <button type="roll" class="sheet-fi-10 sheet-margin"
-                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=>Rés Choc}} {{jet=[[0+@{res_choc_total}-1d10]]}} {{critique=[[@{res_choc_total} * 2]] }}"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Rés Choc}} {{jet=[[0+@{res_choc_total}-1d10]]}} {{critique=[[@{res_choc_total} * 2]] }}"
                                         name="roll_res_choc_total"></button>
                             </div>
                             <div class="sheet-fi-3 sheet-flex-column">
@@ -1983,7 +1984,7 @@
                         <div class="sheet-fi-2 sheet-flex-column">
                             <h4 class="sheet-fi-12 sheet-margin">Ini. #</h4>
                             <button type="roll" class="sheet-fi-10 sheet-margin"
-                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Initiative}} {{jet=[[0+@{ini_total}-1d10- &{tracker}]]}} {{critique=[[@{ini_total} * 2]]  }}"
+                                    value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Initiative}} {{Initiative=[[1d6+@{ini_total} &{tracker}]]}}"
                                     name="roll_ini_total"></button>
                         </div>
                         <div class="sheet-fi-2 sheet-flex-column">
@@ -2044,7 +2045,7 @@
                             </div>
                             <div class="sheet-flex-row sheet-fi-12 sheet-nopad">
                                 <button type="roll" class="sheet-fi-1 sheet-margin"
-                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Attaque avec @{weapon_name} }} {{jet=[[0+@{weapon_competence}+@{weapon_mod}-1d10]]}} {{critique=[[(@{weapon_competence}+@{weapon_mod}) * 2]] }} {{degats=[[@{weapon_degats}]] }} {{localisation=[[1d10]]}} {{degatsCritiques=[[1d10]]}} {{description=@{weapon_notes}}} {{resistance=@{weapon_res} }}"
+                                        value="&{template:jet} {{nom=@{character_name} }} {{commentaire=Attaque avec @{weapon_name} }} {{jet=[[0+@{weapon_competence}+@{weapon_mod}+@{stress_malus}-1d10]]}} {{critique=[[(@{weapon_competence}+@{weapon_mod}+@{stress_malus}) * 2]] }} {{degats=[[@{weapon_degats}]] }} {{localisation=[[1d10]]}} {{degatsCritiques=[[1d10]]}} {{description=@{weapon_notes}}} {{resistance=@{weapon_res} }}"
                                         name="roll_res_maj_total"></button>
                                 <input type="text" class="sheet-fi-4 sheet-margin sheet-input_editable" name="attr_weapon_name"/>
                                 <input type="number" class="sheet-fi-3 sheet-margin sheet-input_editable" name="attr_weapon_competence"/>

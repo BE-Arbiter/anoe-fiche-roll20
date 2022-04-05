@@ -10,6 +10,8 @@ comp_attr["cmb_haches"] = "f";
 comp_attr["cmb_poignards"] = "a";
 comp_attr["cmb_pugilat"] = "a";
 comp_attr["cmb_strategie"] = "i";
+comp_attr["cmb_custom_1"] = "NA";
+comp_attr["cmb_custom_2"] = "NA";
 comp_attr["soc_baratin"] = "ch";
 comp_attr["soc_diplomatie"] = "ch";
 comp_attr["soc_empathie"] = "i";
@@ -19,6 +21,8 @@ comp_attr["soc_intimidation"] = "c";
 comp_attr["soc_marchandage"] = "ch";
 comp_attr["soc_seduction"] = "ch";
 comp_attr["soc_reseau"] = "ch";
+comp_attr["soc_custom_1"] = "NA";
+comp_attr["soc_custom_2"] = "NA";
 comp_attr["phy_acrobatie"] = "a";
 comp_attr["phy_course"] = "r";
 comp_attr["phy_discretion"] = "a";
@@ -31,6 +35,8 @@ comp_attr["phy_pickpocket"] = "a";
 comp_attr["phy_survie"] = "c";
 comp_attr["phy_recherche"] = "p";
 comp_attr["phy_vigilance"] = "p";
+comp_attr["phy_custom_1"] = "NA";
+comp_attr["phy_custom_2"] = "NA";
 comp_attr["con_artisanat"] = "a";
 comp_attr["con_cartographie"] = "i";
 comp_attr["con_conduite"] = "p";
@@ -52,6 +58,9 @@ comp_attr["lang_6"] = "i";
 comp_attr["spe_alchimie"] = "i";
 comp_attr["spe_medicine"] = "i";
 comp_attr["spe_vision_faon"] = "fm";
+comp_attr["spe_custom_1"] = "NA";
+comp_attr["spe_custom_2"] = "NA";
+comp_attr["spe_custom_3"] = "NA";
 comp_attr["maj_air"] = "r";
 comp_attr["maj_eau"] = "f";
 comp_attr["maj_energie"] = "a";
@@ -92,19 +101,34 @@ function updateVitalite() {
 }
 
 function updateStress() {
-    getAttrs([`carac_fm_tot`, `pretre_niveau`], function (values) {
+    getAttrs([`carac_fm_tot`, `pretre_niveau`,'stress_actuel'], function (values) {
         let forceMentale = getNumber(values[`carac_fm_tot`]) || 0;
         let isPriest = getNumber(values[`pretre_niveau`]) || 0;
+        let stressActuel = getNumber(values['stress_actuel']) || 0;
         let asocial = (forceMentale * 2) + 10;
         let saturation = (forceMentale * 3) + 20;
         if (isPriest !== 0) {
             asocial = (forceMentale * 3) + 10;
             saturation = (forceMentale * 4) + 20;
         }
+        let bonusMalus = 0;
+        if(stressActuel >= asocial){
+            bonusMalus = 2;
+        }
         let saveobj = {};
+        saveobj['stress_malus'] = bonusMalus;
         saveobj[`stress_asoc`] = asocial;
         saveobj[`stress_sat`] = saturation;
         setAttrs(saveobj);
+
+        for (const property in comp_attr) {
+            if (property.includes("cmb") || property.includes("soc")) {
+                updateCompetence(property);
+            }
+            else{
+                updateMagie(property, comp_attr[property],comp_attr2[property]);
+            }
+        }
     });
 }
 
@@ -317,13 +341,13 @@ function updateCompetence(competence) {
     }
 }
 function updateCompetenceMax(competence,max){
-    getAttrs([`competence_${competence}_niveau`, `competence_${competence}_maitrise`, `competence_${competence}_modif`, `competence_${competence}_armure`, `competence_${competence}_couplage`, "protection_malus"], function (values) {
+    getAttrs([`competence_${competence}_niveau`, `competence_${competence}_maitrise`, `competence_${competence}_modif`, `competence_${competence}_armure`, `competence_${competence}_couplage`, "protection_malus","stress_malus"], function (values) {
         let niveau = getNumber(values[`competence_${competence}_niveau`]) || 0;
         let maitrise = getNumber(values[`competence_${competence}_maitrise`]) || 0;
         let modif = getNumber(values[`competence_${competence}_modif`]) || 0;
         let armorDependent = armorComp.indexOf(competence) !== -1;
         let armure = competence.includes("custom") ? (getNumber(values[`competence_${competence}_armure`]) || 0) : (armorDependent ? (getNumber(values[`protection_malus`]) || 0) : 0);
-
+        let malusStress = getNumber(values["stress_malus"]) || 0;
         let couplage = getNumber(values[`competence_${competence}_couplage`] || 0);
         if (niveau === 0) {
             niveau = Math.ceil(max / 3)
@@ -331,6 +355,12 @@ function updateCompetenceMax(competence,max){
             niveau = max;
         }
         let total = niveau + maitrise + modif - armure;
+        if(competence.includes("cmb")){
+            total += malusStress;
+        }
+        else if(competence.includes("soc")){
+            total -= malusStress;
+        }
         let saveobj = {};
         if (armorDependent && !competence.includes("custom")) {
             saveobj[`competence_${competence}_armure`] = armure;
@@ -351,7 +381,7 @@ function updateAttribut(attribut) {
         setAttrs(saveobj);
 
         for (const property in comp_attr) {
-            if (comp_attr[property] === attribut && !property.includes("maj")) {
+            if (!property.includes("maj") && (comp_attr[property] === attribut || property.includes("custom"))){
                 updateCompetence(property);
             }
             else if(comp_attr[property] === attribut){
@@ -649,5 +679,9 @@ on("change:exp_total",function(){
 
 on("change:pretre_niveau",function (){
     updateStress();
+});
+
+on("change:stress_actuel",function(){
+   updateStress();
 });
 console.log("worker fully initialized");
